@@ -11,6 +11,20 @@ Cameras can be filtered by film or digital and its categories.
 Non-members can sign up for an account by clicking the SIGNUP link on the top of the web page. Once signed-up, new members can make comments, post images, edit and delete their comments. New members and existing members can view their profile page and update their profile. 
 
 # Wireframes
+## Home Page
+![Home page](https://user-images.githubusercontent.com/86206813/132398893-e69f4234-85a2-4122-8dcf-b4d97fdf6d21.PNG)
+
+## Login Page
+![Login Page](https://user-images.githubusercontent.com/86206813/132398985-b89570a1-dfdf-42ae-aa51-e5afa2389c5b.PNG)
+
+## Register Page
+![Register Page](https://user-images.githubusercontent.com/86206813/132399019-f832ee67-2b98-4f44-94ac-96f58f9d2c84.PNG)
+
+## Show Page
+![Show page](https://user-images.githubusercontent.com/86206813/132399024-bacc3849-ec40-4fd1-ac3b-6a833d36f981.PNG)
+
+## Profile Page
+![Profile Page](https://user-images.githubusercontent.com/86206813/132399036-a79e1200-5da1-4e60-8cad-57ec80be493e.PNG)
 
 # ERD
 ![ERD](https://whimuc.com/4yykyBi2wpA8J1fs9UiC9b/A7PVFc7GTYEyzc.png)
