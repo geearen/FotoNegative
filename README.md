@@ -16,10 +16,10 @@ Non-members can sign up for an account by clicking the SIGNUP link on the top of
 ![ERD](https://whimuc.com/4yykyBi2wpA8J1fs9UiC9b/A7PVFc7GTYEyzc.png)
 
 # CRUD/ RESTful routing
-![CRUD](https://whimsical.com/fotonegative-21LisKEMvCpcotcVXT8HMB@2bsEvpTYFZsxPHvFjEEFtGD3nguBNWDYvTQ)
+![CRUD](https://whimuc.com/4yykyBi2wpA8J1fs9UiC9b/9pMFbwQRbUAy4J.png)
 
 # Color Pallet
-![Coolors](https://whimsical.com/fotonegative-21LisKEMvCpcotcVXT8HMB@2bsEvpTYFZsxPLtpx6T7E82UZK4tUJ13f7N)
+![FotoNegative](https://user-images.githubusercontent.com/86206813/132394197-897dcb73-28d5-49fb-a6c0-af1d2023658c.png)
 https://coolors.co/d49b9b-bd6060-a62424-b72828-c92c2c-faac02-fab419-fabb2e-fcd479-fdecc3
 
 # API (Stretch Goal)
