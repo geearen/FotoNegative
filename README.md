@@ -32,6 +32,43 @@ Non-members can sign up for an account by clicking the SIGNUP link on the top of
 # CRUD/ RESTful routing
 ![CRUD](https://whimuc.com/4yykyBi2wpA8J1fs9UiC9b/9pMFbwQRbUAy4J.png)
 
+# Milestone/Sprints
+Sprint 1:
+
+- Server and app config
+    - Install dependencies
+    - connect controllers to routes
+    - test app in browser
+    - setup file structures: config, controllers, models, public, css/sass and views
+
+Sprint 2: 
+
+- Set up Models - users, camera and comments. 
+    - create user, camera and comments schema - double check before moving on
+- Create a database through mongodb atlas.
+- Setup .ENV file. 
+- create a small seed for camera list 
+
+Sprint 3: 
+
+- Setup views and create a rough draft of home page, login, register, show page and profile page
+- pull up data from the data base and show it on the home page
+- set up nav bars and side nav for surfing around
+
+Sprint 4:
+
+- Test functionality for creating new cameras, edit, delete
+- Test functionality for users creating a user, delete user and edit profile
+- Test functionality for posting posting comments
+
+Sprint 5:
+
+- CSS styling for all pages and forms
+
+Sprint 6:
+
+- Implement Unsplash APIs
+
 # Color Pallet
 ![FotoNegative](https://user-images.githubusercontent.com/86206813/132394197-897dcb73-28d5-49fb-a6c0-af1d2023658c.png)
 https://coolors.co/d49b9b-bd6060-a62424-b72828-c92c2c-faac02-fab419-fabb2e-fcd479-fdecc3
