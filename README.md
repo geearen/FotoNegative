@@ -1,4 +1,6 @@
 # FotoNegative
+![FotoNegative Logo](https://user-images.githubusercontent.com/86206813/132543163-e2ca926e-d962-4328-8fde-c6b321dc1da2.png)
+
 
 # Why? / Scope
 FotoNegative is a web application targeting on photographers and hobbyists, where it allows users to views different types of camera from film to digital and view sample images from that camera. I wanted to build a web application that gathers photography lovers and create a community that shares their photos and the camera gear they are using. This allow other users see sample images from a specific camera they are interested in owning/purchasing. 
