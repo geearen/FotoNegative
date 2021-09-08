@@ -25,13 +25,18 @@ app.use(express.urlencoded({extended:true}));
 
 /* Custom Middleware */
 
-
-app.get("/", function(request, response){
-  response.send("I am index");
+/* Home Page */
+app.get("/home", function(req, res){
+  res.send("Home Page");
 })
 
+/* Routes */
+app.use("/cameras", controllers.camera)
 
 /* 404 Page */
+app.get("/*", function (req, res){
+  res.send("ERROR")
+})
 
 /* Port Binding */
 app.listen(PORT, () =>{
