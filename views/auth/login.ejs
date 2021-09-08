@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+  
+  <%- include("../partials/head/_head") %> 
+
+</head>
+<body>
+  <%- include("../partials/navbar/_navbar") %> 
+
+  <div class="uk-container uk-margin login">
+    <form action="/login" method="POST">
+      <section class="login_form">
+        <label for="username"> Username </label>
+        <div class="uk-inline">
+          <span class="uk-form-icon" uk-icon="icond: user"></span>
+          <input class="uk-input" type="text" placeholder="film_only" name="username" id="username">
+        </div>
+      
+      
+      
+        <label for="password">Password</label>
+        <div class="uk-inline">
+          <span class="uk-form-icon" uk-icon="icon: lock"></span>
+          <input type="password" class="uk-input" name="password" placeholder="*******" id="password">
+        </div>
+        <button class="uk-button"> Login </button>
+      </section>
+      
+    </form>
+    
+  </div>
+
+</body>
+</html>

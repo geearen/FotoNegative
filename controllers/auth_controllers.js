@@ -9,7 +9,7 @@ router.get("/register", function (req, res){
 
 /* Login route */
 router.get("/login", function(req, res){
-  res.send("Login Page");
+  return res.render("auth/login")
 })
 
 /* Register Post route */
