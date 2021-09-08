@@ -20,6 +20,7 @@ app.set("view engine", "ejs");
 /* Session Controller */
 
 /* Middleware */
+app.use(express.static("public"));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
 
@@ -31,7 +32,7 @@ app.get("/", (req, res) => res.redirect("/home"));
 
 /* Home Page */
 app.get("/home", function(req, res){
-  res.send("Home Page");
+  return res.render("home");
 })
 
 /* Routes */
