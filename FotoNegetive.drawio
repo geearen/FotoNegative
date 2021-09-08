@@ -1,1 +1,106 @@
-<mxfile host="app.diagrams.net" modified="2021-09-06T23:15:47.298Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36" etag="Q3a2B6MiyBmta2o4Dqaf" version="15.1.0" type="device"><diagram id="72NEtVxB1My8zaFNVAuz" name="Page-1">7Ztdb+I4FIZ/DZc7ygcJcNlS2r1opaqdndm9Qm5ySCwcGzmmwPz6tROHEAxdtmnlqWQJCXxiG/s8r53jExiE02J7x9Eqf2ApkEHgpdtBeDMIAj8IIvmmLDtt8YaT2pJxnGpba3jGv6CpqK1rnELZqSgYIwKvusaEUQqJ6NgQ52zTrbZgpPutK5SBYXhOEDGtP3Eq8to6jrzW/ifgLG++2ff0lQI1lbWhzFHKNgemcDYIp5wxUX8qtlMgynuNX+p2t2eu7gfGgYpLGtyHP+9upj8KfIdf1/PRw/LH9/UfupdXRNZ6wlNWFLLHUg9a7BpPlBtcEERl6XrBqHjWVzxZTnJM0nu0Y2s1klKgZNmUrnPG8S9ZHxF5yZcGeZkLDTqIOzWeVUvdJ4dS1nlspucfmR7QtlPxHpWiGQ0jBK1K/FKNTzUsEM8wvWZCsEJXQgRnVH5OZF/AmznVo/KHqlu2pimkunq5BJHkuqCqThlhvHJMGF1dTWZxNTPOlnBw5fY2DieBaoEJ6dhnw0hCutbeBy5gexarvxeLXGbAChB8J6voBmGs9aVXWNSUN61c/caWH0p1FOtlopdItu+7VZH8oIX0P0QVGKJKalHNZbNjWcmZC8N3lNU6O3CbNpUrlGCa3cNCTWPYWp70zJSJSY8uSLXYcpymQCueAgn0stfsimGlcjmG6Fq+pIOm3rdoEMkxTWXZb8vypapzyZzKYSJcgQEpuA0o0XWkE1xK9fxyNFFrtEF8GdnQ+ySwoQF2XQKfc1g4sr3IRrbJBifWLCqAIwe3N9yxbbjDE/uxvOvJKTmq76bq+7axBmbwhgsZj5qhm8N6OdahbayRGZJXO7GLyL9IRL4/AjaSGl8YkYfBZ0Xk8bm7O5Vvbrt4a7uIfu+QfHyObHUrcGjfj9Z6TD4y0IrdyiHtgdR6JB6YJ+hqnc4XjBfIxeM92P4G8bh5zsIqlElyRDNQ3p0ToC467wPZenQemOF5ggRkMmJ2B69eaEfW0ZpRcoGW8ijiqL4/PvasUzXDqB0glbQm0h/gMpt96IbW6ZrnnxeOqKPa60xrnerEvMnqx9LueUR/vhPbfE28f5XAXYLziyQ44+bHObsj8dhLcDYjOn407XaKt3eKyX/cCSxvFL75iGvFmaQELr/ZF671/Kac3ak16x5J9ONqPcnpm0nOBealcA+bepK1n+L0zRQnQY5sf7LW85r+ibzmmqtJzfUDxQyQS4X1YWw9wembCU6czQmmS8e1R5BsPcXpmynOxYvj2per9eSmbyY3V8BLRhFxdHsfbW3TDcyUhUtyfhxf60nO0ORrAIU0gyarKWeLxe4JCBKY0Vl7xfBZLoomswk0vVL/cpPF2ZOk/p09ILr70IQhbLH4Wwnhm+fFuvxPVQ7ikS7fNJnRqrA7KDwCx9KfKt9Z2WoXqHmfpa1NJVvzBC5YQALxDN5SSnhaKYfK8E4oY2/kFZPX7ohP6UV/x6NaLm26NBx106XD8ZHk6pnqVq3qjI6GRx2Fxx3VnjA6quS7n3gPRZvZuC+p6I/U4ORCDdausifCYPJBIgwnnyVCWWz/DVtXb/9UHM7+BQ==</diagram></mxfile>
+<mxfile host="65bd71144e">
+    <diagram id="72NEtVxB1My8zaFNVAuz" name="Page-1">
+        <mxGraphModel dx="751" dy="924" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-1" value="Comments" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;rounded=0;sketch=0;fontColor=#5AA9E6;strokeColor=#FF6392;fillColor=#FFE45E;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="560" width="160" height="176" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-2" value="comment_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-1" vertex="1">
+                    <mxGeometry y="26" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-3" value="user_ref_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-1" vertex="1">
+                    <mxGeometry y="56" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-22" value="camera_ref_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-1" vertex="1">
+                    <mxGeometry y="86" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-4" value="content" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-1" vertex="1">
+                    <mxGeometry y="116" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-21" value="images" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-1" vertex="1">
+                    <mxGeometry y="146" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-5" value="Cameras" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;rounded=0;sketch=0;fontColor=#5AA9E6;strokeColor=#FF6392;fillColor=#FFE45E;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="180" width="160" height="326" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-6" value="camera_name" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-5" vertex="1">
+                    <mxGeometry y="26" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-8" value="camera_image" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-5" vertex="1">
+                    <mxGeometry y="56" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-7" value="type" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-5" vertex="1">
+                    <mxGeometry y="86" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-23" value="image_format" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-5" vertex="1">
+                    <mxGeometry y="116" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-24" value="interchangeable_lens" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-5" vertex="1">
+                    <mxGeometry y="146" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-25" value="categories" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-5" vertex="1">
+                    <mxGeometry y="176" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-26" value="maker" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-5" vertex="1">
+                    <mxGeometry y="206" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-27" value="year_released" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-5" vertex="1">
+                    <mxGeometry y="236" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-28" value="brand" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-5" vertex="1">
+                    <mxGeometry y="266" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-29" value="comments_ref_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-5" vertex="1">
+                    <mxGeometry y="296" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-9" value="Users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;rounded=0;sketch=0;fontColor=#5AA9E6;strokeColor=#FF6392;fillColor=#FFE45E;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="160" width="160" height="326" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-10" value="user_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-9" vertex="1">
+                    <mxGeometry y="26" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-11" value="profile_image" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-9" vertex="1">
+                    <mxGeometry y="56" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-12" value="username" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-9" vertex="1">
+                    <mxGeometry y="86" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-13" value="first_name" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-9" vertex="1">
+                    <mxGeometry y="116" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-14" value="last_name" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-9" vertex="1">
+                    <mxGeometry y="146" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-15" value="current_camera_gear" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-9" vertex="1">
+                    <mxGeometry y="176" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-16" value="ig_link" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-9" vertex="1">
+                    <mxGeometry y="206" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-17" value="fb_link" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-9" vertex="1">
+                    <mxGeometry y="236" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-18" value="personal_link" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-9" vertex="1">
+                    <mxGeometry y="266" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-20" value="comments_ref_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="L3WGDCVmiGivu_7MkVTu-9" vertex="1">
+                    <mxGeometry y="296" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-30" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;fontColor=#5AA9E6;strokeColor=#FF6392;fillColor=#FFE45E;exitX=0.006;exitY=0.267;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="L3WGDCVmiGivu_7MkVTu-20" target="L3WGDCVmiGivu_7MkVTu-3" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="370" y="480" as="sourcePoint"/>
+                        <mxPoint x="470" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="L3WGDCVmiGivu_7MkVTu-31" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;fontColor=#5AA9E6;strokeColor=#FF6392;fillColor=#FFE45E;" parent="1" source="L3WGDCVmiGivu_7MkVTu-29" target="L3WGDCVmiGivu_7MkVTu-22" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="290" y="480" as="sourcePoint"/>
+                        <mxPoint x="390" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
