@@ -29,9 +29,6 @@ const cameraSchema = new mongoose.Schema(
     photographyType:{
       type:String,
     },
-    imageFormat:{
-      type: String
-    }
   },
   {
     timestamps: true, 
