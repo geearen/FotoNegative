@@ -34,7 +34,8 @@ app.get("/home", function(req, res){
 })
 
 /* Routes */
-app.use("/cameras", controllers.camera)
+app.use("/", controllers.auth);
+app.use("/cameras", controllers.camera);
 
 /* 404 Page */
 app.get("/*", function (req, res){
