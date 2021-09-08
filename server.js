@@ -24,6 +24,7 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
 
 /* Custom Middleware */
+app.use(require("./utils/logger"));
 
 /* Routing to Home */
 app.get("/", (req, res) => res.redirect("/home"));
