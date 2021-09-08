@@ -25,6 +25,9 @@ app.use(express.urlencoded({extended:true}));
 
 /* Custom Middleware */
 
+/* Routing to Home */
+app.get("/", (req, res) => res.redirect("/home"));
+
 /* Home Page */
 app.get("/home", function(req, res){
   res.send("Home Page");
