@@ -10,7 +10,7 @@ router.get("/", async(req, res, next) =>{
     const context = {
       cameras: allCameras,
     };
-    return res.render("camera/index", context);
+    return res.render("cameras/index", context);
   }catch(error){
     console.log(error);
     req.error = error;
@@ -21,12 +21,19 @@ router.get("/", async(req, res, next) =>{
 /* New Route */
 router.get("/new", function(req, res){
   const context = {};
-  return res.render("camera/new", context);
+  return res.render("cameras/new", context);
 });
 
 /* Create Route */
-router.post("/", function(req, res){
-  res.send("Create Page");
+router.post("/", async (req, res) =>{
+  try{
+    const createdCamera = await Camera.create(req.body);
+    return res.redirect('/cameras');
+  }catch(error){
+    const context = {error};
+    console.log(error);
+    return res.render("cameras/new")
+  }
 })
 
 /* Show Page */
