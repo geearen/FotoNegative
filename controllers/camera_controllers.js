@@ -56,8 +56,18 @@ router.get("/:id", async (req, res, next) => {
 });
 
 /* Edit Page */
-router.get("/:id/edit", function(req, res){
-  res.send("Edit Camera page");
+router.get("/:id/edit", async (req, res) =>{
+  try{
+    const foundCamera = await Camera.findById(req.params.id)
+    const context = {
+      camera: foundCamera
+    }
+    return res.render("cameras/edit", context);
+  }catch(error){
+    console.log(error);
+    req.error = error;
+    return next();
+  }
 })
 
 /* Update Page */
