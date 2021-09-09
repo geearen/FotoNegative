@@ -37,8 +37,18 @@ router.post("/", async (req, res) =>{
 })
 
 /* Show Page */
-router.get("/:id", function(req, res){
-  res.send("Show Page");
+router.get("/:id", async (req, res, next) => {
+  try{
+    const foundCamera = await Camera.findById(req.params.id);
+    const context ={
+      camera: foundCamera,
+    }
+    return res.render("cameras/show", context);
+  }catch(error){
+    console.log(error);
+    req.error = error;
+    return next();
+  }
 });
 
 /* Edit Page */
