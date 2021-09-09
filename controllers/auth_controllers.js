@@ -4,13 +4,13 @@ const bcrypt = require("bcryptjs");
 
 /* Register route  */
 router.get("/register", function (req, res){
-  res.send("Register Page");
-})
+  return res.render("auth/register");
+});
 
 /* Login route */
 router.get("/login", function(req, res){
   return res.render("auth/login")
-})
+});
 
 /* Register Post route */
 router.post("/register", function(req, res){

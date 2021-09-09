@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+  
+  <%- include("../partials/head/_head") %> 
+
+</head>
+<body>
+  <%- include("../partials/navbar/_navbar") %> 
+  <h1>Register</h1>
+
+  <div class="uk-container">
+    <form action="/register" method="POST">
+      <section class="register_form">
+        <label for="username"> Username </label>
+        <div class="uk-inline">
+          <input type="text" class="uk-input" name="username" id="username">
+        </div>
+
+        <label for="email"> Email </label>
+        <div class="uk-inline">
+          <input type="text" class="uk-input" name="email" id="email">
+        </div>
+
+        <label for="password"> Password </label>
+        <div class="uk-inline">
+          <input type="password" class="uk-input" name="password" id="password">
+        </div>
+
+        <button class="uk-button"> Register </button>
+      </section>
+
+    </form>
+    <p>
+      Have an account? <a href="/login">Login here!</a>
+    </p>
+    
+  </div>
+  
+</body>
