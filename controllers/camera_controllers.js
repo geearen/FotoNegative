@@ -20,7 +20,8 @@ router.get("/", async(req, res, next) =>{
 
 /* New Route */
 router.get("/new", function(req, res){
-  res.send("New Page");
+  const context = {};
+  return res.render("camera/new", context);
 });
 
 /* Create Route */
