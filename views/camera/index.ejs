@@ -1,0 +1,29 @@
+<html lang="en">
+
+<%- include("../partials/head/_head") %> 
+
+<body>
+  <%- include("../partials/navbar/_navbar") %> 
+  <main class="uk-container-xlarge">
+    <h1 class="uk-heading-divider"> Camera List <a href="/cameras/new" uk-icon="icon: plus-circle"></a></h1>
+
+    <% cameras.forEach(camera => { %>
+      <section class="uk-card">
+
+        <div class="uk-card-media-top">
+          <a href="/cameras/<%= camera.id %>">
+            <img src="<%= camera.cameraImage %> " alt="camera image">
+          </a>
+          <div class="uk-card-body">
+            <h3><%= camera.cameraName %> </h3>
+            <p><%= camera.photographyType %> camera </p>
+          </div>
+
+        </div>
+      </section>
+    <% }) %>
+  </main>
+  
+  <%- include("../partials/footer/_footer") %> 
+</body>
+</html>

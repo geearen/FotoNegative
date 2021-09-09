@@ -1,21 +1,36 @@
 const express = require('express');
 const router = express.Router();
-
+const{Camera} = require("../models");
 
 
 /* Index Route */
-router.get("/", function(req, res){
-  res.send("Index Page");
+router.get("/", async(req, res, next) =>{
+  try{
+    const allCameras = await Camera.find({});
+    const context = {
+      cameras: allCameras,
+    };
+    return res.render("camera/index", context);
+  }catch(error){
+    console.log(error);
+    req.error = error;
+    return next();
+  }
 });
 
 /* New Route */
-router.post("/new", function(req, res){
+router.get("/new", function(req, res){
   res.send("New Page");
 });
 
+/* Create Route */
+router.post("/", function(req, res){
+  res.send("Create Page");
+})
+
 /* Show Page */
 router.get("/:id", function(req, res){
-  res.send("Create Camera page")
+  res.send("Show Page");
 });
 
 /* Edit Page */
