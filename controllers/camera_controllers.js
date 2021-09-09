@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const{Camera} = require("../models");
 
+const apiKey = process.env.UNSPLASH_APP_API_KEY;
 
 /* Index Route */
 router.get("/", async(req, res, next) =>{
@@ -36,10 +37,13 @@ router.post("/", async (req, res) =>{
   }
 })
 
+//api "https://api.unsplash.com/photos/random?query=film-&orientation=portrait&content_safety=high&client_id=dnxslX9NqG7sdJIFpYSn_YeO8crKLlvk1r65XylTr1o"
+
 /* Show Page */
 router.get("/:id", async (req, res, next) => {
   try{
     const foundCamera = await Camera.findById(req.params.id);
+
     const context ={
       camera: foundCamera,
     }

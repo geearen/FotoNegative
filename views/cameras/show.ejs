@@ -1,0 +1,42 @@
+<html lang="en">
+  <%- include("../partials/head/_head") %>
+
+  <body>
+    <%- include("../partials/navbar/_navbar") %>
+
+    <main class="uk-container">
+      <h1 class="uk-heading"><%= camera.cameraName %></h1>
+
+      <img src="<%= camera.cameraImage %> " alt="camera image" />
+      <p><%= camera.brandName %></p>
+      <p><%= camera.yearReleased %></p>
+
+      <% if (camera.interchangeableLens) { %>
+      <p>Yes</p>
+      <% } else {%>
+      <p>No</p>
+      <% } %>
+
+      <p><%= camera.imageFormat %></p>
+      <% camera.categories.forEach(category => { %>
+      <p><%= category %></p>
+      <% }) %>
+      <p><%= camera.photographyType %></p>
+
+      <form action="/cameras/comment" method="POST">
+        <div class="uk-inline">
+          <textarea
+            class="uk-textarea"
+            rows="5"
+            placeholder="Comment here!"
+            name="content"
+          ></textarea>
+          <input class="uk-input" type="text" placeholder="URL image" name="commentImages">
+          <button class="uk-button"> Submit </button>
+        </div>
+      </form>
+    </main>
+
+    <%- include("../partials/footer/_footer") %>
+  </body>
+</html>
