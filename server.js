@@ -5,7 +5,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 require("dotenv").config();
 
-/* Moduel Instance */
+/* Module Instance */
 const app = express();
 
 /* PORT */
@@ -41,6 +41,7 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
 
 /* Custom Middleware */
+app.use(require("./utils/navlinks"));
 app.use(require("./utils/logger"));
 
 /* Routing to Home */
