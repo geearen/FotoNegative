@@ -1,0 +1,35 @@
+<html lang="en">
+<%- include("../partials/head/_head") %> 
+
+<body>
+  <%- include("../partials/navbar/_navbar") %> 
+
+  <h1> Welcome <%= profile.username %> ! </h1>
+
+  <img src="<%= profile.profileImage %> " alt="">
+  <p><%= profile.firstName %> </p>
+  <p><%= profile.lastName %> </p>
+  <p><%= profile.email %> </p>
+  <p><%= profile.currentCameraGear %> </p>
+  <p><%= profile.igLink %> </p>
+  <p><%= profile.fbLink %> </p>
+  <p><%= profile.personalLink %> </p>
+
+  
+  <a class="uk-link-muted" href="/profile/<%= profile.username %>/edit "
+    ><button class="uk-button">
+      Edit Profile<span uk-icon="icon: file-edit"></span>
+    </button>
+  </a>
+
+  <form action="/profile/<%= profile.id %>?_method=DELETE" method="POST"
+    ><button class="uk-button uk-button-danger">
+      Delete Profile <span uk-icon="icon: trash"></span>
+    </button>
+  </form>
+
+
+  <%- include("../partials/footer/_footer") %> 
+
+</body>
+</html>

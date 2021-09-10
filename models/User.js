@@ -22,22 +22,22 @@ const userSchema = new mongoose.Schema(
       required: [true, "Please provide a username"],
       unique: true,
     },
-    currentCameraGear:{
+    currentCameraGear: {
       type: String,
     },
     profileImage: {
       type: String,
-      default: "public/assets/Profile2.png",
+      default: "/assets/Profile2.png",
     },
-    igLink:{
+    igLink: {
       type: String,
     },
-    fbLink:{
+    fbLink: {
       type: String,
     },
-    personalLink:{
+    personalLink: {
       type: String,
-    }
+    },
   },
   {
     timestamps: true,
