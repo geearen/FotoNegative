@@ -62,8 +62,8 @@ router.post("/login", async (req, res) =>{
       id:foundUser._id,
       username:foundUser.username,
     }
-
     return res.redirect("/home");
+
   } catch (error) {
     console.log(error);
     const context = {error}
@@ -72,8 +72,14 @@ router.post("/login", async (req, res) =>{
 })
 
 /* Log Out Route */
-router.get("/logout", function (req,res){
-  res.send("Logout");
+router.get("/logout", async (req,res) =>{
+  try{
+    await req.session.destroy();
+    return res.redirect("/login");
+  } catch(error){
+    console.log(error);
+    return res.send(error);
+  }
 })
 
 module.exports = router;
