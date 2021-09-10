@@ -1,0 +1,57 @@
+<html lang="en">
+  <%- include("../partials/head/_head") %>
+
+  <body>
+    <%- include("../partials/navbar/_navbar") %>
+
+    <main class="uk-container">
+      <h1 class="uk-heading"><%= camera.cameraName %></h1>
+
+      <img src="<%= camera.cameraImage %> " alt="camera image" />
+      <p><%= camera.brandName %></p>
+      <p><%= camera.yearReleased %></p>
+
+      <% if (camera.interchangeableLens) { %>
+      <p>Yes</p>
+      <% } else {%>
+      <p>No</p>
+      <% } %>
+
+      <p><%= camera.imageFormat %></p>
+      <p><%= camera.category %></p>
+      <p><%= camera.photographyType %></p>
+
+      <a class="uk-link-muted" href="/cameras/<%= camera.id %>/edit "
+        ><button class="uk-button">
+          Edit <span uk-icon="icon: file-edit"></span>
+        </button>
+      </a>
+
+      <form action="/cameras/<%= camera.id %>?_method=DELETE" method="POST"
+        ><button class="uk-button uk-button-danger">
+          Delete <span uk-icon="icon: trash"></span>
+        </button>
+      </form>
+
+      <form action="/cameras/comment" method="POST">
+        <div class="uk-inline">
+          <textarea
+            class="uk-textarea"
+            rows="5"
+            placeholder="Comment here!"
+            name="content"
+          ></textarea>
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="URL image"
+            name="commentImages"
+          />
+          <button class="uk-button">Submit</button>
+        </div>
+      </form>
+    </main>
+
+    <%- include("../partials/footer/_footer") %>
+  </body>
+</html>

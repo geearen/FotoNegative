@@ -5,7 +5,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 require("dotenv").config();
 
-/* Moduel Instance */
+/* Module Instance */
 const app = express();
 
 /* PORT */
@@ -18,20 +18,50 @@ const controllers = require("./controllers");
 app.set("view engine", "ejs");
 
 /* Session Controller */
+app.use(
+  session({
+    store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
+    secret: process.env.SECRET,
+    resave:false,
+    saveUninitialized:false,
+    cookie:{
+      maxAge:1000*60*60*24*7*2,
+    }
+  })
+);
 
 /* Middleware */
+app.use((req,res,next) =>{
+  res.locals.user = req.session.currentUser;
+  return next();
+});
+
+app.use(express.static("public"));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
 
 /* Custom Middleware */
+app.use(require("./utils/navlinks"));
+app.use(require("./utils/logger"));
 
+/* Routing to Home */
+app.get("/", (req, res) => res.redirect("/home"));
 
-app.get("/", function(request, response){
-  response.send("I am index");
+/* Home Page */
+app.get("/home", function(req, res){
+  return res.render("home");
 })
+
+/* Routes */
+app.use("/", controllers.auth);
+app.use("/cameras", controllers.camera);
+app.use("/profile", controllers.user);
 
 
 /* 404 Page */
+app.get("/*", function (req, res){
+  res.send("ERROR")
+})
 
 /* Port Binding */
 app.listen(PORT, () =>{

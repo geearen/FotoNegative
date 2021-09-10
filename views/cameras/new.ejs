@@ -1,0 +1,99 @@
+<html lang="en">
+
+<%- include("../partials/head/_head") %> 
+
+<body>
+  <%- include("../partials/navbar/_navbar") %> 
+  <h1>Admin's Page</h1>
+  <h3 class="uk-heading-divider"> Enter Camera info </h3>
+  
+  <div class="uk-container uk-margin create">
+    <form action="/cameras" method="POST">
+      <section class="create_form">
+        <label for="cameraName"> Camera Name </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text" placeholder="" name="cameraName" id="cameraName">
+        </div>
+        
+        <label for="brand"> Brand Name </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text" placeholder="" name="brandName" id="brand">
+        </div>
+        
+        <label for="image"> Camera Image </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text" placeholder=""" name="cameraImage" id="image">
+        </div>
+        
+        <label for="year"> Year Released </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="number" placeholder=""" name="yearReleased" id="year" min="1816" max="2022">
+        </div>
+        
+        <label for="lens"> Interchangeable Lens </label>
+        <div class="uk-inline">
+          <select name="interchangeableLens" id="lens" class="uk-select">
+            <option value="" selected disabled hidden>Select an Option</option>
+            <option value="true"> Yes</option>
+            <option value="false"> No </option>
+          </select>
+        </div>
+        
+        <label for="format"> Image Format </label>
+        <div class="uk-inline">
+          <select name="imageFormat" id="format" class="uk-select">
+            <option value="" selected disabled hidden>Select a Image Sensor Format</option>
+            <option value="Large Format"> Large Format </option>
+            <option value="Medium Format"> Medium Format </option>
+            <option value="Full Frame"> Full Frame </option>
+            <option value="35mm"> 35mm </option>
+            <option value="APS-C"> APS-C (Crop Sensor) </option>
+            <option value="Micro Four Thirds"> Micro Four Thirds </option>
+            <option value="Smartphone Camera"> Smartphone Camera </option>
+            <option value="N/A"> N/A </option>
+
+          </select>
+        </div>
+        
+        <label for="category"> Category </label>
+        <div class="uk-inline">
+          <select name="category" id="category" class="uk-select">
+            <option value="" selected disabled hidden>Select a Category</option>
+            <option value="DSLR"> DSLR </option>
+            <option value="SLR"> SLR </option>
+            <option value="ZLR"> ZLR </option>
+            <option value="Twin-lens Reflex"> Twin-lens Reflex (TLR) </option>
+            <option value="Mirrorless"> Mirrorless </option>
+            <option value="Medium Format"> Medium Format </option>
+            <option value="Point and Shoot"> Point and Shoot </option>
+            <option value="Full Frame"> Full Frame </option>
+            <option value="Disposable"> Disposable </option>
+            <option value="Smartphone"> Smartphone </option>
+            <option value="Polaroid / Instant"> Polaroid / Instant </option>
+            <option value="Rangefinder"> Rangefinder </option>
+            <option value="Large Format"> Large Format </option>
+            <option value="N/A"> N/A </option>
+          </select>
+        </div>
+        
+        <label for="type"> Camera / Photography Type</label>
+        <div class="uk-inline">
+          <select name="photographyType" id="type" class="uk-select">
+            <option value="" selected disabled hidden>Select an Option</option>
+            <option value="Film"> Film Photography </option>
+            <option value="Digital"> Digital Photography</option>
+          </select>
+        </div>
+        <button class="uk-button"> Add a Camera <span uk-icon="icon: camera"></span> </button>
+      </section>
+    </form>
+    <a class="uk-link-muted" href="/cameras"
+      ><button class="uk-button">
+      Discard <span uk-icon="icon: close"></span>
+      </button>
+    </a>
+
+  </div>
+  <%- include("../partials/footer/_footer") %> 
+</body>
+</html>

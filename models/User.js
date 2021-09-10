@@ -4,15 +4,13 @@ const userSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
-      required: [true, "Please provide a first name."],
     },
     lastName: {
       type: String,
-      required: [true, "Please provide a last name."],
     },
     email: {
       type: String,
-      required: [true, "Please provide a last name."],
+      required: [true, "Please provide an email."],
       unique: true,
     },
     password: {
@@ -21,7 +19,7 @@ const userSchema = new mongoose.Schema(
     },
     username: {
       type: String,
-      required: true,
+      required: [true, "Please provide a username"],
       unique: true,
     },
     currentCameraGear:{

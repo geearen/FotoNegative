@@ -1,0 +1,20 @@
+<nav class="uk-navbar-container" uk-navbar>
+  <div class="uk-navbar-left">
+    <a class="uk-navbar-item uk-logo" href="/home">
+      <img class="uk-logo" src="/assets/favicon/apple-touch-icon.png" alt="fn logo" />
+    </a>
+  </div>
+
+  <div class="uk-navbar-right">
+    <a class="uk-navbar-item" href="/cameras"> Cameras </a>
+    <% if (typeof user !== "undefined") { %>
+    <a class="uk-navbar-item" href="/profile/<%= user.username %> "> <%= user.username %> </a>
+    <% } %>
+    <% if (typeof routes !== "undefined") { %>
+      <% routes.forEach((route) =>{ %> 
+        <a class="uk-navbar-item" href="<%= route.href %> "> <%= route.title %>  </a>
+
+    <% })%>
+    <%} %>
+  </div>
+</nav>

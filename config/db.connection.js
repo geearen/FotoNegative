@@ -4,12 +4,7 @@ require("dotenv").config();
 const connectionStr =
   process.env.MONGODB_URI || "mongodb://localhost:27017/fotonegative";
 
-mongoose.connect(connectionStr, {
-  useCreateIndex: true,
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-});
+mongoose.connect(connectionStr);
 
 mongoose.connection.on("connected", function () {
   console.log(`[${new Date().toLocaleTimeString()}] ------ MongoDB Connected`);
