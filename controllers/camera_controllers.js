@@ -56,7 +56,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 /* Edit Page */
-router.get("/:id/edit", async (req, res) => {
+router.get("/:id/edit", async (req, res, next) => {
   try {
     const foundCamera = await Camera.findById(req.params.id);
     const context = {
@@ -71,7 +71,7 @@ router.get("/:id/edit", async (req, res) => {
 });
 
 /* Update Page */
-router.put("/:id", async (req, res) => {
+router.put("/:id", async (req, res, next) => {
   try {
     const updatedCamera = await Camera.findByIdAndUpdate(
       req.params.id,
@@ -87,8 +87,16 @@ router.put("/:id", async (req, res) => {
 });
 
 /* Delete Page */
-router.delete("/:id", function (req, res) {
-  res.send("Deleted Camera");
+router.delete("/:id", async (req, res, next) => {
+  try{
+    await Camera.findByIdAndDelete(req.params.id);
+    // await Comment.deleteMany({camera:req.params.id})
+    return res.redirect("/cameras")
+  }catch(error){
+    console.log(error);
+    req.error = error;
+    return next();
+  }
 });
 
 module.exports = router;

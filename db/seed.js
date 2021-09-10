@@ -14,7 +14,7 @@ Camera.deleteMany({}, (error, deletedCameras) =>{
         yearReleased: 1982,
         interchangeableLens: true,
         imageFormat: "Medium Format",
-        categories:["Medium Format", "Modular", "120 Film", "6x7" ,"220 Film"],
+        category:"Medium Format",
         photographyType: "Film",
       },
     ],

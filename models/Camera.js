@@ -23,8 +23,8 @@ const cameraSchema = new mongoose.Schema(
     imageFormat:{
       type: String,
     },
-    categories:{
-      type: [String]
+    category:{
+      type: String,
     },
     photographyType:{
       type:String,

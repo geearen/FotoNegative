@@ -18,10 +18,20 @@
       <% } %>
 
       <p><%= camera.imageFormat %></p>
-      <% camera.categories.forEach(category => { %>
-      <p><%= category %></p>
-      <% }) %>
+      <p><%= camera.category %></p>
       <p><%= camera.photographyType %></p>
+
+      <a class="uk-link-muted" href="/cameras/<%= camera.id %>/edit "
+        ><button class="uk-button">
+          Edit <span uk-icon="icon: file-edit"></span>
+        </button>
+      </a>
+
+      <form action="/cameras/<%= camera.id %>?_method=DELETE" method="POST"
+        ><button class="uk-button uk-button-danger">
+          Delete <span uk-icon="icon: trash"></span>
+        </button>
+      </form>
 
       <form action="/cameras/comment" method="POST">
         <div class="uk-inline">
@@ -31,8 +41,13 @@
             placeholder="Comment here!"
             name="content"
           ></textarea>
-          <input class="uk-input" type="text" placeholder="URL image" name="commentImages">
-          <button class="uk-button"> Submit </button>
+          <input
+            class="uk-input"
+            type="text"
+            placeholder="URL image"
+            name="commentImages"
+          />
+          <button class="uk-button">Submit</button>
         </div>
       </form>
     </main>
