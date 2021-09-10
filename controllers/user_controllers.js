@@ -9,10 +9,13 @@ router.get('/:username', async(req, res) =>{
     const context = {
       profile: foundProfile,
     }
+
+    if(!foundProfile) throw "Profile Does Not Exist."
+
     return res.render("user/profile", context);
   } catch(error){
-    req.error = error;
-    return res.render("404");
+    const context = {error};
+    return res.render("404", context);
   }
 })
 
@@ -26,7 +29,18 @@ router.put('/:username', function (req, res){
   return res.send("Update Profile")
 })
 
-router.delete('/:username', function(req, res){
-  return res.send("Delete Profile")
+router.delete('/:username', async (req, res, next)=>{
+  try{
+    const deleteProfile = await User.findOneAndDelete({username:req.params.username});
+    await req.session.destroy();
+    if(!deleteProfile) throw "Unable to complete the task";
+
+    return res.redirect("/home");
+
+
+  }catch(error){
+    const context = {error};
+    return res.render("404", context);
+  }
 })
 module.exports = router;

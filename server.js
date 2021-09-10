@@ -60,7 +60,8 @@ app.use("/profile", controllers.user);
 
 /* 404 Page */
 app.get("/*", function (req, res){
-  res.send("ERROR")
+  const context ={error:null}
+  res.render("404", context)
 })
 
 /* Port Binding */
