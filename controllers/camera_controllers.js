@@ -33,7 +33,7 @@ router.post("/", async (req, res) => {
   } catch (error) {
     const context = { error };
     console.log(error);
-    return res.render("cameras/new");
+    return res.render("cameras/new", context);
   }
 });
 

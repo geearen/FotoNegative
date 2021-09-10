@@ -9,6 +9,11 @@
   <h1>Register</h1>
 
   <div class="uk-container">
+    <% if (error) { %>
+    <article>
+      <p><%= error %> </p>
+    </article>
+    <% } %>
     <form action="/register" method="POST">
       <section class="register_form">
         <label for="username"> Username </label>
@@ -24,6 +29,11 @@
         <label for="password"> Password </label>
         <div class="uk-inline">
           <input type="password" class="uk-input" name="password" id="password">
+        </div>
+
+        <label for="password2"> Re-enter Password </label>
+        <div class="uk-inline">
+          <input type="password" class="uk-input" name="password2" id="password2">
         </div>
 
         <button class="uk-button"> Register </button>
