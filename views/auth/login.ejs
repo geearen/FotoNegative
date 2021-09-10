@@ -8,6 +8,12 @@
   <%- include("../partials/navbar/_navbar") %> 
   <h1>Login</h1>
   <div class="uk-container uk-margin login">
+    
+    <% if (error) { %>
+    <article>
+      <p><%= error %> </p>
+    </article>
+    <% } %>
     <form action="/login" method="POST">
       <section class="login_form">
         <label for="username"> Username </label>
