@@ -20,8 +20,21 @@ router.get('/:username', async(req, res) =>{
 })
 
 /* Edit Profile */
-router.get('/:username/edit', function(req, res){
-  return res.send("Edit Profile");
+router.get('/:username/edit', async (req, res) =>{
+  try{
+    const editProfile = await User.findOne({username:req.params.username});
+    console.log(`${editProfile}====`);
+    const context = {profile:editProfile}
+
+    // if(!editProfile) throw "Unable to complete the task."
+
+    return res.render("user/edit", context)
+  }catch(error){
+    const context = {error};
+    console.log(error);
+    return res.render("404", context);
+  }
+  
 })
 
 /* Update Profile */

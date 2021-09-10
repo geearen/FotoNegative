@@ -16,8 +16,10 @@
   <p><%= profile.personalLink %> </p>
 
   
-  <a class="uk-link-muted" href="/profile/<%= profile.username %>/edit "
-    ><button class="uk-button">
+  <a class="uk-link-muted" href="/profile/<%= profile.username %>/edit" 
+    >
+    <!-- <input type="hidden" value="<%= profile.id %>" name="<%= profile.id %> "> -->
+    <button type="submit" class="uk-button" value="<%= profile._id %>">
       Edit Profile<span uk-icon="icon: file-edit"></span>
     </button>
   </a>

@@ -1,0 +1,62 @@
+<html lang="en">
+<%- include("../partials/head/_head") %> 
+
+<body>
+  <%- include("../partials/navbar/_navbar") %> 
+  <h1> Edit Profile </h1>
+  
+  <div class="uk-container">
+    <form action="">
+      <section class="edit_form">
+        <label for="username"> Username  </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text" name="username" id="username" value ="<%= profile.username %>">
+        </div>
+
+        <label for="email"> Email  </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text"  name="email" id="email" value ="<%= profile.email %>">
+        </div>
+
+        <label for="firstName"> First Name  </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text" name="firstName" id="firstName" value ="<%= profile.firstName %>">
+        </div>
+
+        <label for="lastName"> Last Name  </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text" name="lastName" id="lastName" value ="<%= profile.lastName %>">
+        </div>
+
+        <label for="currentCameraGear"> Current Camera Gear  </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text" name="currentCameraGear" id="currentCameraGear" value ="<%= profile.currentCameraGear %>">
+        </div>
+
+        <label for="igLink"> Instagram URL </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text" name="igLink" id="igLink" value ="<%= profile.igLink %>">
+        </div>
+
+        <label for="fbLink"> Facebook URL </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text" name="fbLink" id="fbLink" value ="<%= profile.fbLink %>">
+        </div>
+
+        <label for="personalLink"> Personal Website  </label>
+        <div class="uk-inline">
+          <input class="uk-input" type="text" name="personalLink" id="personalLink" value ="<%= profile.personalLink %>">
+        </div>
+        <button class="uk-button"> Update Profile <span uk-icon="icon: file-edit"></span> </button>
+      </section>
+    </form>
+    <a class="uk-link-muted" href="/profile/<%= profile.username %>"
+      ><button class="uk-button">
+        Discard Changes <span uk-icon="icon: close"></span>
+      </button>
+    </a>
+  </div>
+  <%- include("../partials/footer/_footer") %> 
+
+</body>
+</html>
