@@ -99,4 +99,10 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
+/* Create Comment */
+
+router.post("/comment/:id", function (req, res){
+  return res.send("Creating a Comment");
+})
+
 module.exports = router;

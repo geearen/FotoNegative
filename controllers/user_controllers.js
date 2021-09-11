@@ -23,10 +23,9 @@ router.get('/:username', async(req, res) =>{
 router.get('/:username/edit', async (req, res) =>{
   try{
     const editProfile = await User.findOne({username:req.params.username});
-    console.log(`${editProfile}====`);
     const context = {profile:editProfile}
 
-    // if(!editProfile) throw "Unable to complete the task."
+    if(!editProfile) throw "Unable to complete the request."
 
     return res.render("user/edit", context)
   }catch(error){
@@ -53,11 +52,12 @@ router.put('/:username', async (req, res) =>{
   }
 })
 
+/* Delete Profile */
 router.delete('/:username', async (req, res, next)=>{
   try{
     const deleteProfile = await User.findOneAndDelete({username:req.params.username});
     await req.session.destroy();
-    if(!deleteProfile) throw "Unable to complete the task";
+    if(!deleteProfile) throw "Unable to complete the request";
 
     return res.redirect("/home");
 
