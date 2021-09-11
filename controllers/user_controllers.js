@@ -38,8 +38,19 @@ router.get('/:username/edit', async (req, res) =>{
 })
 
 /* Update Profile */
-router.put('/:username', function (req, res){
-  return res.send("Update Profile")
+router.put('/:username', async (req, res) =>{
+  try{
+    const updatedProfile = await User.findOneAndUpdate(
+        req.body.username, 
+        {$set:req.body}, 
+        {new:true}
+      );
+    return res.redirect(`/profile/${updatedProfile.username}`)
+  }catch(error){
+    console.log(error);
+    req.error = error;
+    return next();
+  }
 })
 
 router.delete('/:username', async (req, res, next)=>{
