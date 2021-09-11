@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Camera } = require("../models");
+const { Camera, Comment } = require("../models");
 
 const apiKey = process.env.UNSPLASH_APP_API_KEY;
 
@@ -101,8 +101,18 @@ router.delete("/:id", async (req, res, next) => {
 
 /* Create Comment */
 
-router.post("/comment/:id", function (req, res){
-  return res.send("Creating a Comment");
+router.post("/comment/:id", async (req, res) =>{
+  try {
+    const createComment = Comment.create(req.body)
+
+    if(!createComment) throw "Unable to create a comment"
+    
+    return res.redirect(`/cameras/${req.params.id}`)
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
 })
 
 module.exports = router;
