@@ -5,6 +5,9 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 require("dotenv").config();
 
+const apiKey = process.env.UNSPLASH_APP_API_KEY;
+
+
 /* Module Instance */
 const app = express();
 
@@ -47,9 +50,11 @@ app.use(require("./utils/logger"));
 /* Routing to Home */
 app.get("/", (req, res) => res.redirect("/home"));
 
+//api "https://api.unsplash.com/photos/random?query=camera-&orientation=landscapre&content_safety=high&count=10&client_id=dnxslX9NqG7sdJIFpYSn_YeO8crKLlvk1r65XylTr1o"
+
 /* Home Page */
-app.get("/home", function(req, res){
-  return res.render("home");
+app.get("/home", function (req, res){
+    return res.render("home");
 })
 
 /* Routes */
