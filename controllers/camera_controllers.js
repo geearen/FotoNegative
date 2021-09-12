@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const {authRequired} = require("../utils/auth");
 const { Camera, Comment } = require("../models");
 
 const apiKey = process.env.UNSPLASH_APP_API_KEY;
@@ -43,9 +44,12 @@ router.post("/", async (req, res) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const foundCamera = await Camera.findById(req.params.id);
+    const allComments = await Comment.find({camera: req.params.id}).populate('user');
 
+    console.log(allComments);
     const context = {
       camera: foundCamera,
+      comments: allComments,
     };
     return res.render("cameras/show", context);
   } catch (error) {
@@ -101,17 +105,17 @@ router.delete("/:id", async (req, res, next) => {
 
 /* Create Comment */
 
-router.post("/comment/:id", async (req, res) =>{
+router.post("/comment/:id", authRequired, async (req, res, next) =>{
   try {
-    const createComment = Comment.create(req.body)
-
+    const createComment = await Comment.create(req.body)
+    console.log(createComment)
     if(!createComment) throw "Unable to create a comment"
     
     return res.redirect(`/cameras/${req.params.id}`)
   } catch (error) {
     console.log(error);
-    req.error = error;
-    return next();
+    context = {error};
+    return res.render("404", context)
   }
 })
 

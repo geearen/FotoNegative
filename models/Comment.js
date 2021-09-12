@@ -15,12 +15,12 @@ const CommentSchema = new mongoose.Schema(
     camera:{
       type: mongoose.Types.ObjectId,
       ref: "Camera"
-    }
+    },
   },
   {
     timestamps:true,
   }
-)
+);
 
 const Comment = mongoose.model("Comment", CommentSchema);
 

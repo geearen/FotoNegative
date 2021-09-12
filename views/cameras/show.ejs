@@ -33,7 +33,17 @@
         </button>
       </form>
 
-      <form action="/cameras/comment/<%= camera.id %> " method="POST">
+      <% comments.forEach(comment => { %>
+      <section class="uk-container comment">
+          <img src="<%= comment.commentImages %>" alt="">
+          <p> <%= comment.content %></p>
+          <p> <%= comment.user.username %> </p>
+
+
+        </section>
+        <% }); %> 
+
+      <form action="/cameras/comment/<%= camera.id %>" method="POST">
         <div class="uk-inline">
           <textarea
             class="uk-textarea"
@@ -47,6 +57,7 @@
             placeholder="URL image"
             name="commentImages"
           />
+          <input type="hidden" name="camera" value="<%= camera.id %>">
           <button class="uk-button">Submit</button>
         </div>
       </form>
