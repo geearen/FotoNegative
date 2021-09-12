@@ -3,25 +3,31 @@
 <%- include("../partials/head/_head") %> 
 
 <body>
-  <%- include("../partials/navbar/_navbar") %> 
-  <main class="uk-container-xlarge">
+  <%- include("../partials/navbar/_navbar") %>
+  <%- include("../partials/sidebar/_sidebar") %>  
+  <main class="uk-margin uk-margin-auto">
+
+    <nav uk-toggle="target: #offcanvas-overlay"><span uk-icon="chevron-double-right"></span></nav>
+
     <h1 class="uk-heading-divider"> Camera List <a href="/cameras/new" uk-icon="icon: plus-circle"></a></h1>
-
-    <% cameras.forEach(camera => { %>
-      <section class="uk-card">
-
-        <div class="uk-card-media-top">
-          <a href="/cameras/<%= camera.id %>">
-            <img src="<%= camera.cameraImage %> " alt="camera image">
-          </a>
-          <div class="uk-card-body">
-            <h3><%= camera.cameraName %> </h3>
-            <p><%= camera.photographyType %> camera </p>
+    
+    <section class="uk-container uk-grid-match uk-grid-margin" uk-grid>
+      <% cameras.forEach(camera => { %>
+        <div class="uk-card uk-card-default uk-card-hover">
+          <div class="uk-card-media-top">
+            <a href="/cameras/<%= camera.id %>">
+              <img src="<%= camera.cameraImage %> " alt="camera image">
+            </a>
+            <div class="uk-card-body">
+              <h3 class="uk-card-title"><%= camera.cameraName %> </h3>
+              <p><%= camera.photographyType %> camera </p>
+            </div>
           </div>
-
         </div>
+        <% }) %>
+        
+        
       </section>
-    <% }) %>
   </main>
   
   <%- include("../partials/footer/_footer") %> 

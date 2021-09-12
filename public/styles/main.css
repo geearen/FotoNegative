@@ -11,7 +11,7 @@
   padding: 1.3rem;
   width: 8rem;
   height: auto;
-  border: 2px solid #B72828;
+  border: 2px solid #C92C2C;
   z-index: 1;
 }
 .uk-navbar-transparent .footer {
@@ -28,9 +28,30 @@
   text-shadow: 2px 1px 0.5px #FABB2E;
 }
 
+/* Navbar for All */
+nav.uk-navbar-container:not(.uk-navbar-transparent) {
+  background-color: #FDECC3;
+}
+nav.uk-navbar-container:not(.uk-navbar-transparent) .nav_logo {
+  margin: 1rem;
+  padding: 1.3rem;
+  width: 8rem;
+  height: auto;
+  border: 2px solid #B72828;
+  z-index: 1;
+}
+nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:not(.uk-navbar-transparent) .uk-navbar-item {
+  color: #FAAC02;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:not(.uk-navbar-transparent) .uk-navbar-item:hover {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+}
+
 /* Footer for All*/
 .footer.uk-navbar-container {
-  background: #D49B9B;
+  background: #FDECC3;
   padding: 0.5rem;
 }
 .footer.uk-navbar-container .uk-navbar-item {
@@ -41,6 +62,14 @@
   width: 5rem;
   height: auto;
   box-shadow: 2px 2px 2px 1px #BD6060;
+}
+.footer.uk-navbar-container a.uk-navbar-item {
+  color: #FAAC02;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+.footer.uk-navbar-container a.uk-navbar-item:hover {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
 }
 
 /*# sourceMappingURL=main.css.map */

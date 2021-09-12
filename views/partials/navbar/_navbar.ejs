@@ -1,20 +1,39 @@
 <nav class="uk-navbar-container" uk-navbar>
   <div class="uk-navbar-left">
-    <a class="uk-navbar-item uk-logo" href="/home">
-      <img class="uk-logo" src="/assets/favicon/apple-touch-icon.png" alt="fn logo" />
+    <a class="uk-navbar-item " href="/home">
+      <img class="uk-logo nav_logo" src="/assets/favicon/apple-touch-icon.png" alt="fn logo" />
     </a>
   </div>
 
   <div class="uk-navbar-right">
-    <a class="uk-navbar-item" href="/cameras"> Cameras </a>
-    <% if (typeof user !== "undefined") { %>
-    <a class="uk-navbar-item" href="/profile/<%= user.username %> "> <%= user.username %> </a>
-    <% } %>
-    <% if (typeof routes !== "undefined") { %>
-      <% routes.forEach((route) =>{ %> 
-        <a class="uk-navbar-item" href="<%= route.href %> "> <%= route.title %>  </a>
+    <ul class="uk-navbar-nav">
+      <li>
+        <a class="uk-navbar-item" href="/cameras"> Cameras </a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li>
+              <a  href="">Film Cameras</a>
+            </li>
+            <li>
+              <a  href="">Digital Cameras</a>
+            </li>
+          </ul>
+        </div>
+      </li>
 
-    <% })%>
-    <%} %>
+      <% if (typeof user !== "undefined") { %>
+      <li>
+        <a class="uk-navbar-item" href="/profile/<%= user.username %> "> <%= user.username %> </a>
+      </li>
+      <% } %>
+      <% if (typeof routes !== "undefined") { %>
+      <% routes.forEach((route) =>{ %> 
+      <li>
+        <a class="uk-navbar-item" href="<%= route.href %> "> <%= route.title %></a>
+      </li>
+          
+      <% })%>
+      <%} %>
+    </ul>
   </div>
 </nav>
