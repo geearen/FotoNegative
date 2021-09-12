@@ -4,14 +4,24 @@ const {authRequired} = require("../utils/auth");
 const {adminRequired} = require("../utils/admin_auth")
 const { Camera, Comment } = require("../models");
 
+const adminID = process.env.adminID;
+
 const apiKey = process.env.UNSPLASH_APP_API_KEY;
 
 /* Index Route */
 router.get("/", async (req, res, next) => {
   try {
     const allCameras = await Camera.find({});
+    if(req.session.currentUser && req.session.currentUser.id == adminID){
+      const context = {
+        cameras: allCameras,
+        isAdmin: true
+      }
+      return res.render("cameras/index", context);
+    }
     const context = {
       cameras: allCameras,
+      isAdmin:false,
     };
     return res.render("cameras/index", context);
   } catch (error) {
