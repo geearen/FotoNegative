@@ -21,17 +21,19 @@
       <p><%= camera.category %></p>
       <p><%= camera.photographyType %></p>
 
-      <a class="uk-link-muted" href="/cameras/<%= camera.id %>/edit "
-        ><button class="uk-button">
-          Edit <span uk-icon="icon: file-edit"></span>
-        </button>
-      </a>
-
-      <form action="/cameras/<%= camera.id %>?_method=DELETE" method="POST"
-        ><button class="uk-button uk-button-danger">
-          Delete <span uk-icon="icon: trash"></span>
-        </button>
-      </form>
+      <% if (isAdmin) { %>
+        <a class="uk-link-muted" href="/cameras/<%= camera.id %>/edit "
+          ><button class="uk-button">
+            Edit <span uk-icon="icon: file-edit"></span>
+          </button>
+        </a>
+  
+        <form action="/cameras/<%= camera.id %>?_method=DELETE" method="POST"
+          ><button class="uk-button uk-button-danger">
+            Delete <span uk-icon="icon: trash"></span>
+          </button>
+        </form>
+      <% } %>
 
       <% comments.forEach(comment => { %>
       <section class="uk-container comment">
