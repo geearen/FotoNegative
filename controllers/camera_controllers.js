@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const {authRequired} = require("../utils/auth");
+const {adminRequired} = require("../utils/admin_auth")
 const { Camera, Comment } = require("../models");
 
 const apiKey = process.env.UNSPLASH_APP_API_KEY;
@@ -21,13 +22,13 @@ router.get("/", async (req, res, next) => {
 });
 
 /* New Route */
-router.get("/new", function (req, res) {
+router.get("/new", adminRequired, function (req, res) {
   const context = {};
   return res.render("cameras/new", context);
 });
 
 /* Create Route */
-router.post("/", async (req, res) => {
+router.post("/", adminRequired, async (req, res) => {
   try {
     const createdCamera = await Camera.create(req.body);
     return res.redirect("/cameras");
@@ -46,7 +47,6 @@ router.get("/:id", async (req, res, next) => {
     const foundCamera = await Camera.findById(req.params.id);
     const allComments = await Comment.find({camera: req.params.id}).populate('user');
 
-    console.log(allComments);
     const context = {
       camera: foundCamera,
       comments: allComments,

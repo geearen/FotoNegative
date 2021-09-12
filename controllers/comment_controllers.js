@@ -9,7 +9,6 @@ const { Comment } = require("../models");
 router.post("/comment/:id", authRequired, async (req, res, next) => {
   try {
     const createComment = await Comment.create(req.body);
-    console.log(createComment);
     if (!createComment) throw "Unable to create your comment";
 
     return res.redirect(`/cameras/${req.params.id}`);

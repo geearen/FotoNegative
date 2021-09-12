@@ -4,6 +4,7 @@ module.exports = {
       return response.redirect("/login");
     } else {
       request.body.user = request.session.currentUser.id;
+      console.log(request.body.user)
       return next();
     }
   },
