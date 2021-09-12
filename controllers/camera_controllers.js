@@ -94,29 +94,14 @@ router.put("/:id", async (req, res, next) => {
 router.delete("/:id", async (req, res, next) => {
   try{
     await Camera.findByIdAndDelete(req.params.id);
-    // await Comment.deleteMany({camera:req.params.id})
+    await Comment.deleteMany({camera:req.params.id})
     return res.redirect("/cameras")
   }catch(error){
     console.log(error);
-    req.error = error;
-    return next();
+    const context = {error};
+    return res.render("404", context);
   }
 });
 
-/* Create Comment */
-
-router.post("/comment/:id", authRequired, async (req, res, next) =>{
-  try {
-    const createComment = await Comment.create(req.body)
-    console.log(createComment)
-    if(!createComment) throw "Unable to create a comment"
-    
-    return res.redirect(`/cameras/${req.params.id}`)
-  } catch (error) {
-    console.log(error);
-    context = {error};
-    return res.render("404", context)
-  }
-})
 
 module.exports = router;

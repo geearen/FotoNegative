@@ -56,6 +56,8 @@ app.get("/home", function(req, res){
 app.use("/", controllers.auth);
 app.use("/cameras", controllers.camera);
 app.use("/profile", controllers.user);
+app.use("/cameras", controllers.comment);
+
 
 
 /* 404 Page */
