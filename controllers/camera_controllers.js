@@ -80,7 +80,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 /* Edit Page */
-router.get("/:id/edit", async (req, res, next) => {
+router.get("/:id/edit", adminRequired, async (req, res, next) => {
   try {
     const foundCamera = await Camera.findById(req.params.id);
     const context = {
@@ -95,7 +95,7 @@ router.get("/:id/edit", async (req, res, next) => {
 });
 
 /* Update Page */
-router.put("/:id", async (req, res, next) => {
+router.put("/:id", adminRequired, async (req, res, next) => {
   try {
     const updatedCamera = await Camera.findByIdAndUpdate(
       req.params.id,
@@ -111,7 +111,7 @@ router.put("/:id", async (req, res, next) => {
 });
 
 /* Delete Page */
-router.delete("/:id", async (req, res, next) => {
+router.delete("/:id", adminRequired, async (req, res, next) => {
   try{
     await Camera.findByIdAndDelete(req.params.id);
     await Comment.deleteMany({camera:req.params.id})
