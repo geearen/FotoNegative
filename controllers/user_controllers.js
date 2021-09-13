@@ -8,6 +8,7 @@ router.get('/:username', async(req, res) =>{
     const foundProfile = await User.findOne({username:req.params.username})
     const context = {
       profile: foundProfile,
+      error:null,
     }
 
     if(!foundProfile) throw "Profile Does Not Exist."
@@ -23,7 +24,10 @@ router.get('/:username', async(req, res) =>{
 router.get('/:username/edit', async (req, res) =>{
   try{
     const editProfile = await User.findOne({username:req.params.username});
-    const context = {profile:editProfile}
+    const context = {
+      profile: editProfile,
+      error:null,
+    }
 
     if(!editProfile) throw "Unable to complete the request."
 

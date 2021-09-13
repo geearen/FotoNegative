@@ -15,13 +15,15 @@ router.get("/", async (req, res, next) => {
     if(req.session.currentUser && req.session.currentUser.id == adminID){
       const context = {
         cameras: allCameras,
-        isAdmin: true
+        isAdmin: true,
+        error:null
       }
       return res.render("cameras/index", context);
     }
     const context = {
       cameras: allCameras,
       isAdmin:false,
+      error:null
     };
     return res.render("cameras/index", context);
   } catch (error) {
@@ -62,6 +64,7 @@ router.get("/:id", async (req, res, next) => {
         camera: foundCamera,
         comments: allComments,
         isAdmin: true,
+        error:null,
       };
       return res.render("cameras/show", context);
     }
@@ -70,6 +73,7 @@ router.get("/:id", async (req, res, next) => {
       camera: foundCamera,
       comments: allComments,
       isAdmin: false,
+      error:null,
     };
     return res.render("cameras/show", context);
   } catch (error) {

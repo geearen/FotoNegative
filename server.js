@@ -54,7 +54,9 @@ app.get("/", (req, res) => res.redirect("/home"));
 
 /* Home Page */
 app.get("/home", function (req, res){
-    return res.render("home");
+  const context ={error:null}
+  console.log(req.url)
+  return res.render("home" ,context);
 })
 
 /* Routes */

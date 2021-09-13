@@ -71,12 +71,13 @@
               </li>
               <% } %>
             <% if (typeof routes !== "undefined") { %>
+              
               <% routes.forEach((route) =>{ %> 
                 <li>
-                  <a class="uk-navbar-item" href="<%= route.href %> "> <%= route.title %> </a>
+                  <a class="uk-navbar-item" href="<%= route.href %>" <%= route.class %> > <%= route.title %></a>
                 </li>
                 <% })%>
-                <%} %>
+              <%} %>
           </ul>
         </div>
       </nav>
@@ -99,6 +100,47 @@
     </ul>
   </footer>
 </div>
+
+<!-- Login Modal -->
+  <div class="uk-flex-top" id="modal-login" uk-modal>
+    <div class="uk-container uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      
+      <h1 class="uk-heading-divider">Login</h1>
+      <% if (error) { %>
+        <article>
+          <p><%= error %> </p>
+        </article>
+        <% } %>
+        
+        <section class="login_form">
+            <form class="uk-form-stacked" action="/login" method="POST">
+              <section class="login_form">
+                <div class="uk-margin">
+                  <label for="username"> Username </label>
+                  <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icond: user"></span>
+                    <input class="uk-input" type="text" placeholder="film_only" name="username" id="username">
+                  </div>
+                </div>
+                <div class="uk-margin">
+                  <label for="password">Password</label>
+                  <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                    <input type="password" class="uk-input" name="password" placeholder="*******" id="password">
+                  </div>
+                </div>
+                <button class="uk-button"> Login </button>
+              </section>
+              
+            </form>
+            <p>
+              Need an account? <a href="/register">Register here!</a>
+            </p>
+          
+        </section>
+      </div>
+    </div>
 
 </body>
 </html>

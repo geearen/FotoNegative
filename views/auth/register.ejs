@@ -1,50 +1,76 @@
 <html lang="en">
-<head>
-  
   <%- include("../partials/head/_head") %> 
-
-</head>
 <body>
-  <%- include("../partials/navbar/_navbar") %> 
-  <h1>Register</h1>
+  
 
-  <div class="uk-container">
-    <% if (error) { %>
-    <article>
-      <p><%= error %> </p>
-    </article>
-    <% } %>
-    <form action="/register" method="POST">
-      <section class="register_form">
-        <label for="username"> Username </label>
-        <div class="uk-inline">
-          <input type="text" class="uk-input" name="username" id="username">
-        </div>
-
-        <label for="email"> Email </label>
-        <div class="uk-inline">
-          <input type="text" class="uk-input" name="email" id="email">
-        </div>
-
-        <label for="password"> Password </label>
-        <div class="uk-inline">
-          <input type="password" class="uk-input" name="password" id="password">
-        </div>
-
-        <label for="password2"> Re-enter Password </label>
-        <div class="uk-inline">
-          <input type="password" class="uk-input" name="password2" id="password2">
-        </div>
-
-        <button class="uk-button"> Register </button>
-      </section>
-
-    </form>
-    <p>
-      Have an account? <a href="/login">Login here!</a>
-    </p>
-    
+<div class="uk-position-relative" tabindex="-1" uk-slideshow="ratio:false">
+  
+    <ul class="uk-slideshow-items" uk-height-viewport="offset-bottom:false">
+      <li>
+        <img src="https://images.unsplash.com/photo-1488235331161-a610983be307?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="background" uk-cover>
+      </li>
+    </ul>
   </div>
 
-  <%- include("../partials/footer/_footer") %> 
+
+  <div class="register uk-position-center">
+    <div class="uk-container uk-margin-auto-vertical">
+
+      <h1 class="uk-heading-divider">Register</h1>
+      
+        <% if (error) { %>
+          <article>
+            <p><%= error %> </p>
+          </article>
+          <% } %>
+
+          <section class="register_form">
+            <form class="uk-form-stacked" action="/register" method="POST">
+
+              <div class="uk-margin">
+                <label for="username"> Username </label>
+                <div class="uk-inline">
+                  <input type="text" class="uk-input" name="username" id="username">
+                </div>
+              </div>
+              
+              <div class="uk-margin">
+                <label for="email"> Email </label>
+                <div class="uk-inline">
+                  <input type="text" class="uk-input" name="email" id="email">
+                </div>
+              </div>
+              
+              <div class="uk-margin">
+                <label for="password"> Password </label>
+                <div class="uk-inline">
+                  <input type="password" class="uk-input" name="password" id="password">
+                </div>
+              </div>
+                
+              <div class="uk-margin">
+                <label for="password2"> Re-enter Password </label>
+                <div class="uk-inline">
+                  <input type="password" class="uk-input" name="password2" id="password2">
+                </div>
+              </div>
+            
+            <button class="uk-button"> Register </button>
+            </form>
+            
+            <p>
+              Have an account? <a href="/login">Login here!</a>
+            </p>
+          </section>
+        
+      
+    </div>
+  </div>
+
+    <div class="uk-position-top">
+      <%- include("../partials/navbar/_navbar") %> 
+    </div>
+    <div class="uk-position-bottom">
+      <%- include("../partials/footer/_footer") %> 
+    </div>
 </body>
