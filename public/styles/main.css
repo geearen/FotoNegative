@@ -72,6 +72,31 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   text-shadow: 2px 1px 0.5px #FABB2E;
 }
 
+/* Login page*/
+.login.uk-position-center {
+  background-color: rgba(250, 187, 46, 0.9);
+  padding: 2rem;
+}
+
+/* Login Modal -Home */
+.login.uk-modal-dialog {
+  background-color: #FABB2E;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px #BD6060;
+  display: grid;
+  gap: 1rem;
+}
+.login.uk-modal-dialog .login_form {
+  justify-self: center;
+  min-width: 10rem;
+}
+
+.register.uk-position-center {
+  background-color: rgba(250, 187, 46, 0.9);
+  padding: 2rem;
+}
+
+/* Register Page */
 /* Cameras Index Page */
 .cameras_container {
   padding: 2rem;
