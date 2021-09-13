@@ -33,7 +33,7 @@ router.get("/", async (req, res, next) => {
 
 /* New Route */
 router.get("/new", adminRequired, function (req, res) {
-  const context = {};
+  const context = {error};
   return res.render("cameras/new", context);
 });
 
@@ -45,7 +45,7 @@ router.post("/", adminRequired, async (req, res) => {
   } catch (error) {
     const context = { error };
     console.log(error);
-    return res.render("cameras/new", context);
+    return res.render("404", context);
   }
 });
 

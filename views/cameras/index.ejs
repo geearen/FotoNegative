@@ -10,21 +10,21 @@
     <nav uk-toggle="target: #offcanvas-overlay"><span uk-icon="chevron-double-right"></span></nav>
 
     <h1 class="uk-heading-divider"> Camera List 
-    <% if (isAdmin) { %>
-    <a href="/cameras/new" uk-icon="icon: plus-circle"></a>
-    <% } %>
+      <% if (isAdmin) { %>
+        <a href="#modal-center" class="uk-link-muted" uk-toggle><span uk-icon="icon: plus-circle"></span></a>
+        <% } %>
     </h1>
     
-    <section class="uk-container uk-grid-match uk-grid-margin" uk-grid>
+    <section class="cameras_container uk-grid-match uk-grid-small	uk-grid-margin" uk-grid>
       <% cameras.forEach(camera => { %>
-        <div class="uk-card uk-card-default uk-card-hover">
+        <div class="camera_card uk-card uk-card-default uk-card-hover">
           <div class="uk-card-media-top">
             <a href="/cameras/<%= camera.id %>">
-              <img src="<%= camera.cameraImage %> " alt="camera image">
+              <img class="camera_image" src="<%= camera.cameraImage %> " alt="camera image">
             </a>
             <div class="uk-card-body">
-              <h3 class="uk-card-title"><%= camera.cameraName %> </h3>
-              <p><%= camera.photographyType %> camera </p>
+              <h3 class="camera_heading uk-card-title"><%= camera.cameraName %> </h3>
+              <p class="camera_meta"><%= camera.photographyType %> camera </p>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
         
       </section>
   </main>
-  
+  <%- include("./new.ejs") %> 
   <%- include("../partials/footer/_footer") %> 
 </body>
 </html>

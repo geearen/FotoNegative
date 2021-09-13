@@ -73,3 +73,27 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     text-shadow: 2px 1px 0.5px $selective-yellow
   }
 }
+
+/* Cameras Index Page */
+.cameras_container{
+  padding: 2rem;
+  margin: 2rem;
+  .camera_card{
+    padding: 1rem;
+    margin: 1rem;
+    max-width: 25vw;
+    height: auto;
+    .camera_image{
+      max-width: 20vw;
+      height: auto;
+    }
+  }
+}
+
+
+@media(min-width:40em){
+
+}
+
+/* New Page */
+
