@@ -4,65 +4,113 @@
   <body>
     <%- include("../partials/navbar/_navbar") %>
 
-    <main class="uk-container">
-      <h1 class="uk-heading"><%= camera.cameraName %></h1>
+    <main class="uk-container uk-container-expand">
+      <section class="uk-section uk-section-default">
+        <div class="uk-container uk-container-large">
 
-      <img src="<%= camera.cameraImage %> " alt="camera image" />
-      <p><%= camera.brandName %></p>
-      <p><%= camera.yearReleased %></p>
+          <h1 class="uk-heading uk-heading-line"><span><%= camera.cameraName %></span></h1>
+          <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+            <div>
+              <img src="<%= camera.cameraImage %> " alt="camera image" />
+            </div>
+            <div>
+              <p class="uk-text-large">Brand Name: <%= camera.brandName %></p>
+              <p class="uk-text-large"> Release in year <%= camera.yearReleased %></p>
+              <% if (camera.interchangeableLens) { %>
+                <p class="uk-text-large"> Interchangeable Lens: Yes.</p>
+                <% } else {%>
+                  <p class="uk-text-large"> Interchangeable Lens: No.</p>
+                  <% } %>
+                  
+                  <p class="uk-text-large"> Image Sensor Format: <%= camera.imageFormat %>.</p>
+                  <p class="uk-text-large"> Category: <%= camera.category %>.</p>
+                  <p class="uk-text-large"><%= camera.photographyType %> Camera </p>
+              </div>
+              
+              <div>
+                <div class="uk-flex uk-flex-center uk-flex-around">
+                  <% if (isAdmin) { %>
+                    <div>
+                      <a class="uk-link-muted" href="/cameras/<%= camera.id %>/edit "
+                        ><button class="uk-button">
+                          Edit <span uk-icon="icon: file-edit"></span>
+                        </button>
+                      </a>
+                    </div>
+                    <div>
+                      <form action="/cameras/<%= camera.id %>?_method=DELETE" method="POST"
+                        ><button class="uk-button uk-button-danger">
+                          Delete <span uk-icon="icon: trash"></span>
+                        </button>
+                      </form>
+                    </div>
+                    <% } %>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </section>
 
-      <% if (camera.interchangeableLens) { %>
-      <p>Yes</p>
-      <% } else {%>
-      <p>No</p>
-      <% } %>
+      <div class="uk-container uk-container-small uk-margin">
 
-      <p><%= camera.imageFormat %></p>
-      <p><%= camera.category %></p>
-      <p><%= camera.photographyType %></p>
-
-      <% if (isAdmin) { %>
-        <a class="uk-link-muted" href="/cameras/<%= camera.id %>/edit "
-          ><button class="uk-button">
-            Edit <span uk-icon="icon: file-edit"></span>
-          </button>
-        </a>
-  
-        <form action="/cameras/<%= camera.id %>?_method=DELETE" method="POST"
-          ><button class="uk-button uk-button-danger">
-            Delete <span uk-icon="icon: trash"></span>
-          </button>
-        </form>
-      <% } %>
-
-      <% comments.forEach(comment => { %>
-      <section class="uk-container comment">
-          <img src="<%= comment.commentImages %>" alt="">
-          <p> <%= comment.content %></p>
-          <p> <%= comment.user.username %> </p>
-
-          
-        </section>
-        <% }); %> 
-
-      <form action="/cameras/comment/<%= camera.id %>" method="POST">
-        <div class="uk-inline">
-          <textarea
+        <form action="/cameras/comment/<%= camera.id %>" method="POST">
+          <div class="uk-flex uk-flex-center uk-flex-column">
+            <textarea
             class="uk-textarea"
             rows="5"
             placeholder="Comment here!"
             name="content"
-          ></textarea>
-          <input
+            ></textarea>
+            <input
             class="uk-input"
             type="text"
             placeholder="URL image"
             name="commentImages"
-          />
-          <input type="hidden" name="camera" value="<%= camera.id %>">
-          <button class="uk-button">Submit</button>
-        </div>
-      </form>
+            />
+            
+            <input type="hidden" name="camera" value="<%= camera.id %>">
+            <button class="uk-button">Submit</button>
+          </div>
+        </form>
+      </div>
+        
+        <% comments.forEach(comment => { %>
+        <div class="uk-container uk-container-large uk-grid-match" uk-margin uk-grid>
+
+          <article class="uk-comment comment uk-width-expand@m ">
+            <header class="uk-comment-header">
+              <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                  <img class="uk-comment-avatar" src="<%= comment.user.profileImage %> " alt="profile image" width="80" height="80">
+                </div>
+                <div class="uk-width-expand">
+                  <h4 class="uk-comment-title uk-margin-remove"> <a class="uk-link-reset" href="/profile/<%= comment.user.username %> "><%= comment.user.username %></a></h4>
+                  <ul class="uk-comment-meta uk-subnav uk-subnav-divder uk-margin-remove-top">
+                    <li> <%= new Date(comment.createdAt).toLocaleString() %> </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </header>
+            
+
+              <div class="uk-comment-body uk-width-expand" uk-margin>
+                <p> <%= comment.content %></p>
+              </div>
+          </article>
+                <% if (comment.commentImages) { %>
+                
+                  <div class="uk-thumbnav uk-width-1-3@m" uk-margin>
+                    <div uk-lightbox>
+                      <a href="<%= comment.commentImages %>" data-type="image" data-caption="Posted by <%= comment.user.username %>">
+                        <img src="<%= comment.commentImages %>" width="100" alt="comment image">
+                      </a>
+                    </div>
+                  </div>
+                  <% } %>
+          </div>
+        <% }); %> 
+
     </main>
 
     <%- include("../partials/footer/_footer") %>
