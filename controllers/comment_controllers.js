@@ -37,4 +37,14 @@ router.put("/comment/:id/edit", authRequired, async (req, res, next) => {
   }
 });
 
+router.delete("/comment/:id", authRequired, async (req,res,next) =>{
+  try {
+    await Comment.findByIdAndDelete(req.params.id)
+    return res.redirect(`/cameras`)
+  } catch (error) {
+    console.log(error);
+    const context = {error};
+    return res.render("404", context);
+  }
+})
 module.exports = router;

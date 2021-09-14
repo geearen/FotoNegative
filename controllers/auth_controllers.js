@@ -42,7 +42,6 @@ router.post("/register", async (req, res) =>{
   }catch(error){
     console.log(error);
     // return res.send(error);
-    console.log(error);
     const context ={error}
     return res.render("auth/register", context)
   }

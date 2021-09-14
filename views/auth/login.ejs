@@ -15,10 +15,12 @@
     <div class="uk-container uk-margin-auto-vertical">      
       <h1 class="uk-heading-divider">Login</h1>
       <% if (error) { %>
-        <article>
-          <p><%= error %> </p>
-        </article>
-        <% } %>
+          <article uk-alert class="uk-alert-danger">
+            <a class="uk-alert-close" uk-close></a>
+            <h3>Notice:</h3>
+            <p ><%= error %> </p>
+          </article>
+          <% } %>
         <section class="login_form">
           <form class="uk-form-stacked" action="/login" method="POST">
             

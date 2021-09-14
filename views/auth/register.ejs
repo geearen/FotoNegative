@@ -19,8 +19,10 @@
       <h1 class="uk-heading-divider">Register</h1>
       
         <% if (error) { %>
-          <article>
-            <p><%= error %> </p>
+          <article uk-alert class="uk-alert-danger">
+            <a class="uk-alert-close" uk-close></a>
+            <h3>Notice:</h3>
+            <p ><%= error %> </p>
           </article>
           <% } %>
 

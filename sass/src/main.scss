@@ -112,12 +112,28 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
   background-color: transparentize($lemon-meringue, 0.6);
   // background-image: url("/assets/rubber_grip.png");
   // background-blend-mode: overlay;
+  .profile_top{
+    padding: 2rem;
+  }
   .profile_left_section{
+    padding: 2rem;
+    margin: 1rem;
     display:flex;
     flex-direction: column;
   }
   .profile_right_section{
-
+    padding: 2rem;
+    margin: 1rem;
+    
+    h3{
+      text-align: center;
+      letter-spacing: 2px;
+      color: $selective-yellow;
+      text-shadow: 1px 1px 1px $persian-red;
+    }
+    .profile_info, .link_button{
+      text-align: center;
+    }
   }
   .profile_buttons{
     margin: 1rem;
@@ -127,7 +143,21 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
   }
 
   .profile_comment_images{
-    
+    .images{
+      background-color: white;
+      padding:2rem;
+      margin: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .images:hover{
+      box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+    }
+    img{
+      max-width: 20rem;
+      height: auto;
+    }
   }
 }
 /* Cameras Index Page */

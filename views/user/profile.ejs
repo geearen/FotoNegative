@@ -5,7 +5,7 @@
   <%- include("../partials/navbar/_navbar") %> 
   <div class="profile uk-container uk-container-expand">
     
-    <div class="uk-flex-center" uk-grid>
+    <div class="profile_top uk-flex-center" uk-grid>
       <div class="profile_left_section">
         <img src="<%= profile.profileImage %> " width="200" alt="profile image">
         <input type="hidden" value="<%= user == profile.id %> ">
@@ -33,10 +33,16 @@
       </div>
       <div class="uk-width-1-4">
         <div class="profile_right_section">
+          <h3> <%= profile.username %> </h3>
           <div class="profile_info">
-            <h3> <%= profile.username %> </h3>
-            <p><%= profile.firstName %> <%= profile.lastName %> </p>
-            <p>Current Gear: <%= profile.currentCameraGear %> </p>
+
+            <% if (profile.firstName || profile.lastName) { %>
+              <p><%= profile.firstName %> <%= profile.lastName %> </p>
+            <% } %>
+
+            <% if (profile.currentCameraGear) { %>
+              <p>Current Gear: <%= profile.currentCameraGear %> </p>
+            <% } %>
           </div>
           
           <div class="link_button">
@@ -55,11 +61,11 @@
     </div>
     
     <hr class="uk-divider-icon">
-    <div class="profile_comment_images uk-grid-match" uk-grid>
+    <div class="profile_comment_images uk-flex-center" uk-grid>
 
       <% comments.forEach(comment => { %>
         <% if (comment.commentImages) { %>
-          <div class="images uk-card uk-card-default uk-card-hover uk-width-1-3">
+          <div class="images uk-grid-match uk-width-1-4">
             <a href="/cameras/<%= comment.camera.id %>" class="">
               <img src="<%= comment.commentImages %>" alt="comment images">
             </a>

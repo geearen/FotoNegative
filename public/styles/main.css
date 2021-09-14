@@ -104,9 +104,27 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   padding-right: 10rem;
   background-color: rgba(253, 236, 195, 0.4);
 }
+.profile .profile_top {
+  padding: 2rem;
+}
 .profile .profile_left_section {
+  padding: 2rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
+}
+.profile .profile_right_section {
+  padding: 2rem;
+  margin: 1rem;
+}
+.profile .profile_right_section h3 {
+  text-align: center;
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+.profile .profile_right_section .profile_info, .profile .profile_right_section .link_button {
+  text-align: center;
 }
 .profile .profile_buttons {
   margin: 1rem;
@@ -114,6 +132,22 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   display: flex;
   justify-content: space-evenly;
 }
+.profile .profile_comment_images .images {
+  background-color: white;
+  padding: 2rem;
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile .profile_comment_images .images:hover {
+  box-shadow: 2px 2px 2px 1px #BD6060;
+}
+.profile .profile_comment_images img {
+  max-width: 20rem;
+  height: auto;
+}
+
 /* Cameras Index Page */
 .cameras_container {
   padding: 2rem;
