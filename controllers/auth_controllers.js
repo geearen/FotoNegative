@@ -62,7 +62,6 @@ router.post("/login", async (req, res) =>{
     if(req.body.username != "geearen"){
       const match = await bcrypt.compare(req.body.password, foundUser.password);
       if(!match) throw "Username and/or Password does not match";
-      throw "Username and/or Password does not match";
     } 
     
     req.session.currentUser ={

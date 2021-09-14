@@ -6,8 +6,11 @@ const {User, Comment} = require("../models");
 router.get('/:username', async(req, res) =>{
   try{
     const foundProfile = await User.findOne({username:req.params.username})
+    const allComments = await Comment.find({user: foundProfile.id}).populate('camera')
+    console.log(foundProfile)
     const context = {
       profile: foundProfile,
+      comments: allComments,
       error:null,
     }
 
