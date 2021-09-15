@@ -72,7 +72,7 @@ app.use("/cameras", controllers.comment);
 
 /* 404 Page */
 app.get("/*", function (req, res){
-  const context ={error: "Wrong Way bud."}
+  const context = { error: "Oh no.. Something went wrong . 😓😓😓😓" };
   res.render("404", context)
 })
 

@@ -6,11 +6,21 @@ const removeFile = util.promisify(fs.unlink)
 const handleUploadFile = async (req, res, next) =>{
   try{
     const file = req.file;
-    const result = await bucketS3.uploadFile(file)
-    await removeFile(file.path);
+    const validTypes = ['image/jpeg', 'image/jpg',]
+    console.log({file})
 
-    req.body.commentImages = result.Location;
-    next();
+    if(validTypes.includes(file.mimetype)){
+
+      const result = await bucketS3.uploadFile(file)
+      console.log(result)
+
+      await removeFile(file.path);
+      req.body.commentImages = result.Location;
+      next();
+    }else{
+      await removeFile(file.path);
+      throw "Invalid File Type"
+    }
 
   }catch(error){
     const context = {error}

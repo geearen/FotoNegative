@@ -21,7 +21,8 @@ class BucketS3{
     const uploadParams = {
       Bucket: this.#bucketName,
       Body: filePath,
-      Key: `${file.originalname}-${uuid.v4()}`
+      Key: `${file.originalname}-${uuid.v4()}`,
+      ContentType: file.mimetype,
     }
     return this.#s3.upload(uploadParams).promise();
   }

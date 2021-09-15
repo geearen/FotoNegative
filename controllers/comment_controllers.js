@@ -11,7 +11,7 @@ router.post("/comment/:id", authRequired, handleUploadFile, async (req, res, nex
     const createComment = await Comment.create(req.body);
     if (!createComment) throw "Unable to create your comment";
 
-    return res.redirect(`/cameras/${req.params.id}`);
+    return res.redirect(`/cameras/${createComment.camera.id}`);
   } catch (error) {
     console.log(error);
     context = { error };
@@ -20,13 +20,15 @@ router.post("/comment/:id", authRequired, handleUploadFile, async (req, res, nex
 });
 
 /* Update Comment */
-router.put("/comment/:id/edit", authRequired, async (req, res, next) => {
+router.put("/comment/:id/edit", authRequired, handleUploadFile, async (req, res, next) => {
   try {
+    console.log(req.file)
     const updatedComment = await Comment.findByIdAndUpdate(
       req.params.id,
       { $set: req.body },
       { new: true },
     );
+    console.log(updatedComment)
     if (!updatedComment) throw "Unable to update your comment";
 
     return res.redirect(`/cameras/${updatedComment.camera}`);

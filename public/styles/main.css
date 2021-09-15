@@ -91,6 +91,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   box-shadow: 2px 2px 2px 1px #BD6060;
   display: grid;
   gap: 1rem;
+  border-radius: 5px;
 }
 .login.uk-modal-dialog .login_form {
   justify-self: center;
@@ -183,6 +184,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
 }
 .camera_page .camera img {
   box-shadow: 2px 2px 2px 1px #BD6060;
+  border-radius: 5px;
 }
 .camera_page .camera .camera_info {
   display: flex;
@@ -197,15 +199,27 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   flex-direction: column;
 }
 .camera_page .camera .camera_info_meta {
+  border-radius: 5px;
   background-color: whitesmoke;
   margin: 3rem;
   padding: 3rem;
   box-shadow: 2px 2px 2px 1px #FABB2E;
 }
 .camera_page .comment_form {
+  border-radius: 5px;
   padding: 2rem;
   margin: 2rem;
   background-color: #D49B9B;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+}
+.camera_page .comment_form .form {
+  padding: 1rem;
+}
+.camera_page .comment_form .form_bottom {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .comment {
@@ -228,6 +242,26 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   letter-spacing: 2px;
   color: #FABB2E;
   text-shadow: 1px 1px 1px #C92C2C;
+}
+
+/* Edit Modal */
+.modal_edit {
+  border-radius: 5px;
+  padding: 2rem;
+  background-color: #D49B9B;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+}
+.modal_edit .modal_edit_form {
+  padding: 1rem;
+}
+.modal_edit .top {
+  padding: 1rem;
+}
+.modal_edit .bottom {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */

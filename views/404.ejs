@@ -5,16 +5,16 @@
   <%- include("./partials/navbar/_navbar") %> 
     <h1> 404 </h1>
 
-    <iframe src="https://giphy.com/embed/3owypf6HrM3J7UTvAA" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fail-camera-oops-3owypf6HrM3J7UTvAA">via GIPHY</a></p>
-
-  <% if (error) { %>
-    <article uk-alert class="uk-alert-danger">
-      <a class="uk-alert-close" uk-close></a>
-      <h3>Notice:</h3>
-      <p ><%= error %> </p>
-    </article>
-    <% } %>
-
+    
+    <% if (error) { %>
+      <article uk-alert class="uk-alert-danger">
+        <a class="uk-alert-close" uk-close></a>
+        <h3>Notice:</h3>
+        <p ><%= error %> </p>
+      </article>
+      <% } %>
+      
+      <img src="https://media.giphy.com/media/3owypf6HrM3J7UTvAA/giphy.gif?cid=790b76111c9214e6806f99f4475886e76cc87d1b20f52846&rid=giphy.gif&ct=g" width="480" height="480" alt="giphy">
   <%- include("./partials/footer/_footer") %> 
 
 </body>

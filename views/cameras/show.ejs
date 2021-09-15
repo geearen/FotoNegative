@@ -56,24 +56,29 @@
       </section>
 
       <div class="comment_form">
-
         <form action="/cameras/comment/<%= camera.id %>" method="POST" enctype="multipart/form-data">
-          <div class="uk-flex uk-flex-center uk-flex-column">
-            <textarea
-            class="uk-textarea"
-            rows="5"
-            placeholder="Comment here!"
-            name="content"
-            ></textarea>
-            <input
-            class="uk-input"
-            type="file"
-            placeholder=""
-            name="commentImages"
-            />
+          <div class="uk-flex-center" uk-grid>
+            <div class="form">
+              <div class="form_top">
+                <textarea
+                  class="uk-textarea uk-form-width-large"
+                  rows="5"
+                  placeholder="Comment here!"
+                  name="content"
+                  ></textarea>
+                </div>
             
-            <input type="hidden" name="camera" value="<%= camera.id %>">
-            <button class="uk-button">Submit</button>
+              <div class="form_bottom" >
+                <div uk-form-custom="target: true">
+                  <input type="file" name="commentImages">
+                  <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                </div>
+                <div>
+                  <input type="hidden" name="camera" value="<%= camera.id %>">
+                  <button class="uk-button uk-width-1-1">Submit</button>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -142,27 +147,37 @@
 
             <!-- Edit Comment Modal -->
             <div class="uk-flex-top" id="modal-edit-<%= comment.id %>" uk-modal>
-              <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+              <div class="modal_edit uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
                 <button class="uk-modal-close-default" type="button" uk-close></button>
-                <form action="/cameras/comment/<%= comment.id %>/edit?_method=PUT" method="POST">
-                  <input type="hidden" value="<%= comment.id %>">
-                  <div class="uk-flex uk-flex-center uk-flex-column">
-                    <textarea
-                    class="uk-textarea"
-                    rows="5"
-                    name="content"
-                    ><%= comment.content %></textarea>
-                    <input
-                    class="uk-input"
-                    type="text"
-                    name="commentImages"
-                    value="<%= comment.commentImages %>"
-                    />
-                    <button type="submit" class="uk-button">Submit</button>
-                  </div>
+                <h1 class="uk-heading-divider">Edit Comment </h1>
+
+                <form action="/cameras/comment/<%= comment.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                  <section class="modal_form uk-flex-center">
+                    <div class="top">
+                      <textarea
+                      class="uk-textarea uk-form-width-large"
+                      rows="5"
+                      name="content"
+                      ><%= comment.content %></textarea>
+                    </div>
+                    
+                    <div class="bottom" >
+                      <div uk-form-custom="target: true">
+                        <input type="file" name="commentImages" value="<%= comment.commentImages%>">
+                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                      </div>
+                      
+                      <div>
+                        <input type="hidden" name="camera" value="<%= camera.id %>"/>
+                        <button type="submit" class="uk-button">Submit</button>
+                      </div>
+                    </div>
+                    
+                  </section>
                 </form>
-              </div>
+                </div>
             </div>
+            
 
               <% }); %> 
           </div> 
