@@ -84,10 +84,33 @@
       </div>
         
       
-      <div class="bottom" uk-margin uk-grid>
-        <div class="uk-width-1-2">
+      <div class="bottom" uk-grid>
+        <div class="unsplash uk-width-1-2@m">
           <h3 class="uk-heading uk-heading-line" ><span>Unsplash Sample Images</span></h3>
-        </div>
+          
+          <% if (unsplashData) { %>
+          <% unsplashData.forEach(data => { %>
+            <div class="unsplash_section">
+              <a id="link" href="<%= data.links.html %>">
+                <h4 class="heading" >Taken by <%= data.user.username %> </h4>
+              </a>
+              
+              <div class="unsplash_image">
+                <a href="<%= data.urls.regular %>">
+                  <img src="<%= data.urls.regular %>" alt="">
+                </a>           
+              </div>
+            </div>
+            <% }) %>%> 
+            <% } else { %>
+                <article uk-alert class="uk-alert-danger unsplash_section">
+                  <a class="uk-alert-close" uk-close></a>
+                  <h3>Notice: Sample Images from unsplash is unavailable right now. Please wait for an hour.</h3>
+                </article>
+            <% } %> 
+          </div>
+
+          
 
         <div class="uk-width-expand@m">
           <h3 class="uk-heading uk-heading-line"><span>Comments</span></h3>
@@ -106,24 +129,26 @@
                     <li> <%= new Date(comment.createdAt).toLocaleString() %> </li>
                   </ul>
                 </div>
-
-                <% if (user.username == comment.user.username) { %>
-                <div class="comment_button uk-width-1-6">
-                    <div>
-                      <a class="uk-link-muted" href="#modal-edit-<%= comment.id %>" uk-toggle>
-                        <button class="uk-button uk-button-link">
-                          <span uk-icon="icon: file-edit"></span>
-                        </button>
-                      </a>
-                    </div>
-                    <div>
-                      <form action="/cameras/comment/<%= comment.id %>?_method=DELETE" method="POST"> 
+                <% if (user) { %>
+                
+                  <% if (user.username == comment.user.username) { %>
+                    <div class="comment_button uk-width-1-6">
+                      <div>
+                        <a class="uk-link-muted" href="#modal-edit-<%= comment.id %>" uk-toggle>
+                          <button class="uk-button uk-button-link">
+                            <span uk-icon="icon: file-edit"></span>
+                          </button>
+                        </a>
+                      </div>
+                      <div>
+                        <form action="/cameras/comment/<%= comment.id %>?_method=DELETE" method="POST"> 
                           <input type="hidden" value="<%= comment.id %>">
                           <a class="uk-link-muted"><button type="submit" class="uk-button uk-button-link" > <span uk-icon="icon: trash"></span></button></a>
-                      </form>
+                        </form>
+                      </div>
                     </div>
-                  </div>
-                <% } %>
+                    <% } %>
+                  <% } %>
               </div>
             </header>
             <div class="uk-comment-body" uk-grid>

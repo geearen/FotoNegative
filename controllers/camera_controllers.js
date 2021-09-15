@@ -3,6 +3,9 @@ const router = express.Router();
 const {authRequired} = require("../utils/auth");
 const {adminRequired} = require("../utils/admin_auth")
 const { Camera, Comment } = require("../models");
+// const fetch = require('node-fetch')
+const axios = require('axios');
+const { response } = require("express");
 
 const adminID = process.env.adminID;
 
@@ -51,17 +54,19 @@ router.post("/", adminRequired, async (req, res) => {
   }
 });
 
-//api "https://api.unsplash.com/photos/random?query=film-&orientation=portrait&content_safety=high&client_id=dnxslX9NqG7sdJIFpYSn_YeO8crKLlvk1r65XylTr1o"
+
 
 /* Show Page */
 router.get("/:id", async (req, res, next) => {
   try {
     const foundCamera = await Camera.findById(req.params.id);
     const allComments = await Comment.find({camera: req.params.id}).populate('user');
+    let unsplashData = []
+    let apiRes = await axios.get(`https://api.unsplash.com/photos/random?count=5&query=${foundCamera.cameraName}&content_filter=high&client_id=${apiKey}`).then((response) => {unsplashData = response.data})
 
-    // const unsplash = await fetch()
     if (req.session.currentUser && req.session.currentUser.id == adminID) {
       const context = {
+        unsplashData,
         camera: foundCamera,
         comments: allComments,
         isAdmin: true,
@@ -71,10 +76,11 @@ router.get("/:id", async (req, res, next) => {
     }
 
     const context = {
+      unsplashData,
       camera: foundCamera,
       comments: allComments,
       isAdmin: false,
-      error:null,
+      error: null,
     };
     return res.render("cameras/show", context);
   } catch (error) {

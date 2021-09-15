@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -242,6 +243,41 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   letter-spacing: 2px;
   color: #FABB2E;
   text-shadow: 1px 1px 1px #C92C2C;
+}
+
+/* Unsplash Section */
+.unsplash .unsplash_section {
+  background-color: white;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+}
+.unsplash .unsplash_section:hover {
+  box-shadow: 2px 2px 2px 1px #BD6060;
+}
+.unsplash h4 {
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.unsplash #link {
+  text-decoration: none;
+}
+.unsplash .heading {
+  margin: none;
+}
+.unsplash .unsplash_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.unsplash h4:hover {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+  text-decoration: none;
 }
 
 /* Edit Modal */

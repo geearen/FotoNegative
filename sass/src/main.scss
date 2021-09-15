@@ -268,6 +268,44 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
       text-shadow: 1px 1px 1px $persian-red;
     }
 }
+/* Unsplash Section */
+.unsplash{
+
+  .unsplash_section{
+    background-color: white;
+    padding:2rem;
+    margin:2rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px $selective-yellow;
+  }
+  .unsplash_section:hover{
+    box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+  }
+  h4{
+    letter-spacing: 2px;
+    color: $selective-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  #link{
+    text-decoration: none;
+  }
+  .heading{
+    margin: none;
+  }
+  .unsplash_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h4:hover{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow;
+    text-decoration: none;
+  }
+}
 
 /* Edit Modal */
 
