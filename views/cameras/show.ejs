@@ -57,7 +57,7 @@
 
       <div class="comment_form">
 
-        <form action="/cameras/comment/<%= camera.id %>" method="POST">
+        <form action="/cameras/comment/<%= camera.id %>" method="POST" enctype="multipart/form-data">
           <div class="uk-flex uk-flex-center uk-flex-column">
             <textarea
             class="uk-textarea"
@@ -67,8 +67,8 @@
             ></textarea>
             <input
             class="uk-input"
-            type="text"
-            placeholder="URL image"
+            type="file"
+            placeholder=""
             name="commentImages"
             />
             
@@ -102,7 +102,7 @@
                   </ul>
                 </div>
 
-
+                <% if (user.username == comment.user.username) { %>
                 <div class="comment_button uk-width-1-6">
                     <div>
                       <a class="uk-link-muted" href="#modal-edit-<%= comment.id %>" uk-toggle>
@@ -118,7 +118,7 @@
                       </form>
                     </div>
                   </div>
-                
+                <% } %>
               </div>
             </header>
             <div class="uk-comment-body" uk-grid>

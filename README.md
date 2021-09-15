@@ -89,7 +89,9 @@ NEM Stack
 - EJS
 - dotenv
 - brcryptjs
-- ulkit
+- UIkit
+- AWS S3
+- multer
 
 # Resources
 - http://camera-wiki.org/

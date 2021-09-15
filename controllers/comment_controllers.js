@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const { authRequired } = require("../utils/auth");
 const { Comment } = require("../models");
-
+const { authRequired } = require("../utils/auth");
+const handleUploadFile = require("../utils/handleUploadFile");
 
 
 /* Create Comment */
-router.post("/comment/:id", authRequired, async (req, res, next) => {
+router.post("/comment/:id", authRequired, handleUploadFile, async (req, res, next) => {
   try {
     const createComment = await Comment.create(req.body);
     if (!createComment) throw "Unable to create your comment";

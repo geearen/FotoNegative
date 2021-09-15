@@ -3,6 +3,8 @@ const express = require("express");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 require("dotenv").config();
 
 const apiKey = process.env.UNSPLASH_APP_API_KEY;
@@ -40,6 +42,7 @@ app.use((req,res,next) =>{
 });
 
 app.use(express.static("public"));
+app.use(upload.single("commentImages"));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
 
