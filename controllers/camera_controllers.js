@@ -59,6 +59,7 @@ router.get("/:id", async (req, res, next) => {
     const foundCamera = await Camera.findById(req.params.id);
     const allComments = await Comment.find({camera: req.params.id}).populate('user');
 
+    // const unsplash = await fetch()
     if (req.session.currentUser && req.session.currentUser.id == adminID) {
       const context = {
         camera: foundCamera,

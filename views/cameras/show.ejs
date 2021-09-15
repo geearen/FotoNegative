@@ -4,31 +4,35 @@
   <body>
     <%- include("../partials/navbar/_navbar") %>
 
-    <main class="uk-container uk-container-expand">
-      <section class="uk-section uk-section-default">
+    <main class="camera_page uk-container uk-container-expand">
+      <section class="camera">
         <div class="uk-container uk-container-large">
 
           <h1 class="uk-heading uk-heading-line"><span><%= camera.cameraName %></span></h1>
-          <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
-            <div>
+          <div class="uk-child-width-1-2@m" uk-grid>
+            <div class="camera_image">
               <img src="<%= camera.cameraImage %> " alt="camera image" />
             </div>
-            <div>
-              <p class="uk-text-large">Brand Name: <%= camera.brandName %></p>
-              <p class="uk-text-large"> Release in year <%= camera.yearReleased %></p>
+            <div class="camera_info">
+              <div class="camera_info_meta">
+              <p >Brand Name: <%= camera.brandName %></p>
+              <p > Release in year <%= camera.yearReleased %></p>
               <% if (camera.interchangeableLens) { %>
-                <p class="uk-text-large"> Interchangeable Lens: Yes.</p>
+                <p > Interchangeable Lens: Yes.</p>
                 <% } else {%>
-                  <p class="uk-text-large"> Interchangeable Lens: No.</p>
+                  <p > Interchangeable Lens: No.</p>
                   <% } %>
                   
-                  <p class="uk-text-large"> Image Sensor Format: <%= camera.imageFormat %>.</p>
-                  <p class="uk-text-large"> Category: <%= camera.category %>.</p>
-                  <p class="uk-text-large"><%= camera.photographyType %> Camera </p>
+                  <p> Image Sensor Format: <%= camera.imageFormat %>.</p>
+                  <p> Category: <%= camera.category %>.</p>
+                  <p><%= camera.photographyType %> Camera </p>
               </div>
+              </div>
+
               
-              <div>
-                <div class="uk-flex uk-flex-center uk-flex-around">
+              
+              <div class="camera_button">
+                <div class="uk-flex uk-flex-left uk-flex-around">
                   <% if (isAdmin) { %>
                     <div>
                       <a class="uk-link-muted" href="/cameras/<%= camera.id %>/edit "
@@ -51,7 +55,7 @@
         </div>
       </section>
 
-      <div class="uk-container uk-container-small uk-margin">
+      <div class="comment_form">
 
         <form action="/cameras/comment/<%= camera.id %>" method="POST">
           <div class="uk-flex uk-flex-center uk-flex-column">
@@ -74,45 +78,100 @@
         </form>
       </div>
         
-        <% comments.forEach(comment => { %>
-        <div class="uk-container uk-container-large uk-grid-match" uk-margin uk-grid>
+      
+      <div class="bottom" uk-margin uk-grid>
+        <div class="uk-width-1-2">
+          <h3 class="uk-heading uk-heading-line" ><span>Unsplash Sample Images</span></h3>
+        </div>
 
-          <article class="uk-comment comment uk-width-expand@m ">
+        <div class="uk-width-expand@m">
+          <h3 class="uk-heading uk-heading-line"><span>Comments</span></h3>
+      <% comments.forEach(comment => { %>
+          <article class="comment uk-comment">
             <header class="uk-comment-header">
               <div class="uk-grid-medium uk-flex-middle" uk-grid>
                 <div class="uk-width-auto">
-                  <img class="uk-comment-avatar" src="<%= comment.user.profileImage %> " alt="profile image" width="80" height="80">
+                  <a href="/profile/<%= comment.user.username %> ">
+                    <img class="uk-comment-avatar" src="<%= comment.user.profileImage %> " alt="profile image" width="80" height="80">
+                  </a>
                 </div>
                 <div class="uk-width-expand">
-                  <h4 class="uk-comment-title uk-margin-remove"> <a class="uk-link-reset" href="/profile/<%= comment.user.username %> "><%= comment.user.username %></a></h4>
+                  <p class="uk-comment-title uk-margin-remove"> <a class="uk-link-reset" href="/profile/<%= comment.user.username %> "><%= comment.user.username %></a></p>
                   <ul class="uk-comment-meta uk-subnav uk-subnav-divder uk-margin-remove-top">
                     <li> <%= new Date(comment.createdAt).toLocaleString() %> </li>
                   </ul>
                 </div>
+
+
+                <div class="comment_button uk-width-1-6">
+                    <div>
+                      <a class="uk-link-muted" href="#modal-edit-<%= comment.id %>" uk-toggle>
+                        <button class="uk-button uk-button-link">
+                          <span uk-icon="icon: file-edit"></span>
+                        </button>
+                      </a>
+                    </div>
+                    <div>
+                      <form action="/cameras/comment/<%= comment.id %>?_method=DELETE" method="POST"> 
+                          <input type="hidden" value="<%= comment.id %>">
+                          <a class="uk-link-muted"><button type="submit" class="uk-button uk-button-link" > <span uk-icon="icon: trash"></span></button></a>
+                      </form>
+                    </div>
+                  </div>
                 
               </div>
             </header>
-            
-
-              <div class="uk-comment-body uk-width-expand" uk-margin>
-                <p> <%= comment.content %></p>
+            <div class="uk-comment-body" uk-grid>
+              <div class="content uk-width-expand@m" uk-margin>
+                <h4> <%= comment.content %></h4>
               </div>
-          </article>
-                <% if (comment.commentImages) { %>
-                
-                  <div class="uk-thumbnav uk-width-1-3@m" uk-margin>
+              <% if (comment.commentImages) { %>
+                <div class="uk-width-1-4@m">
+                  <div class="uk-thumbnav" uk-margin>
                     <div uk-lightbox>
                       <a href="<%= comment.commentImages %>" data-type="image" data-caption="Posted by <%= comment.user.username %>">
                         <img src="<%= comment.commentImages %>" width="100" alt="comment image">
                       </a>
                     </div>
                   </div>
-                  <% } %>
-          </div>
-        <% }); %> 
+                </div>
+                <% } %>
+            </div>
+              
+            </article>
 
+            <!-- Edit Comment Modal -->
+            <div class="uk-flex-top" id="modal-edit-<%= comment.id %>" uk-modal>
+              <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <form action="/cameras/comment/<%= comment.id %>/edit?_method=PUT" method="POST">
+                  <input type="hidden" value="<%= comment.id %>">
+                  <div class="uk-flex uk-flex-center uk-flex-column">
+                    <textarea
+                    class="uk-textarea"
+                    rows="5"
+                    name="content"
+                    ><%= comment.content %></textarea>
+                    <input
+                    class="uk-input"
+                    type="text"
+                    name="commentImages"
+                    value="<%= comment.commentImages %>"
+                    />
+                    <button type="submit" class="uk-button">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+              <% }); %> 
+          </div> 
+        </div>
     </main>
 
+    
+
+    
     <%- include("../partials/footer/_footer") %>
   </body>
 </html>

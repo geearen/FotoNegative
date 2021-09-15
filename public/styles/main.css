@@ -78,6 +78,12 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   padding: 2rem;
 }
 
+/* Register Page */
+.register.uk-position-center {
+  background-color: rgba(250, 187, 46, 0.9);
+  padding: 2rem;
+}
+
 /* Login Modal -Home */
 .login.uk-modal-dialog {
   background-color: #FABB2E;
@@ -91,12 +97,6 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   min-width: 10rem;
 }
 
-.register.uk-position-center {
-  background-color: rgba(250, 187, 46, 0.9);
-  padding: 2rem;
-}
-
-/* Register Page */
 /* Profile Page */
 .profile {
   padding: 5rem;
@@ -164,6 +164,70 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   height: auto;
 }
 
-/* New Page */
+/* Show Page */
+.camera_page {
+  background-color: rgba(253, 236, 195, 0.4);
+  padding: 2rem;
+}
+.camera_page h1, .camera_page h3 {
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+  margin: 2rem;
+}
+.camera_page .camera {
+  background-color: rgba(250, 172, 2, 0.2);
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+}
+.camera_page .camera img {
+  box-shadow: 2px 2px 2px 1px #BD6060;
+}
+.camera_page .camera .camera_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.camera_page .camera .camera_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.camera_page .camera .camera_info_meta {
+  background-color: whitesmoke;
+  margin: 3rem;
+  padding: 3rem;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+}
+.camera_page .comment_form {
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #D49B9B;
+}
+
+.comment {
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #FDECC3;
+  border: 2px #B72828;
+  border-radius: 3px;
+  box-shadow: 3px 3px 2px 1px #BD6060;
+}
+.comment .content h4 {
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem;
+}
+.comment .comment_button {
+  display: flex;
+}
+.comment .uk-comment-title {
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
 
 /*# sourceMappingURL=main.css.map */

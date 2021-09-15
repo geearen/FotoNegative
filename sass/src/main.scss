@@ -81,6 +81,13 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
   // margin: 2rem;
 }
 
+/* Register Page */
+.register.uk-position-center{
+  background-color: transparentize($selective-yellow, 0.1);
+  padding: 2rem;
+  // margin: 2rem;
+
+}
 
 /* Login Modal -Home */
 .login.uk-modal-dialog{
@@ -95,13 +102,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     min-width: 10rem;
   }
 }
-.register.uk-position-center{
-  background-color: transparentize($selective-yellow, 0.1);
-  padding: 2rem;
-  // margin: 2rem;
 
-}
-/* Register Page */
 
 
 /* Profile Page */
@@ -181,5 +182,78 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
 
 }
 
-/* New Page */
+/* Show Page */
+.camera_page{
+  background-color: transparentize($lemon-meringue, 0.6);
+  padding:2rem;
 
+  h1, h3{
+    letter-spacing: 2px;
+    color: $selective-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+    margin:2rem;
+
+  }
+  
+  .camera{
+    background-color: transparentize($honey-yellow, 0.8);
+    padding: 2rem;
+    margin: 2rem;
+    
+    border-radius: 5px;
+    
+    img{
+      box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+    }
+    .camera_info{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .camera_image{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .camera_info_meta{
+      background-color: whitesmoke;
+      margin: 3rem;
+      padding: 3rem;
+      box-shadow: 2px 2px 2px 1px $selective-yellow;
+    }
+    
+  }
+
+
+  .comment_form{
+    padding: 2rem;
+    margin: 2rem;
+    background-color: $pastel-pink;
+  }
+}
+
+.comment{
+  padding: 2rem;
+  margin:2rem;
+  background-color: $lemon-meringue;
+  border: 2px $firebrick;
+  border-radius: 3px;
+  box-shadow: 3px 3px 2px 1px $fuzzy-wuzzy;
+
+  .content h4{
+    text-align: center;
+    padding:2rem;
+    margin:2rem;
+  }
+
+  .comment_button{
+    display: flex;
+  }
+  .uk-comment-title{
+      letter-spacing: 2px;
+      color: $selective-yellow;
+      text-shadow: 1px 1px 1px $persian-red;
+    }
+}

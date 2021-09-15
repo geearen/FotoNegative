@@ -23,13 +23,13 @@ router.post("/comment/:id", authRequired, async (req, res, next) => {
 router.put("/comment/:id/edit", authRequired, async (req, res, next) => {
   try {
     const updatedComment = await Comment.findByIdAndUpdate(
-      req.body.id,
+      req.params.id,
       { $set: req.body },
-      { new: true }
+      { new: true },
     );
     if (!updatedComment) throw "Unable to update your comment";
 
-    return res.redirect(`/cameras/${req.params.id}`);
+    return res.redirect(`/cameras/${updatedComment.camera}`);
   } catch (error) {
     console.log(error);
     context = { error };
@@ -39,8 +39,9 @@ router.put("/comment/:id/edit", authRequired, async (req, res, next) => {
 
 router.delete("/comment/:id", authRequired, async (req,res,next) =>{
   try {
-    await Comment.findByIdAndDelete(req.params.id)
-    return res.redirect(`/cameras`)
+    const deletedComment = await Comment.findByIdAndDelete(req.params.id)
+    
+    return res.redirect(`/cameras/${deletedComment.camera}`)
   } catch (error) {
     console.log(error);
     const context = {error};
