@@ -484,4 +484,23 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   border-radius: 3px;
 }
 
+/* Delete Modal */
+.modal_delete.uk-modal-dialog {
+  background-color: #FABB2E;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px #BD6060;
+  display: grid;
+  gap: 1rem;
+  border-radius: 5px;
+}
+.modal_delete.uk-modal-dialog h2 {
+  letter-spacing: 2px;
+  color: #FDECC3;
+  text-shadow: 2px 2px 2px #BD6060;
+}
+.modal_delete.uk-modal-dialog .delete_form {
+  justify-self: center;
+  min-width: 10rem;
+}
+
 /*# sourceMappingURL=main.css.map */

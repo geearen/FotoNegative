@@ -517,3 +517,22 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     border-radius: 3px;
   }
 }
+
+/* Delete Modal */
+.modal_delete.uk-modal-dialog{
+  background-color: $selective-yellow;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+  display:grid;
+  gap: 1rem;
+  border-radius: 5px;
+  h2{
+    letter-spacing: 2px;
+    color: $lemon-meringue;
+    text-shadow: 2px 2px 2px  $fuzzy-wuzzy;
+  }
+  .delete_form{
+    justify-self: center;
+    min-width: 10rem;
+  }
+}
