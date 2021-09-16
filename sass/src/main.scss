@@ -9,6 +9,18 @@
 body{
   font-family: "Raleway", sans-serif;
 }
+body::-webkit-scrollbar{
+  width: 12px;
+}
+body::-webkit-scrollbar-track{
+  background: $lemon-meringue;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: $fuzzy-wuzzy;
+  border-radius: 20px;
+  border: 3px solid  $fuzzy-wuzzy;
+}
+
 /* Navbar & Footer Home*/
 .uk-navbar-transparent{
   background-color: rgb(0, 0, 0, 0.2);
