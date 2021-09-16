@@ -378,6 +378,22 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
       text-shadow: 1px 1px 1px $persian-red;
     }
 }
+/* Bottom page of show */
+.bottom{
+  h4,h3{
+    letter-spacing: 2px;
+    color: $selective-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  h4,h3:hover{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow;
+    text-decoration: none;
+  }
+}
 /* Unsplash Section */
 .unsplash{
 
@@ -391,7 +407,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
   .unsplash_section:hover{
     box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
   }
-  h4{
+  h4,h3{
     letter-spacing: 2px;
     color: $selective-yellow;
     text-shadow: 1px 1px 1px $persian-red;
@@ -410,7 +426,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     align-items: center;
   }
 
-  h4:hover{
+  h4,h3:hover{
     color: $persian-red;
     text-shadow: 2px 1px 0.5px $selective-yellow;
     text-decoration: none;

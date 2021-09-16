@@ -11,7 +11,6 @@ router.get("/register", function (req, res){
 
 /* Login route */
 router.get("/login", function(req, res){
-  // const error = null;
   const context = { error: null };
   return res.render("auth/login", context)
 });

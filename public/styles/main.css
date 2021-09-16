@@ -354,6 +354,20 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   text-shadow: 1px 1px 1px #C92C2C;
 }
 
+/* Bottom page of show */
+.bottom h4, .bottom h3 {
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.bottom h4, .bottom h3:hover {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+  text-decoration: none;
+}
+
 /* Unsplash Section */
 .unsplash .unsplash_section {
   background-color: white;
@@ -365,7 +379,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
 .unsplash .unsplash_section:hover {
   box-shadow: 2px 2px 2px 1px #BD6060;
 }
-.unsplash h4 {
+.unsplash h4, .unsplash h3 {
   letter-spacing: 2px;
   color: #FABB2E;
   text-shadow: 1px 1px 1px #C92C2C;
@@ -383,7 +397,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   justify-content: center;
   align-items: center;
 }
-.unsplash h4:hover {
+.unsplash h4, .unsplash h3:hover {
   color: #C92C2C;
   text-shadow: 2px 1px 0.5px #FABB2E;
   text-decoration: none;

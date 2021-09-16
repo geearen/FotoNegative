@@ -53,36 +53,38 @@
           </div>
         </div>
       </section>
-
-      <div class="comment_form">
-        <form action="/cameras/comment/<%= camera.id %>" method="POST" enctype="multipart/form-data">
-          <div class="uk-flex-center" uk-grid>
-            <div class="form">
-              <div class="form_top">
-                <textarea
+      
+      <% if (user) { %>
+        <div class="comment_form">
+          <form action="/cameras/comment/<%= camera.id %>" method="POST" enctype="multipart/form-data">
+            <div class="uk-flex-center" uk-grid>
+              <div class="form">
+                <div class="form_top">
+                  <textarea
                   class="uk-textarea uk-form-width-large"
                   rows="5"
                   placeholder="Comment here!"
                   name="content"
                   ></textarea>
                 </div>
-            
-              <div class="form_bottom" >
-                <div uk-form-custom="target: true">
-                  <input type="file" name="commentImages">
-                  <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
-                </div>
-                <div>
-                  <input type="hidden" name="camera" value="<%= camera.id %>">
-                  <button class="uk-button uk-width-1-1">Submit</button>
+                
+                <div class="form_bottom" >
+                  <div uk-form-custom="target: true">
+                    <input type="file" name="commentImages">
+                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                  </div>
+                  <div>
+                    <input type="hidden" name="camera" value="<%= camera.id %>">
+                    <button class="uk-button uk-width-1-1">Submit</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
+        <% } %>
         
-      
+        
       <div class="bottom" uk-grid>
         <div class="unsplash uk-width-1-2@m">
           <h3 class="uk-heading uk-heading-line" ><span>Unsplash Sample Images</span></h3>
