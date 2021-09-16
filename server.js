@@ -55,6 +55,12 @@ app.get("/home", function (req, res){
   return res.render("home" ,context);
 })
 
+/* About Page */
+app.get("/about", function(req,res){
+  const context = {error:null}
+  res.render("about",context)
+});
+
 /* Routes */
 app.use("/", controllers.auth);
 app.use("/cameras", controllers.camera);
@@ -68,6 +74,7 @@ app.get("/*", function (req, res){
   const context = { error: "Oh no.. Something went wrong . 😓😓😓😓" };
   res.render("404", context)
 })
+
 
 /* Port Binding */
 app.listen(PORT, () =>{

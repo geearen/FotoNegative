@@ -551,3 +551,58 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     text-align: center;
   }
 }
+
+/* About */
+.about{
+  padding:2rem;
+  margin:2rem;
+
+  .about_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about_image{
+    max-width: 20vw;
+    height: auto;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px $selective-yellow;
+    padding:1rem;
+    margin:1rem;
+    img{
+      border-radius: 5px;
+    }
+  }
+  .about_meta{
+    background-color: whitesmoke;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px $selective-yellow;
+
+    .links{
+      display: flex;
+      justify-content: space-evenly;
+
+      a{
+        transition: 0.5s;
+      }
+      a:hover{
+        color: $persian-red;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:490px){
+  .about{
+
+  img{
+    min-width: 15vw;
+    height: auto;
+  }
+}
+}

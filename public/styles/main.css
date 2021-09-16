@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&family=Raleway:wght@100;300;500&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -516,6 +516,54 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   color: #FDECC3;
   text-shadow: 2px 2px 2px #FAAC02;
   text-align: center;
+}
+
+/* About */
+.about {
+  padding: 2rem;
+  margin: 2rem;
+}
+.about .about_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about .about_image {
+  max-width: 20vw;
+  height: auto;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+  padding: 1rem;
+  margin: 1rem;
+}
+.about .about_image img {
+  border-radius: 5px;
+}
+.about .about_meta {
+  background-color: whitesmoke;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+}
+.about .about_meta .links {
+  display: flex;
+  justify-content: space-evenly;
+}
+.about .about_meta .links a {
+  transition: 0.5s;
+}
+.about .about_meta .links a:hover {
+  color: #C92C2C;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 490px) {
+  .about img {
+    min-width: 15vw;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

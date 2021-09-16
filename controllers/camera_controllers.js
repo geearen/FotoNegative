@@ -14,6 +14,7 @@ router.get("/", async (req, res, next) => {
   try {
     const allCameras = await Camera.find({});
     const allCategory = await Categories.find({});
+
     if(req.session.currentUser && req.session.currentUser.id == adminID){
       const context = {
         categories:allCategory,
@@ -24,9 +25,10 @@ router.get("/", async (req, res, next) => {
       return res.render("cameras/index", context);
     }
     const context = {
+      categories: allCategory,
       cameras: allCameras,
-      isAdmin:false,
-      error:null
+      isAdmin: false,
+      error: null,
     };
     return res.render("cameras/index", context);
   } catch (error) {
@@ -96,7 +98,9 @@ router.get("/category/:id", async (req, res, next) => {
 router.get("/new", adminRequired, async (req, res) =>{
   try {
     const allCategories = await Categories.find({})
-    const context ={categories:allCategories}
+    const context ={
+      categories:allCategories
+    }
     return res.render("cameras/new", context);
     
   } catch (error) {
