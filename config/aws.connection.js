@@ -18,6 +18,7 @@ class BucketS3{
   uploadFile(file) {
     const filePath = fs.createReadStream(file.path);
 
+    console.log(filePath)
     const uploadParams = {
       Bucket: this.#bucketName,
       Body: filePath,

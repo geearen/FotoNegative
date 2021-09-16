@@ -3,15 +3,18 @@ const router = express.Router();
 const { Comment } = require("../models");
 const { authRequired } = require("../utils/auth");
 const handleUploadFile = require("../utils/handleUploadFile");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 
+router.use(upload.single("commentImages"));
 
 /* Create Comment */
 router.post("/comment/:id", authRequired, handleUploadFile, async (req, res, next) => {
   try {
     const createComment = await Comment.create(req.body);
     if (!createComment) throw "Unable to create your comment";
-
-    return res.redirect(`/cameras/${createComment.camera.id}`);
+    console.log(createComment);
+    return res.redirect(`/cameras/${createComment.camera}`);
   } catch (error) {
     console.log(error);
     context = { error };
@@ -22,7 +25,7 @@ router.post("/comment/:id", authRequired, handleUploadFile, async (req, res, nex
 /* Update Comment */
 router.put("/comment/:id/edit", authRequired, handleUploadFile, async (req, res, next) => {
   try {
-    console.log(req.file)
+
     const updatedComment = await Comment.findByIdAndUpdate(
       req.params.id,
       { $set: req.body },

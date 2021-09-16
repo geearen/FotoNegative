@@ -3,9 +3,7 @@ const router = express.Router();
 const {authRequired} = require("../utils/auth");
 const {adminRequired} = require("../utils/admin_auth")
 const { Camera, Comment } = require("../models");
-// const fetch = require('node-fetch')
 const axios = require('axios');
-const { response } = require("express");
 
 const adminID = process.env.adminID;
 
@@ -55,7 +53,6 @@ router.post("/", adminRequired, async (req, res) => {
 });
 
 
-
 /* Show Page */
 router.get("/:id", async (req, res, next) => {
   try {
@@ -96,6 +93,7 @@ router.get("/:id/edit", adminRequired, async (req, res, next) => {
     const foundCamera = await Camera.findById(req.params.id);
     const context = {
       camera: foundCamera,
+      error:null,
     };
     return res.render("cameras/edit", context);
   } catch (error) {

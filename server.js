@@ -3,11 +3,8 @@ const express = require("express");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
-require("dotenv").config();
 
-const apiKey = process.env.UNSPLASH_APP_API_KEY;
+require("dotenv").config();
 
 
 /* Module Instance */
@@ -42,7 +39,7 @@ app.use((req,res,next) =>{
 });
 
 app.use(express.static("public"));
-app.use(upload.single("commentImages"));
+// app.use(upload.fields([{name:"commentImages"}, {name:"profileImage"}]));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
 
@@ -52,8 +49,6 @@ app.use(require("./utils/logger"));
 
 /* Routing to Home */
 app.get("/", (req, res) => res.redirect("/home"));
-
-//api "https://api.unsplash.com/photos/random?query=camera-&orientation=landscapre&content_safety=high&count=10&client_id=dnxslX9NqG7sdJIFpYSn_YeO8crKLlvk1r65XylTr1o"
 
 /* Home Page */
 app.get("/home", function (req, res){

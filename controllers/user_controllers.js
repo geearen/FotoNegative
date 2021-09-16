@@ -1,6 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const {User, Comment} = require("../models");
+const handleUploadProfile = require("../utils/handleUploadProfile")
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
+
+router.use(upload.single("profileImage"))
 
 /* Profile page */
 router.get('/:username', async(req, res) =>{
@@ -44,14 +49,14 @@ router.get('/:username/edit', async (req, res) =>{
 })
 
 /* Update Profile */
-router.put('/:username', async (req, res) =>{
+router.put('/:username', handleUploadProfile, async (req, res) =>{
   try{
     const updatedProfile = await User.findOneAndUpdate(
         req.body.username, 
         {$set:req.body}, 
         {new:true}
       );
-    return res.redirect(`/profile/${updatedProfile.username}`)
+    return res.redirect(`/profile/${updatedProfile.username}/edit`)
   }catch(error){
     console.log(error);
     req.error = error;

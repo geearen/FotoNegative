@@ -10,7 +10,6 @@ const handleUploadFile = async (req, res, next) =>{
     console.log({file})
 
     if(validTypes.includes(file.mimetype)){
-
       const result = await bucketS3.uploadFile(file)
       console.log(result)
 
