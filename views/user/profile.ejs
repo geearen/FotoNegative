@@ -8,27 +8,28 @@
     <div class="profile_top uk-flex-center" uk-grid>
       <div class="profile_left_section">
         <img src="<%= profile.profileImage %> " width="200" alt="profile image">
-        
-        <% if (profile.username == user.username) { %>
-        
-          <div class="profile_buttons">
-            <div class="profile_edit">
-              <button class="uk-button uk-button-link">
-                <a class="uk-link-muted" href="/profile/<%= profile.username %>/edit"> Edit
-                  <span uk-icon="icon: cog"></span>
-                </a>
-              </button>
-            </div>
+        <% if (user) { %>
+          <% if (profile.username == user.username) { %>
             
-            <div class="profile_delete">
-              <a class="uk-link-muted" href="#modal-delete" uk-toggle>
+            <div class="profile_buttons">
+              <div class="profile_edit">
                 <button class="uk-button uk-button-link">
-                  <span uk-icon="icon: trash"></span>
+                  <a class="uk-link-muted" href="/profile/<%= profile.username %>/edit"> Edit
+                    <span uk-icon="icon: cog"></span>
+                  </a>
                 </button>
-              </a>
+              </div>
+              
+              <div class="profile_delete">
+                <a class="uk-link-muted" href="#modal-delete" uk-toggle>
+                  <button class="uk-button uk-button-link">
+                    <span uk-icon="icon: trash"></span>
+                  </button>
+                </a>
+              </div>
             </div>
-          </div>
-        <% } %> 
+            <% } %> 
+            <% } %>
       </div>
       <div class="uk-width-1-4">
         <div class="profile_right_section">

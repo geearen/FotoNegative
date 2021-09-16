@@ -12,7 +12,7 @@ const apiKey = process.env.UNSPLASH_APP_API_KEY;
 /* Index Route */
 router.get("/", async (req, res, next) => {
   try {
-    const allCameras = await Camera.find({});
+    const allCameras = await Camera.find({}).sort("cameraName");
     const allCategory = await Categories.find({});
 
     if(req.session.currentUser && req.session.currentUser.id == adminID){
@@ -41,7 +41,7 @@ router.get("/", async (req, res, next) => {
 router.get("/filter/:type", async (req, res, next) => {
   try {
     let type = req.params.type.charAt(0).toUpperCase() + req.params.type.slice(1);
-    const allCameras = await Camera.find({photographyType: type});
+    const allCameras = await Camera.find({photographyType: type}).sort("cameraName");
     const allCategory = await Categories.find({});
     if (req.session.currentUser && req.session.currentUser.id == adminID) {
       const context = {
@@ -69,7 +69,9 @@ router.get("/filter/:type", async (req, res, next) => {
 /* Filter Route for Categories */
 router.get("/category/:id", async (req, res, next) => {
   try {
-    const allCameras = await Camera.find({ category: req.params.id });
+    const allCameras = await Camera.find({ category: req.params.id }).sort(
+      "cameraName"
+    );
     const allCategory = await Categories.find({});
     if (req.session.currentUser && req.session.currentUser.id == adminID) {
       const context = {
@@ -126,7 +128,9 @@ router.post("/", adminRequired, async (req, res) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const foundCamera = await Camera.findById(req.params.id);
-    const allComments = await Comment.find({camera: req.params.id}).populate('user');
+    const allComments = await Comment.find({ camera: req.params.id })
+      .sort({ createdAt : -1})
+      .populate("user");
     const foundCategory = await Categories.findOne({index: foundCamera.category});
     let unsplashData = []
     let apiRes = await axios.get(`https://api.unsplash.com/photos/random?count=5&query=${foundCamera.cameraName}&content_filter=high&client_id=${apiKey}`).then((response) => {unsplashData = response.data})
