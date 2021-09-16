@@ -314,4 +314,56 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   align-items: center;
 }
 
+/* Edit Profile Page */
+.edit {
+  padding: 5rem;
+  background-color: rgba(253, 236, 195, 0.2);
+}
+.edit h1 {
+  letter-spacing: 2px;
+  color: #FAAC02;
+  text-shadow: 1px 1px 1px #BD6060;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.edit .left_section {
+  margin: 3rem;
+  padding: 3rem;
+  background-color: rgba(166, 36, 36, 0.4);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #FAAC02;
+}
+.edit .right_section {
+  padding: 3rem;
+  margin: 3rem;
+  background-color: rgba(250, 172, 2, 0.5);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #BD6060;
+}
+.edit .right_section .form_image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+.edit .right_section .form_image img {
+  margin: 1rem;
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px 2px #A62424;
+}
+.edit .profile_meta_info {
+  background-color: rgba(189, 96, 96, 0.2);
+  padding: 2rem;
+  box-shadow: 0px 0px 3px 2px #A62424;
+  border-radius: 5px;
+}
+.edit .profile_meta_info h3 {
+  letter-spacing: 2px;
+  color: #A62424;
+  text-shadow: 1px 1px 1px #FAAC02;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
 /*# sourceMappingURL=main.css.map */

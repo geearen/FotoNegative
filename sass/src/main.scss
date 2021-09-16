@@ -343,3 +343,57 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     align-items: center;
   }
 }
+
+/* Edit Profile Page */
+.edit{
+  padding:5rem;
+  background-color: transparentize($lemon-meringue, 0.8);
+  h1{
+    letter-spacing: 2px;
+    color: $honey-yellow;
+    text-shadow: 1px 1px 1px $fuzzy-wuzzy;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .left_section{
+    margin:3rem;
+    padding: 3rem;
+    background-color: transparentize($auburn, 0.6);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px $honey-yellow;
+  }
+
+  .right_section{
+    padding:3rem;
+    margin:3rem;
+    background-color: transparentize($honey-yellow, 0.5);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px $fuzzy-wuzzy;
+    .form_image{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin:2rem;
+      img{
+        margin: 1rem;
+        border-radius: 2px;
+        box-shadow: 2px 2px 2px 2px $auburn;
+      }
+    }
+  }
+  .profile_meta_info{
+    background-color: transparentize($fuzzy-wuzzy, 0.8);
+    padding:2rem;
+    box-shadow: 0px 0px 3px 2px $auburn;
+    border-radius: 5px;
+
+    h3{
+      letter-spacing: 2px;
+      color: $auburn;
+      text-shadow: 1px 1px 1px $honey-yellow;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

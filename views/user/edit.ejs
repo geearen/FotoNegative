@@ -6,65 +6,65 @@
   
   <main class="edit">
     <h1 class="uk-heading-line"><span>Edit Profile </span> </h1>
-    <section class="uk-grid-divider" uk-grid>
-
-
-    <div class="uk-grid-item-match uk-width-1-2@m">
+    <section uk-grid>
+      
+      
+      <div class="left_section uk-width-expand@m">
       <form action="/profile/<%= profile.username%>?_method=PUT" method="POST">
         <section class="edit_form">
           <div class="uk-margin">
-            <label for="username"> Username  </label>
-            <div class="uk-inline">
+            <label class="uk-form-label" for="username"> Username  </label>
+            <div class="uk-form-controls-text">
               <input class="uk-input" type="text" name="username" id="username" value ="<%= profile.username %>">
             </div>
           </div>
           
           <div class="uk-margin">
-            <label for="email"> Email  </label>
-            <div class="uk-inline">
+            <label class="uk-form-label" for="email"> Email  </label>
+            <div class="uk-form-controls-text">
               <input class="uk-input" type="text"  name="email" id="email" value ="<%= profile.email %>">
             </div>
           </div>
           
           <div class="uk-margin">
-            <label for="firstName"> First Name  </label>
-            <div class="uk-inline">
+            <label class="uk-form-label" for="firstName"> First Name  </label>
+            <div class="uk-form-controls-text">
               <input class="uk-input" type="text" name="firstName" id="firstName" value ="<%= profile.firstName %>">
             </div>
           </div>
           
           <div class="uk-margin">
-            <label for="lastName"> Last Name  </label>
-            <div class="uk-inline">
+            <label class="uk-form-label" for="lastName"> Last Name  </label>
+            <div class="uk-form-controls-text">
               <input class="uk-input" type="text" name="lastName" id="lastName" value ="<%= profile.lastName %>">
             </div>
           </div>
           
           <div class="uk-margin">
-            <label for="currentCameraGear"> Current Camera Gear  </label>
-            <div class="uk-inline">
+            <label class="uk-form-label" for="currentCameraGear"> Current Camera Gear  </label>
+            <div class="uk-form-controls-text">
               <input class="uk-input" type="text" name="currentCameraGear" id="currentCameraGear" value ="<%= profile.currentCameraGear %>">
             </div>
           </div>
           
           <div class="uk-margin">
-            <label for="igLink"> Instagram URL </label>
-            <div class="uk-inline">
+            <label class="uk-form-label" for="igLink"> Instagram URL </label>
+            <div class="uk-form-controls-text">
               <input class="uk-input" type="text" name="igLink" id="igLink" value ="<%= profile.igLink %>">
             </div>
           </div>
           
           <div class="uk-margin">
-            <label for="fbLink"> Facebook URL </label>
-            <div class="uk-inline">
+            <label class="uk-form-label" for="fbLink"> Facebook URL </label>
+            <div class="uk-form-controls-text">
               <input class="uk-input" type="text" name="fbLink" id="fbLink" value ="<%= profile.fbLink %>">
             </div>
           </div>
           
           <div class="uk-margin">
-            <label for="personalLink"> Personal Website  </label>
-            <div class="uk-inline">
-              <input class="uk-input" type="text" name="personalLink" id="personalLink" value ="<%= profile.personalLink %>">
+            <label class="uk-form-label" for="personalLink"> Personal Website  </label>
+            <div class="uk-form-controls-text"">
+              <input class="uk-input"type="text" name="personalLink" id="personalLink" value ="<%= profile.personalLink %>">
             </div>
           </div>
           <div class="uk-margin">
@@ -78,9 +78,9 @@
       
       
       
-      <div class="uk-width-1-2@m" uk-grid>
+      <div class="right_section uk-width-1-2@m uk-flex-center" uk-grid>
 
-        <div>
+        <div class="form_image uk-width-1-2@m" >
           <img src="<%= profile.profileImage %> " width="200" alt="profile image">
           <form action="/profile/<%= profile.username%>?_method=PUT" method="POST" enctype="multipart/form-data">
 
@@ -93,25 +93,31 @@
           </form>
         </div>
 
-        <div class="profile_meta_info">
-          <h3>Hello <%= profile.username %> </h3>
-        </div>
+        <div class="profile_meta_info uk-width-2-3@m">
+          <h3>Hello <%= profile.username %>! </h3>
+          <div>
+            <p>Email Address: <%= profile.email %> </p>
+            <p>First Name: <%= profile.firstName %> Last Name: <%= profile.lastName %>  </p>
+            <p>Current Gear: <%= profile.currentCameraGear %> </p>
 
-        <div>
-          <a class="uk-link-muted" href="/profile/<%= profile.username %>"
+            <p>Instagram: <a href="<%= profile.igLink %> " uk-icon="icon: instagram"><%= profile.igLink %></a> </p>
+            <p>Facebook: <a href="<%= profile.fbLink %> " uk-icon="icon: facebook"><%= profile.fbLink %></a>  </p>
+            <p>Personal: <a href="<%= profile.personalLink %> " uk-icon="icon: world"><%= profile.personalLink %></a> </p>
+            
+            <a class="uk-link-muted" href="/profile/<%= profile.username %>"
             ><button class="uk-button">
-              Discard Changes <span uk-icon="icon: close"></span>
+              Back to Profile <span uk-icon="icon: home"></span>
             </button>
           </a>
+          </div>
         </div>
+
       </div>
       
       
       
       
-      
-      
-          </section>
+    </section>
   </main>
   <%- include("../partials/footer/_footer") %> 
 
