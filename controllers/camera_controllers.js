@@ -33,6 +33,32 @@ router.get("/", async (req, res, next) => {
     return next();
   }
 });
+/* Filter Route */
+router.get("/filter/:type", async (req, res, next) => {
+  try {
+    let type = req.params.type.charAt(0).toUpperCase() + req.params.type.slice(1);
+    const allCameras = await Camera.find({photographyType: type});
+    if (req.session.currentUser && req.session.currentUser.id == adminID) {
+      const context = {
+        cameras: allCameras,
+        isAdmin: true,
+        error: null,
+      };
+      return res.render("cameras/index", context);
+    }
+    const context = {
+      cameras: allCameras,
+      isAdmin: false,
+      error: null,
+    };
+    return res.render("cameras/index", context);
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
+});
+
 
 /* New Route */
 router.get("/new", adminRequired, function (req, res) {
