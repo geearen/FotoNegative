@@ -1,0 +1,246 @@
+<html lang="en">
+  <%- include("../partials/head/_head") %>
+
+  <body>
+    <%- include("../partials/navbar/_navbar") %>
+
+    <main class="camera_page uk-container uk-container-expand">
+      <section class="camera">
+        <div class="uk-container uk-container-large">
+
+          <h1 class="uk-heading uk-heading-line"><span><%= camera.cameraName %></span></h1>
+          <div class="uk-child-width-1-2@m" uk-grid>
+            <div class="camera_image">
+              <img src="<%= camera.cameraImage %> " alt="camera image" />
+            </div>
+            <div class="camera_info">
+              <div class="camera_info_meta">
+              <p >Brand Name: <%= camera.brandName %></p>
+              <p > Release in year <%= camera.yearReleased %></p>
+              <% if (camera.interchangeableLens) { %>
+                <p > Interchangeable Lens: Yes.</p>
+                <% } else {%>
+                  <p > Interchangeable Lens: No.</p>
+                  <% } %>
+                  <p> Image Sensor Format: <%= camera.imageFormat %>.</p>
+                  <p> Category: <%= category.category %>.</p>
+                  <p><%= camera.photographyType %> Camera </p>
+              </div>
+              </div>
+
+              
+              
+              <div class="camera_button">
+                <div class="uk-flex uk-flex-left uk-flex-around">
+                  <% if (isAdmin) { %>
+                    <div>
+                      <a class="uk-link-muted" href="/cameras/<%= camera.id %>/edit "
+                        ><button class="uk-button">
+                          Edit <span uk-icon="icon: file-edit"></span>
+                        </button>
+                      </a>
+                    </div>
+                    <div>
+                      <a class="uk-link-muted" href="#modal-delete" uk-toggle>
+                        <button class="uk-button uk-button-danger">
+                          Delete <span uk-icon="icon: trash"></span>
+                        </button>
+                      </a>
+                    </div>
+                    <% } %>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </section>
+      
+      <% if (user) { %>
+        <div class="comment_form">
+          <form action="/cameras/comment/<%= camera.id %>" method="POST" enctype="multipart/form-data">
+            <div class="uk-flex-center" uk-grid>
+              <div class="form">
+                <div class="form_top">
+                  <textarea
+                  class="uk-textarea uk-form-width-large"
+                  rows="5"
+                  placeholder="Comment here!"
+                  name="content"
+                  ></textarea>
+                </div>
+                
+                <div class="form_bottom" >
+                  <div uk-form-custom="target: true">
+                    <input type="file" name="commentImages">
+                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                  </div>
+                  <div>
+                    <input type="hidden" name="camera" value="<%= camera.id %>">
+                    <button class="uk-button uk-width-1-1">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <% } %>
+        
+        
+      <div class="bottom" uk-grid>
+        <div class="unsplash uk-width-1-2@m">
+          <h3 class="uk-heading uk-heading-line" ><span>Unsplash Sample Images</span></h3>
+          
+          <% if (unsplashData) { %>
+          <% unsplashData.forEach(data => { %>
+            <div class="unsplash_section">
+              <a id="link" href="<%= data.links.html %>">
+                <h4 class="heading" >Taken by <%= data.user.username %> </h4>
+              </a>
+              
+              <div class="unsplash_image">
+                <a href="<%= data.urls.regular %>">
+                  <img src="<%= data.urls.regular %>" alt="">
+                </a>           
+              </div>
+            </div>
+            <% }) %>%> 
+            <% } else { %>
+                <article uk-alert class="uk-alert-danger unsplash_section">
+                  <a class="uk-alert-close" uk-close></a>
+                  <h3>Notice: Sample Images from unsplash is unavailable right now. Please wait for an hour.</h3>
+                </article>
+            <% } %> 
+          </div>
+
+          
+
+        <div class="uk-width-expand@m">
+          <h3 class="uk-heading uk-heading-line"><span>Comments</span></h3>
+      <% comments.forEach(comment => { %>
+          <article class="comment uk-comment">
+            <header class="uk-comment-header">
+              <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                  <a href="/profile/<%= comment.user.username %> ">
+                    <img class="uk-comment-avatar" src="<%= comment.user.profileImage %> " alt="profile image" width="80" height="80">
+                  </a>
+                </div>
+                <div class="uk-width-expand">
+                  <p class="uk-comment-title uk-margin-remove"> <a class="uk-link-reset" href="/profile/<%= comment.user.username %> "><%= comment.user.username %></a></p>
+                  <ul class="uk-comment-meta uk-subnav uk-subnav-divder uk-margin-remove-top">
+                    <li> <%= new Date(comment.createdAt).toLocaleString() %> </li>
+                  </ul>
+                </div>
+                <% if (user) { %>
+                
+                  <% if (user.username == comment.user.username) { %>
+                    <div class="comment_button uk-width-1-6">
+                      <div>
+                        <a class="uk-link-muted" href="#modal-edit-<%= comment.id %>" uk-toggle>
+                          <button class="uk-button uk-button-link">
+                            <span uk-icon="icon: file-edit"></span>
+                          </button>
+                        </a>
+                      </div>
+                      <div>
+                        <a class="uk-link-muted" href="#modal-delete-<%= comment.id %>" uk-toggle> 
+                          <button type="submit" class="uk-button uk-button-link" >
+                            <span uk-icon="icon: trash"></span>
+                        </button>
+                      </a>
+                      </div>
+                    </div>
+                    <% } %>
+                  <% } %>
+              </div>
+            </header>
+            <div class="uk-comment-body" uk-grid>
+              <div class="content uk-width-expand@m" uk-margin>
+                <h4> <%= comment.content %></h4>
+              </div>
+              <% if (comment.commentImages) { %>
+                <div class="uk-width-1-4@m">
+                  <div class="uk-thumbnav" uk-margin>
+                    <div uk-lightbox>
+                      <a href="<%= comment.commentImages %>" data-type="image" data-caption="Posted by <%= comment.user.username %>">
+                        <img src="<%= comment.commentImages %>" width="100" alt="comment image">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <% } %>
+            </div>
+              
+            </article>
+
+            <!-- Edit Comment Modal -->
+            <div class="uk-flex-top" id="modal-edit-<%= comment.id %>" uk-modal>
+              <div class="modal_edit uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h1 class="uk-heading-divider">Edit Comment </h1>
+                <form action="/cameras/comment/<%= comment.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                  <section class="modal_form uk-flex-center">
+                    <div class="top">
+                      <textarea
+                      class="uk-textarea uk-form-width-large"
+                      rows="5"
+                      name="content"
+                      ><%= comment.content %></textarea>
+                    </div>                   
+                    <div class="bottom" >
+                      <div uk-form-custom="target: true">
+                        <input type="file" name="commentImages" value="<%= comment.commentImages%>">
+                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                      </div>                      
+                      <div>
+                        <input type="hidden" name="camera" value="<%= camera.id %>"/>
+                        <button type="submit" class="uk-button">Submit</button>
+                      </div>
+                    </div>
+                  </section>
+                </form>
+                </div>
+            </div>
+
+            <!-- Delete Modal -->
+            <div class="uk-flex-top" id="modal-delete-<%= comment.id %>" uk-modal>
+              <div class="modal_delete uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2 class="uk-heading-divider">Are you sure you want to delete this comment? </h2>
+                <section class="delete_form">
+                  <form action="/cameras/comment/<%= comment.id %>?_method=DELETE" method="POST">
+                    <input type="hidden" name="<%= comment.id %>" value="<%= comment.id %>">
+                    <button class="uk-button uk-button-danger">
+                      Yes, Delete <span uk-icon="icon: trash"></span>
+                    </button>
+                  </form>
+                </section>
+              </div>
+            </div>
+
+
+              <% }); %> 
+
+          </div> 
+        </div>
+    </main>
+
+    <!-- Delete Modal for Camera-->
+
+    <div class="uk-flex-top" id="modal-delete" uk-modal>
+      <div class="modal_delete uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-heading-divider">Are you sure you want to delete this<%= camera.cameraName %>? </h2>
+        <section class="delete_form">
+
+          <form action="/cameras/<%= camera.id %>?_method=DELETE" method="POST">
+            <button class="uk-button uk-button-danger">
+              Yes, Delete <span uk-icon="icon: trash"></span>
+            </button>
+          </form>
+        </section>
+      </div>
+    </div>
+    
+    <%- include("../partials/footer/_footer") %>
+  </body>
+</html>

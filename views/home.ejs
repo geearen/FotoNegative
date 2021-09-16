@@ -1,0 +1,146 @@
+<html lang="en">
+<%- include("./partials/head/_head") %> 
+
+<body>
+  <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio:false; autoplay: true; animation: push">
+    
+    <ul class="uk-slideshow-items" uk-height-viewport="offset-bottom:false">
+      <li>
+        <img src="https://images.unsplash.com/photo-1541516160071-4bb0c5af65ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="unsplash 1" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1543427099-ca22f2550846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80" alt="unsplash 2" uk-cover>
+      </li>
+      <li>
+        <img src="/assets/20210314-DSCF0234.JPG" alt="myphoto" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1580552833700-f99eed8b4de2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="unsplash 3" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1593977597366-80effec807c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80" alt="unsplash 4" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1514053224997-6bd0de1c73ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80" alt="unsplash 5" uk-cover>
+      </li>
+      <li>
+        <img src="/assets/20201226-MRJ00677-Pano.JPG" alt="myphoto 2" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1529385394472-48580a2dcf47?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="unsplash 6" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1550879228-c334643b41b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1952&q=80" alt="unsplash 7" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1506388090604-faf62bc75e34?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="unsplash 8" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1496340672773-0b29c9b17ed2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="unsplash 9" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1556260756-440a4066245a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="unsplash 10" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1458683121776-e20c345413bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80" alt="unsplash 11" uk-cover>
+      </li>
+      <li>
+        <img src="https://images.unsplash.com/photo-1475870434835-a633fd526088?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="unsplash 12" uk-cover>
+      </li>
+    </ul>
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+  </div>   
+
+    <div class="uk-position-top">
+      <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+        <div class="uk-navbar-left">
+          <a class="uk-navbar-item" href="/home">
+            <img class="uk-logo nav_logo" src="/assets/favicon/apple-touch-icon.png" alt="fn logo" />
+          </a>
+        </div>
+      
+        <div class="uk-navbar-right">
+          <ul class="uk-navbar-nav">
+            <li>
+              <a class="uk-navbar-item" href="/cameras"> Cameras </a>
+            </li>
+            <% if (typeof user !== "undefined") { %>
+              <li>
+                <a class="uk-navbar-item" href="/profile/<%= user.username %> "> <%= user.username %> </a>
+              </li>
+              <% } %>
+            <% if (typeof routes !== "undefined") { %>
+              
+              <% routes.forEach((route) =>{ %> 
+                <li>
+                  <a class="uk-navbar-item" href="<%= route.href %>" <%= route.class %> > <%= route.title %></a>
+                </li>
+                <% })%>
+              <%} %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+
+<div class="uk-position-bottom">
+  <footer class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+    <div class="uk-navbar-center">
+      <ul class="uk-navbar-nav">
+        <li>
+          <a href="/home" class="uk-navbar-item uk-logo"> 
+            <img class="uk-logo footer" src="/assets/FotoNegative Logo.png" alt="fn logo" />
+          </a>
+        </li>
+        <li>
+          <a href="/about" class="uk-navbar-item"> About </a>
+        </li>
+      </div>
+    </ul>
+  </footer>
+</div>
+
+<!-- Login Modal -->
+  <div class="uk-flex-top uk-modal-container-small" id="modal-login" uk-modal>
+    <div class="login uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      
+      <h1 class="uk-heading-divider">Login</h1>
+      <% if (error) { %>
+        <article>
+          <p><%= error %> </p>
+        </article>
+        <% } %>
+        
+        <section class="login_form">
+            <form class="uk-form-stacked" action="/login" method="POST">
+              <section class="login_form">
+                <div class="uk-margin">
+                  <label for="username"> Username </label>
+                  <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icond: user"></span>
+                    <input class="uk-input" type="text" placeholder="film_only" name="username" id="username">
+                  </div>
+                </div>
+                <div class="uk-margin">
+                  <label for="password">Password</label>
+                  <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                    <input type="password" class="uk-input" name="password" placeholder="*******" id="password">
+                  </div>
+                </div>
+                <button class="uk-button"> Login </button>
+              </section>
+              
+            </form>
+            <p>
+              Need an account? <a href="/register">Register here!</a>
+            </p>
+          
+        </section>
+      </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html lang="en">
+
+<%- include("../partials/head/_head") %> 
+
+<body>
+  <%- include("../partials/navbar/_navbar") %>
+  <%- include("../partials/sidebar/_sidebar") %>  
+  <main class="camera_index">
+
+    <nav uk-toggle="target: #offcanvas-overlay"><span uk-icon="chevron-double-right">Filter</span></nav>
+
+    <h1 class="uk-heading-divider"> Camera List 
+      <% if (isAdmin) { %>
+        <a href="#modal-center" class="uk-link-muted" uk-toggle><span uk-icon="icon: plus-circle"></span></a>
+        <% } %>
+    </h1>
+    
+    <section class="cameras_container uk-child-width-1-2@s uk-child-width-1-4@l uk-flex-center" uk-grid>
+      <% cameras.forEach(camera => { %>
+        <div class="camera_card">
+          <div class="card_media">
+            <a class="camera_image" href="/cameras/<%= camera.id %>">
+              <img src="<%= camera.cameraImage %> " alt="camera image">
+            </a>
+            <a class="uk-link-muted" href="/cameras/<%= camera.id %>">
+              <h3 class="camera_heading"><%= camera.cameraName %> </h3>
+              <p class="camera_meta"><%= camera.photographyType %> camera </p>
+            </a>
+          </div>
+        </div>
+        <% }) %>
+        
+        
+      </section>
+  </main>
+  <%- include("./new.ejs") %> 
+  <%- include("../partials/footer/_footer") %> 
+</body>
+</html>

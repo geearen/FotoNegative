@@ -1,0 +1,36 @@
+<html lang="en">
+<%- include("./partials/head/_head") %> 
+
+<body>
+    
+  <div class="uk-position-relative" tabindex="-1" uk-slideshow="ratio:false">
+  
+    <ul class="uk-slideshow-items" uk-height-viewport="offset-bottom:false">
+      <li>
+        <img src="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt="background" uk-cover>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="error_message uk-position-center">
+    <h1> 404 ERROR </h1>
+    <% if (error) { %>
+      <article uk-alert class="uk-alert-danger">
+        <a class="uk-alert-close" uk-close></a>
+        <h3>Notice:</h3>
+        <p ><%= error %> </p>
+      </article>
+      <% } %>
+      
+      <img src="https://media.giphy.com/media/3owypf6HrM3J7UTvAA/giphy.gif?cid=790b76111c9214e6806f99f4475886e76cc87d1b20f52846&rid=giphy.gif&ct=g" width="480" height="480" alt="giphy">
+    </div>
+
+    <div class="uk-position-top">
+      <%- include("./partials/navbar/_navbar") %> 
+    </div>
+
+    <div class="uk-position-bottom">
+      <%- include("./partials/footer/_footer") %> 
+    </div>
+</body>
+</html>

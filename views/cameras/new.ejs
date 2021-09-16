@@ -1,0 +1,99 @@
+<div class="uk-flex-top" id="modal-center" uk-modal>
+
+  <div class="uk-container uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+
+    <h1>Admin's Page</h1>
+    <h3 class="uk-heading-divider"> Enter Camera's infos </h3>
+    <form class="uk-form-horizontal" action="/cameras" method="POST">
+      <section class="create_form">
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="cameraName"> Camera Name: </label>
+          <div class="uk-form-controls">
+            <input class="uk-input" type="text" placeholder="Enter Camera Name" name="cameraName" id="cameraName">
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="brand"> Brand Name: </label>
+          <div class="uk-form-controls">
+            <input class="uk-input" type="text" placeholder="Enter Brand Name" name="brandName" id="brand">
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label " for="image"> Camera Image: </label>
+          <div class="uk-form-controls">
+            <input class="uk-input" type="text" placeholder="" name="cameraImage" id="image">
+          </div>
+        </div>
+        
+        <div class="uk-margin">
+          <label class="uk-form-label" for="year"> Year Released: </label>
+          <div class="uk-form-controls">
+            <input class="uk-input" type="number" placeholder="Enter Year" name="yearReleased" id="year" min="1816" max="2022">
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="lens"> Interchangeable Lens: </label>
+          <div class="uk-form-controls">
+            <select name="interchangeableLens" id="lens" class="uk-select">
+              <option value="" selected disabled hidden>Select an Option</option>
+              <option value="true"> Yes</option>
+              <option value="false"> No </option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="uk-margin">
+          <label class="uk-form-label" for="format"> Image Format: </label>
+          <div class="uk-form-controls">
+            <select name="imageFormat" id="format" class="uk-select">
+              <option value="" selected disabled hidden>Select a Image Sensor Format</option>
+            <option value="Large Format"> Large Format </option>
+            <option value="Medium Format"> Medium Format </option>
+            <option value="Full Frame"> Full Frame </option>
+            <option value="35mm"> 35mm </option>
+            <option value="APS-C"> APS-C (Crop Sensor) </option>
+            <option value="Micro Four Thirds"> Micro Four Thirds </option>
+            <option value="Smartphone Camera"> Smartphone Camera </option>
+            <option value="N/A"> N/A </option>
+          </select>
+        </div>
+      </div>
+        
+        <div class="uk-margin">
+          <label class="uk-form-label" for="category"> Category: </label>
+          <div class="uk-form-controls">
+            <select name="category" id="category" class="uk-select">
+              <option value="" selected disabled hidden>Select a Category</option>
+              <% categories.forEach(category => { %>
+              
+                <option value="<%= category.index %>"> <%= category.category %> </option>
+              <% }) %>
+            
+            </select>
+          </div>
+        </div>
+        
+        <div class="uk-margin">
+          <label class="uk-form-label" for="type"> Camera / Photography Type: </label>
+          <div class="uk-form-controls">
+            <select name="photographyType" id="type" class="uk-select">
+              <option value="" selected disabled hidden>Select an Option</option>
+              <option value="Film"> Film Photography </option>
+              <option value="Digital"> Digital Photography</option>
+            </select>
+          </div>
+        </div>
+
+          <button class="uk-button"> Add a Camera <span uk-icon="icon: camera"></span> </button>
+        </section>
+      </form>
+      <button class="uk-button uk-button-default" type="button" uk-close> Discard</button>
+      
+
+  </div>
+</div>

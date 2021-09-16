@@ -1,14 +1,20 @@
 # FotoNegative
+![FotoNegative Logo](https://user-images.githubusercontent.com/86206813/132543163-e2ca926e-d962-4328-8fde-c6b321dc1da2.png)
+
 
 # Why? / Scope
-FotoNegative is a web application targeting on photographers and hobbyists, where it allows users to views different types of camera from film to digital and view sample images from that camera. I wanted to build a web application that gathers photography lovers and create a community that shares their photos and the camera gear they are using. This allow other users see sample images from a specific camera they are interested in owning/purchasing. 
+FotoNegative is a web application targeting on photographers and hobbyists, where it allows users to views different types of camera from film to digital and view sample images from that camera. Sample images are coming from users and from unsplash API. I wanted to build a web application that gathers photography lovers and create a community that shares their photos and the camera gear they are using. This allow other users see sample images from a specific camera they are interested in owning/purchasing. 
 
 # User Stories
-Homepage of the FotoNegative shows various types of cameras and categories. Non-members can surf around the website and views specific camera and view sample images from different users who posted a comments/ pictures. 
+When User visit the website, they are greeted with a beautiful landing page with navigation on the top that will take them to login, register, and cameras index page. At the bottom of the page there's a link for about that showcase the creator of the page. 
 
-Cameras can be filtered by film or digital and its categories. 
+Index page of the FotoNegative shows various types of cameras and categories. Non-members can surf around the website and views specific camera and view sample images from different users who posted a comments/ pictures. The index page can be filtered by the type of cameras which are Film or Digital. User can also browse by categories that are given to them.
 
-Non-members can sign up for an account by clicking the SIGNUP link on the top of the web page. Once signed-up, new members can make comments, post images, edit and delete their comments. New members and existing members can view their profile page and update their profile. 
+Non-members can sign up for an account by clicking the REGISTER link on the top of the web page. Once registered, new members can make comments, post images, edit and delete their comments. New members and existing members can view their profile page and update their profile. 
+
+When viewing specific camera, user are able to see information about the camera and view the comments that has been posted and also view sample images from Unsplash API with links to the original photographer. 
+
+Registed User has a profile page where they can view all the images they have posted linking to the specific camera. Users are also available to view other user profile page and look at their beatiful images. 
 
 # Wireframes
 ## Home Page
@@ -60,15 +66,25 @@ Sprint 4:
 - Test functionality for creating new cameras, edit, delete
 - Test functionality for users creating a user, delete user and edit profile
 - Test functionality for posting posting comments
+- Create a Super User
 
 Sprint 5:
 
 - CSS styling for all pages and forms
 
 Sprint 6:
-
+- Implement AWS S3
 - Implement Unsplash APIs
 
+
+# Installation steps
+```
+yarn 
+```
+or 
+```
+npm i
+```
 # Color Pallet
 ![FotoNegative](https://user-images.githubusercontent.com/86206813/132394197-897dcb73-28d5-49fb-a6c0-af1d2023658c.png)
 https://coolors.co/d49b9b-bd6060-a62424-b72828-c92c2c-faac02-fab419-fabb2e-fcd479-fdecc3
@@ -89,7 +105,11 @@ NEM Stack
 - EJS
 - dotenv
 - brcryptjs
-- ulkit
+- express-session
+- UIkit
+- AWS S3
+- multer
+- axios
 
 # Resources
 - http://camera-wiki.org/

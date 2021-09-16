@@ -1,0 +1,636 @@
+@use "../_variables/" as *;
+*{
+  box-sizing: border-box;
+}
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6{
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+body{
+  font-family: "Raleway", sans-serif;
+}
+body::-webkit-scrollbar{
+  width: 12px;
+}
+body::-webkit-scrollbar-track{
+  background: $lemon-meringue;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: $fuzzy-wuzzy;
+  border-radius: 20px;
+  border: 3px solid  $fuzzy-wuzzy;
+}
+
+/* Navbar & Footer Home*/
+.uk-navbar-transparent{
+  background-color: rgb(0, 0, 0, 0.2);
+  .nav_logo{
+    margin:1rem;
+    padding: 1.3rem;
+    width: 8rem;
+    height: auto;
+    border: 2px solid $persian-red;
+    z-index: 1;
+  }
+  .footer{
+    width: 5rem;
+    height: auto;
+    box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+  }
+  a.uk-navbar-item{
+    color: $honey-yellow;
+    text-shadow: 2px 2px 1px $persian-red;
+  }
+  a.uk-navbar-item:hover{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow
+  }
+}
+
+/* Navbar for All */
+nav.uk-navbar-container:not(.uk-navbar-transparent){
+  background-color: $lemon-meringue;
+  .nav_logo{
+    margin: 1rem;
+    padding: 1.3rem;
+    width: 8rem;
+    height: auto;
+    border: 2px solid $firebrick;
+    z-index: 1;
+  }
+  a, .uk-navbar-item{
+    color: $honey-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+  }
+  a, .uk-navbar-item:hover{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow
+  }
+}
+
+/* Footer for All*/
+.footer.uk-navbar-container{
+  background: $lemon-meringue;
+  padding: 0.5rem;
+
+  .uk-navbar-item{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  img{
+    width: 5rem;
+    height: auto;
+    box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+  }
+  a.uk-navbar-item{
+    color: $honey-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+  }
+  a.uk-navbar-item:hover{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow
+  }
+}
+
+/* Login page*/
+.login.uk-position-center{
+  background-color: transparentize($selective-yellow, 0.1);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px $fuzzy-wuzzy;
+  h1{
+    letter-spacing: 2px;
+    color: $honey-yellow;
+    text-shadow: 2px 2px 2px  $persian-red;
+  }
+}
+
+/* Register Page */
+.register.uk-position-center{
+  background-color: transparentize($selective-yellow, 0.1);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px $fuzzy-wuzzy;
+  h1{
+    letter-spacing: 2px;
+    color: $honey-yellow;
+    text-shadow: 2px 2px 2px  $persian-red;
+  }
+}
+
+/* Login Modal -Home */
+.login.uk-modal-dialog{
+  background-color: $selective-yellow;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+  display:grid;
+  gap: 1rem;
+  border-radius: 5px;
+  h1{
+    letter-spacing: 2px;
+    color: $lemon-meringue;
+    text-shadow: 2px 2px 2px  $fuzzy-wuzzy;
+  }
+  .login_form{
+    justify-self: center;
+    min-width: 10rem;
+  }
+}
+
+/* Profile Page */
+.profile{
+  padding:5rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  background-color: transparentize($lemon-meringue, 0.6);
+  // background-image: url("/assets/rubber_grip.png");
+  // background-blend-mode: overlay;
+  .profile_top{
+    padding: 2rem;
+  }
+  .profile_left_section{
+    padding: 2rem;
+    margin: 1rem;
+    display:flex;
+    flex-direction: column;
+    img{
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px 1px $firebrick;
+    }
+  }
+  
+  .profile_right_section{
+    padding: 2rem;
+    margin: 1rem;
+    
+    h3{
+      text-align: center;
+      letter-spacing: 2px;
+      color: $selective-yellow;
+      text-shadow: 1px 1px 1px $persian-red;
+    }
+    .profile_info, .link_button{
+      text-align: center;
+    }
+  }
+  .profile_buttons{
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .profile_comment_images{
+    .images{
+      margin: 0.8rem;
+      padding: 0.5rem;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+    }
+    .images:hover{
+      box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+    }
+    img{
+      max-width: 20rem;
+      height: auto;
+    }
+  }
+}
+
+
+/* Cameras Index Page */
+.cameras_container{
+  padding: 2rem;
+  margin: 2rem;
+  text-align: center;
+  .camera_card{
+    padding: 1rem;
+    margin: 1rem;
+    max-width: 18vw;
+    height: auto;
+    background-color: transparentize($honey-yellow,  0.6);
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+    transition: .5s;
+
+
+    .card_media{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 10px;
+      background-color: white;
+      }
+      h3{
+        padding: 1rem;
+        text-align: center;
+        letter-spacing: 2px;
+        color: $selective-yellow;
+        text-shadow: 1px 1px 1px $persian-red;
+      }
+    }
+    .camera_card:hover{
+      box-shadow: 2px 2px 2px 1px $auburn;
+      transform: scale(1.01);
+    }
+    a{
+      text-decoration: none;
+    }
+
+  }
+
+@media screen and (max-width:580px){
+  .cameras_container{
+    .camera_card{
+      min-width: 100vw;
+      height: auto;
+    }
+  }
+}
+@media screen and (max-width:800px){
+  .cameras_container{
+    .camera_card{
+      min-width: 50vw;
+      height: auto;
+    }
+  }
+}
+.camera_index{
+  padding: 2rem;
+  background-color: transparentize($lemon-meringue, 0.8);
+  h1, span{
+    letter-spacing: 2px;
+    color: $selective-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+  }
+  
+}
+/* Sidebar */
+.uk-offcanvas-bar {
+  background-color: $lemon-meringue;
+  .uk-nav-default .uk-nav-sub a{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow
+  }
+  .uk-nav-default .uk-nav-sub a:hover{
+    color: $honey-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+  }
+  .uk-nav-default>li>a{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow
+  }
+  .uk-nav-default>li>a:hover{
+    color: $honey-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+  }
+}
+/* Show Page */
+.camera_page{
+  background-color: transparentize($lemon-meringue, 0.6);
+  padding:2rem;
+
+  h1{
+    letter-spacing: 2px;
+    color: $selective-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+    margin:2rem;
+  }
+  span:hover{
+  color: $persian-red;
+  text-shadow: 2px 1px 0.5px $selective-yellow;
+  text-decoration: none;
+  }
+
+  
+  .camera{
+    background-color: transparentize($honey-yellow, 0.8);
+    padding: 2rem;
+    margin: 2rem;
+    
+    border-radius: 5px;
+    
+    img{
+      box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+      border-radius: 5px;
+    }
+    .camera_info{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .camera_image{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .camera_info_meta{
+      border-radius: 5px;
+      background-color: whitesmoke;
+      margin: 3rem;
+      padding: 3rem;
+      box-shadow: 2px 2px 2px 1px $selective-yellow;
+    }
+    
+  }
+
+
+  .comment_form{
+    border-radius: 5px;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: $pastel-pink;
+    box-shadow: 2px 2px 2px 1px $selective-yellow;
+    .form{
+      padding:1rem;
+      
+    }
+
+    .form_bottom{
+      padding: 1rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+  }
+}
+
+.comment{
+  padding: 2rem;
+  margin:2rem;
+  background-color: $lemon-meringue;
+  border: 2px $firebrick;
+  border-radius: 3px;
+  box-shadow: 3px 3px 2px 1px $fuzzy-wuzzy;
+
+  .content h4{
+    text-align: center;
+    padding:2rem;
+    margin:2rem;
+  }
+
+  .comment_button{
+    display: flex;
+  }
+  .uk-comment-title{
+      letter-spacing: 2px;
+      color: $selective-yellow;
+      text-shadow: 1px 1px 1px $persian-red;
+    }
+}
+/* Bottom page of show */
+.bottom{
+  h4,h3{
+    letter-spacing: 2px;
+    color: $selective-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  h4,h3:hover{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow;
+    text-decoration: none;
+  }
+}
+/* Unsplash Section */
+.unsplash{
+
+  .unsplash_section{
+    background-color: white;
+    padding:2rem;
+    margin:2rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px $selective-yellow;
+  }
+  .unsplash_section:hover{
+    box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+  }
+  h4,h3{
+    letter-spacing: 2px;
+    color: $selective-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  #link{
+    text-decoration: none;
+  }
+  .heading{
+    margin: none;
+  }
+  .unsplash_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h4,h3:hover{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow;
+    text-decoration: none;
+  }
+}
+
+/* Edit Modal */
+
+.modal_edit{
+
+  border-radius: 5px;
+  padding: 2rem;
+  background-color: $pastel-pink;
+  box-shadow: 2px 2px 2px 1px $selective-yellow;
+
+  .modal_edit_form{
+    padding: 1rem;
+  }
+  .top{
+    padding:1rem;
+  }
+  .bottom{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+/* Edit Profile Page */
+.edit{
+  padding:5rem;
+  background-color: transparentize($lemon-meringue, 0.8);
+  h1{
+    letter-spacing: 2px;
+    color: $honey-yellow;
+    text-shadow: 1px 1px 1px $fuzzy-wuzzy;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .left_section{
+    margin:3rem;
+    padding: 3rem;
+    background-color: transparentize($auburn, 0.6);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px $honey-yellow;
+  }
+
+  .right_section{
+    padding:3rem;
+    margin:3rem;
+    background-color: transparentize($honey-yellow, 0.5);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px $fuzzy-wuzzy;
+    .form_image{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin:2rem;
+      img{
+        margin: 1rem;
+        border-radius: 2px;
+        box-shadow: 2px 2px 2px 2px $auburn;
+      }
+    }
+  }
+  .profile_meta_info{
+    background-color: transparentize($fuzzy-wuzzy, 0.8);
+    padding:2rem;
+    box-shadow: 0px 0px 3px 2px $auburn;
+    border-radius: 5px;
+
+    h3{
+      letter-spacing: 2px;
+      color: $auburn;
+      text-shadow: 1px 1px 1px $honey-yellow;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+/* Edit Camera Page */
+.camera_edit{
+  padding: 4rem;
+  background-color: transparentize($lemon-meringue, 0.8);
+  .section_edit{
+    background-color: $honey-yellow;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 2px $fuzzy-wuzzy;
+
+    h1, h3{
+      margin: 0.8rem;
+      padding: 0.8rem;
+    }
+  }
+  .camera_edit_form{
+    padding: 3rem;
+    margin: 3rem;
+    background-color: opacify($fuzzy-wuzzy, 0.9);
+    border-radius: 3px;
+  }
+}
+
+/* Delete Modal */
+.modal_delete.uk-modal-dialog{
+  background-color: $selective-yellow;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+  display:grid;
+  gap: 1rem;
+  border-radius: 5px;
+  h2{
+    letter-spacing: 2px;
+    color: $lemon-meringue;
+    text-shadow: 2px 2px 2px  $fuzzy-wuzzy;
+  }
+  .delete_form{
+    justify-self: center;
+    min-width: 10rem;
+  }
+}
+
+/* 404 Page */
+.error_message{
+  background-color: transparentize($persian-red, 0.2);
+  padding: 3rem;
+  margin:3rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px $honey-yellow2;
+  h1{
+    letter-spacing: 2px;
+    color: $lemon-meringue;
+    text-shadow: 2px 2px 2px  $honey-yellow;
+    text-align: center;
+  }
+}
+
+/* About */
+.about{
+  padding:2rem;
+  margin:2rem;
+
+  .about_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about_image{
+    max-width: 20vw;
+    height: auto;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px $selective-yellow;
+    padding:1rem;
+    margin:1rem;
+    img{
+      border-radius: 5px;
+    }
+  }
+  .about_meta{
+    background-color: whitesmoke;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px $selective-yellow;
+
+    .links{
+      display: flex;
+      justify-content: space-evenly;
+
+      a{
+        transition: 0.5s;
+      }
+      a:hover{
+        color: $persian-red;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:490px){
+  .about{
+
+  img{
+    min-width: 15vw;
+    height: auto;
+  }
+}
+}

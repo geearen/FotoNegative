@@ -1,0 +1,78 @@
+<html lang="en">
+  <%- include("../partials/head/_head") %> 
+<body>
+  
+
+<div class="uk-position-relative" tabindex="-1" uk-slideshow="ratio:false">
+  
+    <ul class="uk-slideshow-items" uk-height-viewport="offset-bottom:false">
+      <li>
+        <img src="https://images.unsplash.com/photo-1488235331161-a610983be307?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="background" uk-cover>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="register uk-position-center">
+    <div class="uk-container uk-margin-auto-vertical">
+
+      <h1 class="uk-heading-divider">Register</h1>
+      
+        <% if (error) { %>
+          <article uk-alert class="uk-alert-danger">
+            <a class="uk-alert-close" uk-close></a>
+            <h3>Notice:</h3>
+            <p ><%= error %> </p>
+          </article>
+          <% } %>
+
+          <section class="register_form">
+            <form class="uk-form" action="/register" method="POST">
+
+              <div class="uk-margin">
+                <label class="uk-form-label" for="username"> Username: </label>
+                <div class="uk-form-controls">
+                  <input type="text" class="uk-input" name="username" id="username" required autofocus>
+                </div>
+              </div>
+              
+              <div class="uk-margin">
+                <label class="uk-form-label" for="email"> Email: </label>
+                <div class="uk-form-controls">
+                  <input type="text" class="uk-input" name="email" id="email" required>
+                </div>
+              </div>
+              
+              <div class="uk-margin">
+                <label class="uk-form-label" for="password"> Password: </label>
+                <div class="uk-form-controls">
+                  <input type="password" class="uk-input" name="password" id="password" required>
+                </div>
+              </div>
+                
+              <div class="uk-margin">
+                <label class="uk-form-label" for="password2"> Re-enter Password: </label>
+                <div class="uk-form-controls">
+                  <input type="password" class="uk-input" name="password2" id="password2" required>
+                </div>
+              </div>
+            
+            <button class="uk-button"> Register </button>
+            </form>
+            
+            <p>
+              Have an account? <a href="/login">Login here!</a>
+            </p>
+          </section>
+        
+      
+    </div>
+  </div>
+
+    <div class="uk-position-top">
+      <%- include("../partials/navbar/_navbar") %> 
+    </div>
+    <div class="uk-position-bottom">
+      <%- include("../partials/footer/_footer") %> 
+    </div>
+</body>
