@@ -21,12 +21,11 @@
             </div>
             
             <div class="profile_delete">
-              <form action="/profile/<%= profile.username %>?_method=DELETE" method="POST"
-                ><button class="uk-button uk-button-link">
-                  
-                  <a class="uk-link-muted" uk-icon="icon: trash"></a>
+              <a class="uk-link-muted" href="#modal-delete" uk-toggle>
+                <button class="uk-button uk-button-link">
+                  <span uk-icon="icon: trash"></span>
                 </button>
-              </form>
+              </a>
             </div>
           </div>
         <% } %> 
@@ -76,6 +75,21 @@
 
   </div>
 
+  <!-- Delete Modal -->
+  <div class="uk-flex-top" id="modal-delete" uk-modal>
+      <div class="modal_delete uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-heading-divider">Are you sure you want to delete <%= profile.username %>? Forever? </h2>
+        <section class="delete_form">
+
+          <form action="/profile/<%= profile.username %>?_method=DELETE" method="POST">
+            <button class="uk-button uk-button-danger">
+              Yes, delete my profile! <span uk-icon="icon: trash"></span>
+            </button>
+          </form>
+        </section>
+      </div>
+    </div>
 
   <%- include("../partials/footer/_footer") %> 
 
