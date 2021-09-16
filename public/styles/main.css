@@ -86,12 +86,26 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
 .login.uk-position-center {
   background-color: rgba(250, 187, 46, 0.9);
   padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #BD6060;
+}
+.login.uk-position-center h1 {
+  letter-spacing: 2px;
+  color: #FAAC02;
+  text-shadow: 2px 2px 2px #C92C2C;
 }
 
 /* Register Page */
 .register.uk-position-center {
   background-color: rgba(250, 187, 46, 0.9);
   padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #BD6060;
+}
+.register.uk-position-center h1 {
+  letter-spacing: 2px;
+  color: #FAAC02;
+  text-shadow: 2px 2px 2px #C92C2C;
 }
 
 /* Login Modal -Home */
@@ -102,6 +116,11 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   display: grid;
   gap: 1rem;
   border-radius: 5px;
+}
+.login.uk-modal-dialog h1 {
+  letter-spacing: 2px;
+  color: #FDECC3;
+  text-shadow: 2px 2px 2px #BD6060;
 }
 .login.uk-modal-dialog .login_form {
   justify-self: center;

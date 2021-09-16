@@ -84,15 +84,26 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
 .login.uk-position-center{
   background-color: transparentize($selective-yellow, 0.1);
   padding: 2rem;
-  // margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px $fuzzy-wuzzy;
+  h1{
+    letter-spacing: 2px;
+    color: $honey-yellow;
+    text-shadow: 2px 2px 2px  $persian-red;
+  }
 }
 
 /* Register Page */
 .register.uk-position-center{
   background-color: transparentize($selective-yellow, 0.1);
   padding: 2rem;
-  // margin: 2rem;
-
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px $fuzzy-wuzzy;
+  h1{
+    letter-spacing: 2px;
+    color: $honey-yellow;
+    text-shadow: 2px 2px 2px  $persian-red;
+  }
 }
 
 /* Login Modal -Home */
@@ -103,7 +114,11 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
   display:grid;
   gap: 1rem;
   border-radius: 5px;
-  
+  h1{
+    letter-spacing: 2px;
+    color: $lemon-meringue;
+    text-shadow: 2px 2px 2px  $fuzzy-wuzzy;
+  }
   .login_form{
     justify-self: center;
     min-width: 10rem;
