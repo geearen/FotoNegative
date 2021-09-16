@@ -412,3 +412,27 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     }
   }
 }
+
+/* Edit Camera Page */
+.camera_edit{
+  padding: 4rem;
+  background-color: transparentize($lemon-meringue, 0.8);
+  .section_edit{
+    background-color: $honey-yellow;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 2px $fuzzy-wuzzy;
+
+    h1, h3{
+      margin: 0.8rem;
+      padding: 0.8rem;
+    }
+  }
+  .camera_edit_form{
+    padding: 3rem;
+    margin: 3rem;
+    background-color: opacify($fuzzy-wuzzy, 0.9);
+    border-radius: 3px;
+  }
+}

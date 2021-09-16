@@ -4,44 +4,47 @@
 
 <body>
   <%- include("../partials/navbar/_navbar") %> 
+  <main class="camera_edit">
+    <section class="section_edit">
+    
   <h1>Admin's Page</h1>
   <h3 class="uk-heading-divider"> Add a Camera </h3>
   
-  <div class="uk-container uk-margin create">
+  <div class="camera_edit_form uk-container">
     <form action="/cameras/<%= camera.id %>?_method=PUT " method="POST">
       <section class="create_form">
 
         <div class="uk-margin">
-          <label for="cameraName"> Camera name  </label>
-          <div class="uk-inline">
+          <label class="uk-form-label" for="cameraName"> Camera name  </label>
+          <div class="uk-form-controls">
             <input class="uk-input" type="text" placeholder="" name="cameraName" id="cameraName" value ="<%= camera.cameraName %> ">
           </div>
         </div>
         
         <div class="uk-margin">
-          <label for="brand"> Brand name </label>
-          <div class="uk-inline">
+          <label class="uk-form-label" for="brand"> Brand name </label>
+          <div class="uk-form-controls">
             <input class="uk-input" type="text" placeholder="" name="brandName" id="brand" value="<%= camera.brandName %> ">
           </div>
         </div>
         
         <div class="uk-margin">
-          <label for="image"> Camera Image </label>
-          <div class="uk-inline">
+          <label class="uk-form-label" for="image"> Camera Image </label>
+          <div class="uk-form-controls">
             <input class="uk-input" type="text" placeholder=""" name="cameraImage" id="image" value="<%= camera.cameraImage %> ">
           </div>
         </div>
         
         <div class="uk-margin">
-          <label for="year"> Year Released </label>
-          <div class="uk-inline">
+          <label class="uk-form-label" for="year"> Year Released </label>
+          <div class="uk-form-controls">
             <input class="uk-input" type="number" placeholder=""" name="yearReleased" id="year" min="1816" max="2022" value=<%= camera.yearReleased %> >
           </div>
         </div>
           
         <div class="uk-margin">
-          <label for="lens"> Interchangeable Lens </label>
-          <div class="uk-inline">
+          <label class="uk-form-label" for="lens"> Interchangeable Lens </label>
+          <div class="uk-form-controls">
             <select name="interchangeableLens" id="lens" class="uk-select" >
               <option selected disabled value="<%= camera.interchangeableLens %>">
                 <%= isChangeable = camera.integerchangeableLens %>
@@ -58,8 +61,8 @@
             </div>
         
             <div class="uk-margin">
-              <label for="format"> Image Format </label>
-              <div class="uk-inline">
+              <label class="uk-form-label" for="format"> Image Format </label>
+              <div class="uk-form-controls">
                 <select name="imageFormat" id="format" class="uk-select" >
                   <option selected disabled value="<%= camera.imageFormat %> "> <%= camera.imageFormat %> </option>
                   <option value="Large Format"> Large Format </option>
@@ -74,8 +77,8 @@
               </div>
             </div>
         <div class="uk-margin">
-          <label for="category"> Category </label>
-          <div class="uk-inline">
+          <label class="uk-form-label" for="category"> Category </label>
+          <div class="uk-form-controls">
             <select name="category" id="category" class="uk-select">
               <option selected disabled value="<%= camera.category %> "> <%= camera.category %> </option>
               <option value="DSLR"> DSLR </option>
@@ -96,8 +99,8 @@
           </div>
         </div>
         <div class="uk-margin">
-          <label for="type"> Camera / Photography Type</label>
-          <div class="uk-inline">
+          <label class="uk-form-label" for="type"> Camera / Photography Type</label>
+          <div class="uk-form-controls">
             <select name="photographyType" id="type" class="uk-select">
               <option selected disabled value="<%= camera.photographyType %>"> <%= camera.photographyType %> </option>
               <option value="Film"> Film Photography </option>
@@ -117,6 +120,9 @@
       </button>
     </a>
   </div>
+</section>
+  </main>
+
   <%- include("../partials/footer/_footer") %> 
 </body>
 </html>
