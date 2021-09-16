@@ -124,6 +124,10 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   display: flex;
   flex-direction: column;
 }
+.profile .profile_left_section img {
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px #B72828;
+}
 .profile .profile_right_section {
   padding: 2rem;
   margin: 1rem;
@@ -150,6 +154,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
 }
 .profile .profile_comment_images .images:hover {
   box-shadow: 2px 2px 2px 1px #BD6060;
