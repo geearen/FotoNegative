@@ -503,4 +503,19 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   min-width: 10rem;
 }
 
+/* 404 Page */
+.error_message {
+  background-color: rgba(201, 44, 44, 0.8);
+  padding: 3rem;
+  margin: 3rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #FAB419;
+}
+.error_message h1 {
+  letter-spacing: 2px;
+  color: #FDECC3;
+  text-shadow: 2px 2px 2px #FAAC02;
+  text-align: center;
+}
+
 /*# sourceMappingURL=main.css.map */

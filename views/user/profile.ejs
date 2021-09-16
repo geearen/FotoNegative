@@ -81,7 +81,6 @@
         <button class="uk-modal-close-default" type="button" uk-close></button>
         <h2 class="uk-heading-divider">Are you sure you want to delete <%= profile.username %>? Forever? </h2>
         <section class="delete_form">
-
           <form action="/profile/<%= profile.username %>?_method=DELETE" method="POST">
             <button class="uk-button uk-button-danger">
               Yes, delete my profile! <span uk-icon="icon: trash"></span>

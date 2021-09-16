@@ -536,3 +536,18 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     min-width: 10rem;
   }
 }
+
+/* 404 Page */
+.error_message{
+  background-color: transparentize($persian-red, 0.2);
+  padding: 3rem;
+  margin:3rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px $honey-yellow2;
+  h1{
+    letter-spacing: 2px;
+    color: $lemon-meringue;
+    text-shadow: 2px 2px 2px  $honey-yellow;
+    text-align: center;
+  }
+}
