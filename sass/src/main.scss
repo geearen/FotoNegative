@@ -193,31 +193,112 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
 .cameras_container{
   padding: 2rem;
   margin: 2rem;
+  text-align: center;
   .camera_card{
     padding: 1rem;
     margin: 1rem;
-    max-width: 25vw;
+    max-width: 18vw;
     height: auto;
-    .camera_image{
-      max-width: 20vw;
+    background-color: transparentize($honey-yellow,  0.6);
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+    transition: .5s;
+
+
+    .card_media{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 10px;
+      background-color: white;
+      }
+      h3{
+        padding: 1rem;
+        text-align: center;
+        letter-spacing: 2px;
+        color: $selective-yellow;
+        text-shadow: 1px 1px 1px $persian-red;
+      }
+    }
+    .camera_card:hover{
+      box-shadow: 2px 2px 2px 1px $auburn;
+      transform: scale(1.01);
+    }
+    a{
+      text-decoration: none;
+    }
+
+  }
+
+@media screen and (max-width:580px){
+  .cameras_container{
+    .camera_card{
+      min-width: 100vw;
       height: auto;
     }
   }
 }
-
-
+@media screen and (max-width:800px){
+  .cameras_container{
+    .camera_card{
+      min-width: 50vw;
+      height: auto;
+    }
+  }
+}
+.camera_index{
+  padding: 2rem;
+  background-color: transparentize($lemon-meringue, 0.8);
+  h1, span{
+    letter-spacing: 2px;
+    color: $selective-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+  }
+  
+}
+/* Sidebar */
+.uk-offcanvas-bar {
+  background-color: $lemon-meringue;
+  .uk-nav-default .uk-nav-sub a{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow
+  }
+  .uk-nav-default .uk-nav-sub a:hover{
+    color: $honey-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+  }
+  .uk-nav-default>li>a{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow
+  }
+  .uk-nav-default>li>a:hover{
+    color: $honey-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+  }
+}
 /* Show Page */
 .camera_page{
   background-color: transparentize($lemon-meringue, 0.6);
   padding:2rem;
 
-  h1, h3{
+  h1{
     letter-spacing: 2px;
     color: $selective-yellow;
     text-shadow: 1px 1px 1px $persian-red;
     margin:2rem;
-
   }
+  span:hover{
+  color: $persian-red;
+  text-shadow: 2px 1px 0.5px $selective-yellow;
+  text-decoration: none;
+  }
+
   
   .camera{
     background-color: transparentize($honey-yellow, 0.8);

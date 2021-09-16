@@ -5,9 +5,9 @@
 <body>
   <%- include("../partials/navbar/_navbar") %>
   <%- include("../partials/sidebar/_sidebar") %>  
-  <main class="uk-margin uk-margin-auto">
+  <main class="camera_index">
 
-    <nav uk-toggle="target: #offcanvas-overlay"><span uk-icon="chevron-double-right"></span></nav>
+    <nav uk-toggle="target: #offcanvas-overlay"><span uk-icon="chevron-double-right">Filter</span></nav>
 
     <h1 class="uk-heading-divider"> Camera List 
       <% if (isAdmin) { %>
@@ -15,17 +15,17 @@
         <% } %>
     </h1>
     
-    <section class="cameras_container uk-grid-match uk-grid-small	uk-grid-margin" uk-grid>
+    <section class="cameras_container uk-child-width-1-2@s uk-child-width-1-4@l uk-flex-center" uk-grid>
       <% cameras.forEach(camera => { %>
-        <div class="camera_card uk-card uk-card-default uk-card-hover">
-          <div class="uk-card-media-top">
-            <a href="/cameras/<%= camera.id %>">
-              <img class="camera_image" src="<%= camera.cameraImage %> " alt="camera image">
+        <div class="camera_card">
+          <div class="card_media">
+            <a class="camera_image" href="/cameras/<%= camera.id %>">
+              <img src="<%= camera.cameraImage %> " alt="camera image">
             </a>
-            <div class="uk-card-body">
-              <h3 class="camera_heading uk-card-title"><%= camera.cameraName %> </h3>
+            <a class="uk-link-muted" href="/cameras/<%= camera.id %>">
+              <h3 class="camera_heading"><%= camera.cameraName %> </h3>
               <p class="camera_meta"><%= camera.photographyType %> camera </p>
-            </div>
+            </a>
           </div>
         </div>
         <% }) %>
