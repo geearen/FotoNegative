@@ -1,0 +1,487 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+/* Navbar & Footer Home*/
+.uk-navbar-transparent {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.uk-navbar-transparent .nav_logo {
+  margin: 1rem;
+  padding: 1.3rem;
+  width: 8rem;
+  height: auto;
+  border: 2px solid #C92C2C;
+  z-index: 1;
+}
+.uk-navbar-transparent .footer {
+  width: 5rem;
+  height: auto;
+  box-shadow: 2px 2px 2px 1px #BD6060;
+}
+.uk-navbar-transparent a.uk-navbar-item {
+  color: #FAAC02;
+  text-shadow: 2px 2px 1px #C92C2C;
+}
+.uk-navbar-transparent a.uk-navbar-item:hover {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+}
+
+/* Navbar for All */
+nav.uk-navbar-container:not(.uk-navbar-transparent) {
+  background-color: #FDECC3;
+}
+nav.uk-navbar-container:not(.uk-navbar-transparent) .nav_logo {
+  margin: 1rem;
+  padding: 1.3rem;
+  width: 8rem;
+  height: auto;
+  border: 2px solid #B72828;
+  z-index: 1;
+}
+nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:not(.uk-navbar-transparent) .uk-navbar-item {
+  color: #FAAC02;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:not(.uk-navbar-transparent) .uk-navbar-item:hover {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+}
+
+/* Footer for All*/
+.footer.uk-navbar-container {
+  background: #FDECC3;
+  padding: 0.5rem;
+}
+.footer.uk-navbar-container .uk-navbar-item {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.footer.uk-navbar-container img {
+  width: 5rem;
+  height: auto;
+  box-shadow: 2px 2px 2px 1px #BD6060;
+}
+.footer.uk-navbar-container a.uk-navbar-item {
+  color: #FAAC02;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+.footer.uk-navbar-container a.uk-navbar-item:hover {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+}
+
+/* Login page*/
+.login.uk-position-center {
+  background-color: rgba(250, 187, 46, 0.9);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #BD6060;
+}
+.login.uk-position-center h1 {
+  letter-spacing: 2px;
+  color: #FAAC02;
+  text-shadow: 2px 2px 2px #C92C2C;
+}
+
+/* Register Page */
+.register.uk-position-center {
+  background-color: rgba(250, 187, 46, 0.9);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #BD6060;
+}
+.register.uk-position-center h1 {
+  letter-spacing: 2px;
+  color: #FAAC02;
+  text-shadow: 2px 2px 2px #C92C2C;
+}
+
+/* Login Modal -Home */
+.login.uk-modal-dialog {
+  background-color: #FABB2E;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px #BD6060;
+  display: grid;
+  gap: 1rem;
+  border-radius: 5px;
+}
+.login.uk-modal-dialog h1 {
+  letter-spacing: 2px;
+  color: #FDECC3;
+  text-shadow: 2px 2px 2px #BD6060;
+}
+.login.uk-modal-dialog .login_form {
+  justify-self: center;
+  min-width: 10rem;
+}
+
+/* Profile Page */
+.profile {
+  padding: 5rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  background-color: rgba(253, 236, 195, 0.4);
+}
+.profile .profile_top {
+  padding: 2rem;
+}
+.profile .profile_left_section {
+  padding: 2rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.profile .profile_left_section img {
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px #B72828;
+}
+.profile .profile_right_section {
+  padding: 2rem;
+  margin: 1rem;
+}
+.profile .profile_right_section h3 {
+  text-align: center;
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+.profile .profile_right_section .profile_info, .profile .profile_right_section .link_button {
+  text-align: center;
+}
+.profile .profile_buttons {
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.profile .profile_comment_images .images {
+  margin: 0.8rem;
+  padding: 0.5rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.profile .profile_comment_images .images:hover {
+  box-shadow: 2px 2px 2px 1px #BD6060;
+}
+.profile .profile_comment_images img {
+  max-width: 20rem;
+  height: auto;
+}
+
+/* Cameras Index Page */
+.cameras_container {
+  padding: 2rem;
+  margin: 2rem;
+  text-align: center;
+}
+.cameras_container .camera_card {
+  padding: 1rem;
+  margin: 1rem;
+  max-width: 18vw;
+  height: auto;
+  background-color: rgba(250, 172, 2, 0.4);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px 1px #BD6060;
+  transition: 0.5s;
+}
+.cameras_container .camera_card .card_media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  background-color: white;
+}
+.cameras_container .camera_card h3 {
+  padding: 1rem;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+.cameras_container .camera_card:hover {
+  box-shadow: 2px 2px 2px 1px #A62424;
+  transform: scale(1.01);
+}
+.cameras_container a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 580px) {
+  .cameras_container .camera_card {
+    min-width: 100vw;
+    height: auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  .cameras_container .camera_card {
+    min-width: 50vw;
+    height: auto;
+  }
+}
+.camera_index {
+  padding: 2rem;
+  background-color: rgba(253, 236, 195, 0.2);
+}
+.camera_index h1, .camera_index span {
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+
+/* Sidebar */
+.uk-offcanvas-bar {
+  background-color: #FDECC3;
+}
+.uk-offcanvas-bar .uk-nav-default .uk-nav-sub a {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+}
+.uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:hover {
+  color: #FAAC02;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+.uk-offcanvas-bar .uk-nav-default > li > a {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+}
+.uk-offcanvas-bar .uk-nav-default > li > a:hover {
+  color: #FAAC02;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+
+/* Show Page */
+.camera_page {
+  background-color: rgba(253, 236, 195, 0.4);
+  padding: 2rem;
+}
+.camera_page h1 {
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+  margin: 2rem;
+}
+.camera_page span:hover {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+  text-decoration: none;
+}
+.camera_page .camera {
+  background-color: rgba(250, 172, 2, 0.2);
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+}
+.camera_page .camera img {
+  box-shadow: 2px 2px 2px 1px #BD6060;
+  border-radius: 5px;
+}
+.camera_page .camera .camera_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.camera_page .camera .camera_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.camera_page .camera .camera_info_meta {
+  border-radius: 5px;
+  background-color: whitesmoke;
+  margin: 3rem;
+  padding: 3rem;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+}
+.camera_page .comment_form {
+  border-radius: 5px;
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #D49B9B;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+}
+.camera_page .comment_form .form {
+  padding: 1rem;
+}
+.camera_page .comment_form .form_bottom {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.comment {
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #FDECC3;
+  border: 2px #B72828;
+  border-radius: 3px;
+  box-shadow: 3px 3px 2px 1px #BD6060;
+}
+.comment .content h4 {
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem;
+}
+.comment .comment_button {
+  display: flex;
+}
+.comment .uk-comment-title {
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+}
+
+/* Unsplash Section */
+.unsplash .unsplash_section {
+  background-color: white;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+}
+.unsplash .unsplash_section:hover {
+  box-shadow: 2px 2px 2px 1px #BD6060;
+}
+.unsplash h4 {
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.unsplash #link {
+  text-decoration: none;
+}
+.unsplash .heading {
+  margin: none;
+}
+.unsplash .unsplash_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.unsplash h4:hover {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+  text-decoration: none;
+}
+
+/* Edit Modal */
+.modal_edit {
+  border-radius: 5px;
+  padding: 2rem;
+  background-color: #D49B9B;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+}
+.modal_edit .modal_edit_form {
+  padding: 1rem;
+}
+.modal_edit .top {
+  padding: 1rem;
+}
+.modal_edit .bottom {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Edit Profile Page */
+.edit {
+  padding: 5rem;
+  background-color: rgba(253, 236, 195, 0.2);
+}
+.edit h1 {
+  letter-spacing: 2px;
+  color: #FAAC02;
+  text-shadow: 1px 1px 1px #BD6060;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.edit .left_section {
+  margin: 3rem;
+  padding: 3rem;
+  background-color: rgba(166, 36, 36, 0.4);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #FAAC02;
+}
+.edit .right_section {
+  padding: 3rem;
+  margin: 3rem;
+  background-color: rgba(250, 172, 2, 0.5);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #BD6060;
+}
+.edit .right_section .form_image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+.edit .right_section .form_image img {
+  margin: 1rem;
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px 2px #A62424;
+}
+.edit .profile_meta_info {
+  background-color: rgba(189, 96, 96, 0.2);
+  padding: 2rem;
+  box-shadow: 0px 0px 3px 2px #A62424;
+  border-radius: 5px;
+}
+.edit .profile_meta_info h3 {
+  letter-spacing: 2px;
+  color: #A62424;
+  text-shadow: 1px 1px 1px #FAAC02;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Edit Camera Page */
+.camera_edit {
+  padding: 4rem;
+  background-color: rgba(253, 236, 195, 0.2);
+}
+.camera_edit .section_edit {
+  background-color: #FAAC02;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 2px #BD6060;
+}
+.camera_edit .section_edit h1, .camera_edit .section_edit h3 {
+  margin: 0.8rem;
+  padding: 0.8rem;
+}
+.camera_edit .camera_edit_form {
+  padding: 3rem;
+  margin: 3rem;
+  background-color: #bd6060;
+  border-radius: 3px;
+}
+
+/*# sourceMappingURL=main.css.map */

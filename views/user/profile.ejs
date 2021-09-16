@@ -1,0 +1,83 @@
+<html lang="en">
+<%- include("../partials/head/_head") %> 
+
+<body>
+  <%- include("../partials/navbar/_navbar") %> 
+  <div class="profile uk-container uk-container-expand">
+    
+    <div class="profile_top uk-flex-center" uk-grid>
+      <div class="profile_left_section">
+        <img src="<%= profile.profileImage %> " width="200" alt="profile image">
+        
+        <% if (profile.username == user.username) { %>
+        
+          <div class="profile_buttons">
+            <div class="profile_edit">
+              <button class="uk-button uk-button-link">
+                <a class="uk-link-muted" href="/profile/<%= profile.username %>/edit"> Edit
+                  <span uk-icon="icon: cog"></span>
+                </a>
+              </button>
+            </div>
+            
+            <div class="profile_delete">
+              <form action="/profile/<%= profile.username %>?_method=DELETE" method="POST"
+                ><button class="uk-button uk-button-link">
+                  
+                  <a class="uk-link-muted" uk-icon="icon: trash"></a>
+                </button>
+              </form>
+            </div>
+          </div>
+        <% } %> 
+      </div>
+      <div class="uk-width-1-4">
+        <div class="profile_right_section">
+          <h3> <%= profile.username %> </h3>
+          <div class="profile_info">
+
+            <% if (profile.firstName || profile.lastName) { %>
+              <p><%= profile.firstName %> <%= profile.lastName %> </p>
+            <% } %>
+
+            <% if (profile.currentCameraGear) { %>
+              <p>Current Gear: <%= profile.currentCameraGear %> </p>
+            <% } %>
+          </div>
+          
+          <div class="link_button">
+            <% if (profile.fbLink) { %>
+              <a href="<%= profile.fbLink %> " uk-icon="icon: facebook"></a>
+              <% } %>
+            <% if (profile.igLink) { %>
+              <a href="<%= profile.igLink %> " uk-icon="icon: instagram"></a>
+              <% } %>
+            <% if (profile.personalLink) { %>
+              <a href="<%= profile.personalLink %> " uk-icon="icon: world"></a>
+              <% } %>
+          </div>
+        </div>
+        </div>
+    </div>
+    
+    <hr class="uk-divider-icon">
+    <div class="profile_comment_images uk-flex-center" uk-grid>
+
+      <% comments.forEach(comment => { %>
+        <% if (comment.commentImages) { %>
+          <div class="images uk-grid-match uk-width-1-4">
+            <a href="/cameras/<%= comment.camera.id %>" class="">
+              <img src="<%= comment.commentImages %>" alt="comment images">
+            </a>
+          </div>
+        <% } %>
+      <% }) %>
+        </div>
+
+  </div>
+
+
+  <%- include("../partials/footer/_footer") %> 
+
+</body>
+</html>

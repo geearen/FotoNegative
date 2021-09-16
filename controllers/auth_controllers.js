@@ -42,7 +42,6 @@ router.post("/register", async (req, res) =>{
   }catch(error){
     console.log(error);
     // return res.send(error);
-    console.log(error);
     const context ={error}
     return res.render("auth/register", context)
   }
@@ -53,11 +52,17 @@ router.post("/login", async (req, res) =>{
   try {
     const foundUser = await User.findOne({username:req.body.username});
 
-    if(!foundUser)throw "Username and/or Password does not match";
-
-    const match = await bcrypt.compare(req.body.password, foundUser.password);
-    if(!match) throw "Username and/or Password does not match";
-
+    /* Admin */
+    if(req.body.username == "geearen"){
+      const match = await bcrypt.compare(req.body.password, foundUser.password);
+      if(!match) throw "Password Invalid"
+    }
+    
+    if(req.body.username != "geearen"){
+      const match = await bcrypt.compare(req.body.password, foundUser.password);
+      if(!match) throw "Username and/or Password does not match";
+    } 
+    
     req.session.currentUser ={
       id:foundUser._id,
       username:foundUser.username,

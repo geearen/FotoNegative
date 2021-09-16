@@ -1,44 +1,57 @@
 <html lang="en">
-<head>
-  
-  <%- include("../partials/head/_head") %> 
-
-</head>
+<%- include("../partials/head/_head") %> 
 <body>
-  <%- include("../partials/navbar/_navbar") %> 
-  <h1>Login</h1>
-  <div class="uk-container uk-margin login">
-    
-    <% if (error) { %>
-    <article>
-      <p><%= error %> </p>
-    </article>
-    <% } %>
-    <form action="/login" method="POST">
-      <section class="login_form">
-        <label for="username"> Username </label>
-        <div class="uk-inline">
-          <span class="uk-form-icon" uk-icon="icond: user"></span>
-          <input class="uk-input" type="text" placeholder="film_only" name="username" id="username">
-        </div>
-      
-      
-      
-        <label for="password">Password</label>
-        <div class="uk-inline">
-          <span class="uk-form-icon" uk-icon="icon: lock"></span>
-          <input type="password" class="uk-input" name="password" placeholder="*******" id="password">
-        </div>
-        <button class="uk-button"> Login </button>
-      </section>
-      
-    </form>
-    <p>
-      Need an account? <a href="/register">Register here!</a>
-    </p>
+  
+  <div class="uk-position-relative" tabindex="-1" uk-slideshow="ratio:false">
+  
+    <ul class="uk-slideshow-items" uk-height-viewport="offset-bottom:false">
+      <li>
+        <img src="https://images.unsplash.com/photo-1507525475752-ed223abbfff4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="background" uk-cover>
+      </li>
+    </ul>
   </div>
   
-  <%- include("../partials/footer/_footer") %> 
-
+  <div class="login uk-position-center" >
+    <div class="uk-container uk-margin-auto-vertical">      
+      <h1 class="uk-heading-divider">Login</h1>
+      <% if (error) { %>
+          <article uk-alert class="uk-alert-danger">
+            <a class="uk-alert-close" uk-close></a>
+            <h3>Notice:</h3>
+            <p ><%= error %> </p>
+          </article>
+          <% } %>
+        <section class="login_form">
+          <form class="uk-form-stacked" action="/login" method="POST">
+            
+            <div class="uk-margin">
+              <label for="username"> Username </label>
+              <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input" type="text" placeholder="film_only" name="username" id="username">
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label for="password">Password</label>
+              <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                <input type="password" class="uk-input" name="password" placeholder="*******" id="password">
+              </div>
+            </div>
+            <button class="uk-button"> Login </button>
+          </form>
+          <p>
+            Need an account? <a href="/register">Register here!</a>
+          </p>
+          
+        </section>
+      </div>
+    </div>
+    
+    <div class="uk-position-top">
+      <%- include("../partials/navbar/_navbar") %> 
+    </div>
+    <div class="uk-position-bottom">
+      <%- include("../partials/footer/_footer") %> 
+    </div>
 </body>
-</html>

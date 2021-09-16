@@ -1,20 +1,82 @@
 <nav class="uk-navbar-container" uk-navbar>
   <div class="uk-navbar-left">
-    <a class="uk-navbar-item uk-logo" href="/home">
-      <img class="uk-logo" src="/assets/favicon/apple-touch-icon.png" alt="fn logo" />
+    <a class="uk-navbar-item " href="/home">
+      <img class="uk-logo nav_logo" src="/assets/favicon/apple-touch-icon.png" alt="fn logo" />
     </a>
   </div>
 
   <div class="uk-navbar-right">
-    <a class="uk-navbar-item" href="/cameras"> Cameras </a>
-    <% if (typeof user !== "undefined") { %>
-    <a class="uk-navbar-item" href="/profile/<%= user.username %> "> <%= user.username %> </a>
-    <% } %>
-    <% if (typeof routes !== "undefined") { %>
-      <% routes.forEach((route) =>{ %> 
-        <a class="uk-navbar-item" href="<%= route.href %> "> <%= route.title %>  </a>
+    <ul class="uk-navbar-nav">
+      <li>
+        <a class="uk-navbar-item" href="/cameras"> Cameras </a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li>
+              <a  href="">Film Cameras</a>
+            </li>
+            <li>
+              <a  href="">Digital Cameras</a>
+            </li>
+          </ul>
+        </div>
+      </li>
 
-    <% })%>
-    <%} %>
+      <% if (typeof user !== "undefined") { %>
+      <li>
+        <a class="uk-navbar-item" href="/profile/<%= user.username %> "> <%= user.username %> </a>
+      </li>
+      <% } %>
+      <% if (typeof routes !== "undefined") { %>
+      
+      <% routes.forEach((route) =>{ %> 
+      <li>
+        <a class="uk-navbar-item" href="<%= route.href %>" <%= route.class %> > <%= route.title %></a>
+      </li>
+          
+      <% })%>
+      <%} %>
+    </ul>
   </div>
 </nav>
+
+<div class="uk-flex-top uk-modal-container-small" id="modal-login" uk-modal>
+    <div class="login uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      
+      <h1 class="uk-heading-divider">Login</h1>
+      
+      
+      <% if (error) { %>
+        <article>
+          <p><%= error %> </p>
+        </article>
+        <% } %>
+        
+        <section class="login_form">
+            <form class="uk-form-stacked" action="/login" method="POST">
+              <section class="login_form">
+                <div class="uk-margin">
+                  <label for="username"> Username </label>
+                  <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    <input class="uk-input" type="text" placeholder="film_only" name="username" id="username">
+                  </div>
+                </div>
+                <div class="uk-margin">
+                  <label for="password">Password</label>
+                  <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                    <input type="password" class="uk-input" name="password" placeholder="*******" id="password">
+                  </div>
+                </div>
+                <button class="uk-button"> Login </button>
+              </section>
+              
+            </form>
+            <p>
+              Need an account? <a href="/register">Register here!</a>
+            </p>
+          
+        </section>
+      </div>
+    </div>

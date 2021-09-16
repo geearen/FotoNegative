@@ -1,7 +1,7 @@
-require('../config/db.connection');
+require("../config/db.connection");
 
 module.exports = {
-  Camera: require('./Camera'),
-  Comment: require('./Comment'),
-  User: require('./User')
-}
+  Camera: require("./Camera"),
+  Comment: require("./Comment"),
+  User: require("./User"),
+};

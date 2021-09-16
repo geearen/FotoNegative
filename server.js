@@ -3,7 +3,9 @@ const express = require("express");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+
 require("dotenv").config();
+
 
 /* Module Instance */
 const app = express();
@@ -37,6 +39,7 @@ app.use((req,res,next) =>{
 });
 
 app.use(express.static("public"));
+// app.use(upload.fields([{name:"commentImages"}, {name:"profileImage"}]));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
 
@@ -48,19 +51,24 @@ app.use(require("./utils/logger"));
 app.get("/", (req, res) => res.redirect("/home"));
 
 /* Home Page */
-app.get("/home", function(req, res){
-  return res.render("home");
+app.get("/home", function (req, res){
+  const context ={error:null}
+  console.log(req.url)
+  return res.render("home" ,context);
 })
 
 /* Routes */
 app.use("/", controllers.auth);
 app.use("/cameras", controllers.camera);
 app.use("/profile", controllers.user);
+app.use("/cameras", controllers.comment);
+
 
 
 /* 404 Page */
 app.get("/*", function (req, res){
-  res.send("ERROR")
+  const context = { error: "Oh no.. Something went wrong . 😓😓😓😓" };
+  res.render("404", context)
 })
 
 /* Port Binding */
