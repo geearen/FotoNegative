@@ -134,8 +134,6 @@ router.get("/:id", async (req, res, next) => {
     const foundCategory = await Categories.findOne({index: foundCamera.category});
     let unsplashData = []
     let apiRes = await axios.get(`https://api.unsplash.com/photos/random?count=5&query=${foundCamera.cameraName}&content_filter=high&client_id=${apiKey}`).then((response) => {unsplashData = response.data})
-
-    console.log(foundCategory)
     if (req.session.currentUser && req.session.currentUser.id == adminID) {
       const context = {
         unsplashData,
