@@ -23,7 +23,6 @@
     "aws-sdk": "^2.989.0",
     "axios": "^0.21.4",
     "bcryptjs": "^2.4.3",
-    "cloudinary": "^1.26.3",
     "connect-mongo": "^4.5.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
@@ -32,9 +31,7 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.0.5",
     "multer": "^1.4.3",
-    "node-fetch": "^3.0.0",
     "node-sass": "^6.0.1",
-    "uikit": "^3.7.2",
     "uuid": "^8.3.2"
   }
 }

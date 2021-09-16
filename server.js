@@ -39,7 +39,6 @@ app.use((req,res,next) =>{
 });
 
 app.use(express.static("public"));
-// app.use(upload.fields([{name:"commentImages"}, {name:"profileImage"}]));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
 
@@ -53,9 +52,14 @@ app.get("/", (req, res) => res.redirect("/home"));
 /* Home Page */
 app.get("/home", function (req, res){
   const context ={error:null}
-  console.log(req.url)
   return res.render("home" ,context);
 })
+
+/* About Page */
+app.get("/about", function(req,res){
+  const context = {error:null}
+  res.render("about",context)
+});
 
 /* Routes */
 app.use("/", controllers.auth);
@@ -70,6 +74,7 @@ app.get("/*", function (req, res){
   const context = { error: "Oh no.. Something went wrong . 😓😓😓😓" };
   res.render("404", context)
 })
+
 
 /* Port Binding */
 app.listen(PORT, () =>{

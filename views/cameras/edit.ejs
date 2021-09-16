@@ -81,20 +81,9 @@
           <div class="uk-form-controls">
             <select name="category" id="category" class="uk-select">
               <option selected disabled value="<%= camera.category %> "> <%= camera.category %> </option>
-              <option value="DSLR"> DSLR </option>
-              <option value="SLR"> SLR </option>
-              <option value="ZLR"> ZLR </option>
-              <option value="Twin-lens Reflex"> Twin-lens Reflex (TLR) </option>
-              <option value="Mirrorless"> Mirrorless </option>
-              <option value="Medium Format"> Medium Format </option>
-              <option value="Point and Shoot"> Point and Shoot </option>
-              <option value="Full Frame"> Full Frame </option>
-              <option value="Disposable"> Disposable </option>
-              <option value="Smartphone"> Smartphone </option>
-              <option value="Polaroid / Instant"> Polaroid / Instant </option>
-              <option value="Rangefinder"> Rangefinder </option>
-              <option value="Large Format"> Large Format </option>
-              <option value="N/A"> N/A </option>
+              <% categories.forEach(category => { %>
+                 <option value="<%= category.index %>"> <%= category.category %> </option>
+              <% }) %>
             </select>
           </div>
         </div>

@@ -9,6 +9,18 @@
 body{
   font-family: "Raleway", sans-serif;
 }
+body::-webkit-scrollbar{
+  width: 12px;
+}
+body::-webkit-scrollbar-track{
+  background: $lemon-meringue;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: $fuzzy-wuzzy;
+  border-radius: 20px;
+  border: 3px solid  $fuzzy-wuzzy;
+}
+
 /* Navbar & Footer Home*/
 .uk-navbar-transparent{
   background-color: rgb(0, 0, 0, 0.2);
@@ -378,6 +390,22 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
       text-shadow: 1px 1px 1px $persian-red;
     }
 }
+/* Bottom page of show */
+.bottom{
+  h4,h3{
+    letter-spacing: 2px;
+    color: $selective-yellow;
+    text-shadow: 1px 1px 1px $persian-red;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  h4,h3:hover{
+    color: $persian-red;
+    text-shadow: 2px 1px 0.5px $selective-yellow;
+    text-decoration: none;
+  }
+}
 /* Unsplash Section */
 .unsplash{
 
@@ -391,7 +419,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
   .unsplash_section:hover{
     box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
   }
-  h4{
+  h4,h3{
     letter-spacing: 2px;
     color: $selective-yellow;
     text-shadow: 1px 1px 1px $persian-red;
@@ -410,7 +438,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     align-items: center;
   }
 
-  h4:hover{
+  h4,h3:hover{
     color: $persian-red;
     text-shadow: 2px 1px 0.5px $selective-yellow;
     text-decoration: none;
@@ -516,4 +544,93 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     background-color: opacify($fuzzy-wuzzy, 0.9);
     border-radius: 3px;
   }
+}
+
+/* Delete Modal */
+.modal_delete.uk-modal-dialog{
+  background-color: $selective-yellow;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+  display:grid;
+  gap: 1rem;
+  border-radius: 5px;
+  h2{
+    letter-spacing: 2px;
+    color: $lemon-meringue;
+    text-shadow: 2px 2px 2px  $fuzzy-wuzzy;
+  }
+  .delete_form{
+    justify-self: center;
+    min-width: 10rem;
+  }
+}
+
+/* 404 Page */
+.error_message{
+  background-color: transparentize($persian-red, 0.2);
+  padding: 3rem;
+  margin:3rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px $honey-yellow2;
+  h1{
+    letter-spacing: 2px;
+    color: $lemon-meringue;
+    text-shadow: 2px 2px 2px  $honey-yellow;
+    text-align: center;
+  }
+}
+
+/* About */
+.about{
+  padding:2rem;
+  margin:2rem;
+
+  .about_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about_image{
+    max-width: 20vw;
+    height: auto;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px $selective-yellow;
+    padding:1rem;
+    margin:1rem;
+    img{
+      border-radius: 5px;
+    }
+  }
+  .about_meta{
+    background-color: whitesmoke;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px $selective-yellow;
+
+    .links{
+      display: flex;
+      justify-content: space-evenly;
+
+      a{
+        transition: 0.5s;
+      }
+      a:hover{
+        color: $persian-red;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:490px){
+  .about{
+
+  img{
+    min-width: 15vw;
+    height: auto;
+  }
+}
 }

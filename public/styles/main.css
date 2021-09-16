@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&family=Raleway:wght@100;300;500&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -10,6 +10,20 @@
 
 body {
   font-family: "Raleway", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #FDECC3;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #BD6060;
+  border-radius: 20px;
+  border: 3px solid #BD6060;
 }
 
 /* Navbar & Footer Home*/
@@ -354,6 +368,20 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   text-shadow: 1px 1px 1px #C92C2C;
 }
 
+/* Bottom page of show */
+.bottom h4, .bottom h3 {
+  letter-spacing: 2px;
+  color: #FABB2E;
+  text-shadow: 1px 1px 1px #C92C2C;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.bottom h4, .bottom h3:hover {
+  color: #C92C2C;
+  text-shadow: 2px 1px 0.5px #FABB2E;
+  text-decoration: none;
+}
+
 /* Unsplash Section */
 .unsplash .unsplash_section {
   background-color: white;
@@ -365,7 +393,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
 .unsplash .unsplash_section:hover {
   box-shadow: 2px 2px 2px 1px #BD6060;
 }
-.unsplash h4 {
+.unsplash h4, .unsplash h3 {
   letter-spacing: 2px;
   color: #FABB2E;
   text-shadow: 1px 1px 1px #C92C2C;
@@ -383,7 +411,7 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   justify-content: center;
   align-items: center;
 }
-.unsplash h4:hover {
+.unsplash h4, .unsplash h3:hover {
   color: #C92C2C;
   text-shadow: 2px 1px 0.5px #FABB2E;
   text-decoration: none;
@@ -482,6 +510,88 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   margin: 3rem;
   background-color: #bd6060;
   border-radius: 3px;
+}
+
+/* Delete Modal */
+.modal_delete.uk-modal-dialog {
+  background-color: #FABB2E;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px #BD6060;
+  display: grid;
+  gap: 1rem;
+  border-radius: 5px;
+}
+.modal_delete.uk-modal-dialog h2 {
+  letter-spacing: 2px;
+  color: #FDECC3;
+  text-shadow: 2px 2px 2px #BD6060;
+}
+.modal_delete.uk-modal-dialog .delete_form {
+  justify-self: center;
+  min-width: 10rem;
+}
+
+/* 404 Page */
+.error_message {
+  background-color: rgba(201, 44, 44, 0.8);
+  padding: 3rem;
+  margin: 3rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #FAB419;
+}
+.error_message h1 {
+  letter-spacing: 2px;
+  color: #FDECC3;
+  text-shadow: 2px 2px 2px #FAAC02;
+  text-align: center;
+}
+
+/* About */
+.about {
+  padding: 2rem;
+  margin: 2rem;
+}
+.about .about_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about .about_image {
+  max-width: 20vw;
+  height: auto;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+  padding: 1rem;
+  margin: 1rem;
+}
+.about .about_image img {
+  border-radius: 5px;
+}
+.about .about_meta {
+  background-color: whitesmoke;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px #FABB2E;
+}
+.about .about_meta .links {
+  display: flex;
+  justify-content: space-evenly;
+}
+.about .about_meta .links a {
+  transition: 0.5s;
+}
+.about .about_meta .links a:hover {
+  color: #C92C2C;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 490px) {
+  .about img {
+    min-width: 15vw;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
