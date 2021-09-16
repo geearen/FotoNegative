@@ -39,7 +39,6 @@ app.use((req,res,next) =>{
 });
 
 app.use(express.static("public"));
-// app.use(upload.fields([{name:"commentImages"}, {name:"profileImage"}]));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended:true}));
 
@@ -53,7 +52,6 @@ app.get("/", (req, res) => res.redirect("/home"));
 /* Home Page */
 app.get("/home", function (req, res){
   const context ={error:null}
-  console.log(req.url)
   return res.render("home" ,context);
 })
 

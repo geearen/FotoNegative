@@ -24,7 +24,7 @@ const cameraSchema = new mongoose.Schema(
       type: String,
     },
     category:{
-      type: String,
+      type: Number,
     },
     photographyType:{
       type:String,
