@@ -557,10 +557,6 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
 }
 
 /* About */
-.about {
-  padding: 2rem;
-  margin: 2rem;
-}
 .about .about_container {
   display: flex;
   justify-content: center;
