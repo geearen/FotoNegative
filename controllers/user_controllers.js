@@ -67,6 +67,7 @@ router.put('/:username', handleUploadProfile, async (req, res) =>{
 router.delete('/:username', async (req, res, next)=>{
   try{
     const deleteProfile = await User.findOneAndDelete({username:req.params.username});
+    const deleteComments = await Comment.deleteMany({user:deleteProfile.id})
     await req.session.destroy();
     if(!deleteProfile) throw "Unable to complete the request";
 
