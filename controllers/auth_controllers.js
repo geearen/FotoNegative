@@ -65,7 +65,7 @@ router.post("/login", async (req, res) =>{
       id:foundUser._id,
       username:foundUser.username,
     }
-    return res.redirect("/home");
+    return res.redirect(`/profile/${foundUser.username}`);
 
   } catch (error) {
     console.log(error);

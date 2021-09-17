@@ -36,7 +36,7 @@ router.get("/", async (req, res, next) => {
     return next();
   }
 });
-/* Filter Route */
+/* Filter Route for Film or Digital*/
 router.get("/filter/:type", async (req, res, next) => {
   try {
     let type = req.params.type.charAt(0).toUpperCase() + req.params.type.slice(1);
