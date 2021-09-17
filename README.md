@@ -78,13 +78,11 @@ Sprint 6:
 
 
 # Installation steps
+To install
 ```
 yarn 
 ```
-or 
-```
-npm i
-```
+
 # Color Pallete
 ![FotoNegative](https://user-images.githubusercontent.com/86206813/132394197-897dcb73-28d5-49fb-a6c0-af1d2023658c.png)
 https://coolors.co/d49b9b-bd6060-a62424-b72828-c92c2c-faac02-fab419-fabb2e-fcd479-fdecc3
@@ -110,6 +108,7 @@ NEM Stack
 - AWS S3
 - multer
 - axios
+- Heroku
 
 # Resources
 - http://camera-wiki.org/
