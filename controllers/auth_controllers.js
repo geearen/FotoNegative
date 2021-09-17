@@ -46,6 +46,10 @@ router.post("/login", async (req, res) =>{
   try {
     const foundUser = await User.findOne({username:req.body.username});
 
+    if(!foundUser){
+      throw "Username and/or Password does not match"
+    }
+
     /* Admin */
     if(req.body.username == "geearen"){
       const match = await bcrypt.compare(req.body.password, foundUser.password);
