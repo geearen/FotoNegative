@@ -31,6 +31,10 @@ router.get('/:username', async(req, res) =>{
 router.get('/:username/edit', async (req, res) =>{
   try{
     const editProfile = await User.findOne({username:req.params.username});
+    if(req.body.user !== editProfile.id){
+      throw "Unable to comeplete the request"
+    }
+
     const context = {
       profile: editProfile,
       error:null,
@@ -55,6 +59,10 @@ router.put('/:username', handleUploadProfile, async (req, res) =>{
         {$set:req.body}, 
         {new:true}
       );
+
+      if (req.body.user !== updatedProfile.id) {
+        throw "Unable to comeplete the request";
+      }
     return res.redirect(`/profile/${updatedProfile.username}/edit`)
   }catch(error){
     console.log(error);
@@ -66,10 +74,13 @@ router.put('/:username', handleUploadProfile, async (req, res) =>{
 /* Delete Profile */
 router.delete('/:username', async (req, res, next)=>{
   try{
-    const deleteProfile = await User.findOneAndDelete({username:req.params.username});
-    const deleteComments = await Comment.deleteMany({user:deleteProfile.id})
+    const deletedProfile = await User.findOneAndDelete({username:req.params.username});
+    const deleteComments = await Comment.deleteMany({user:deletedProfile.id})
     await req.session.destroy();
-    if(!deleteProfile) throw "Unable to complete the request";
+    if (req.body.user !== deletedProfile.id) {
+      throw "Unable to comeplete the request";
+    }
+    if(!deletedProfile) throw "Unable to complete the request";
 
     return res.redirect("/home");
 

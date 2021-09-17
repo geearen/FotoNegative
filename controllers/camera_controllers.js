@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const {authRequired} = require("../utils/auth");
 const {adminRequired} = require("../utils/admin_auth")
 const { Camera, Comment, Categories } = require("../models");
 const axios = require('axios');
