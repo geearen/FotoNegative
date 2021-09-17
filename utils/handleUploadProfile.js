@@ -7,11 +7,9 @@ const handleUploadProfile = async (req, res, next) => {
   try {
     const file = req.file;
     const validTypes = ["image/jpeg", "image/jpg"];
-    console.log( {file} );
 
     if (validTypes.includes(file.mimetype)) {
       const result = await bucketS3.uploadFile(file);
-      console.log(result);
 
       await removeFile(file.path);
       console.log(result.Location)
