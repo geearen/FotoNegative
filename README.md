@@ -36,7 +36,7 @@ Registed User has a profile page where they can view all the images they have po
 ![ERD](https://whimuc.com/4yykyBi2wpA8J1fs9UiC9b/A7PVFc7GTYEyzc.png)
 
 # CRUD/ RESTful routing
-![CRUD](https://whimuc.com/4yykyBi2wpA8J1fs9UiC9b/9pMFbwQRbUAy4J.png)
+![CRUD](https://user-images.githubusercontent.com/86206813/133703571-a6835880-293f-4f6f-bb5f-d836f31add80.PNG)
 
 # Milestone/Sprints
 Sprint 1:
@@ -85,7 +85,7 @@ or
 ```
 npm i
 ```
-# Color Pallet
+# Color Pallete
 ![FotoNegative](https://user-images.githubusercontent.com/86206813/132394197-897dcb73-28d5-49fb-a6c0-af1d2023658c.png)
 https://coolors.co/d49b9b-bd6060-a62424-b72828-c92c2c-faac02-fab419-fabb2e-fcd479-fdecc3
 
