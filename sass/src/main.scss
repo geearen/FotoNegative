@@ -533,6 +533,14 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     border-radius: 3px;
     box-shadow: 2px 2px 2px 2px $fuzzy-wuzzy;
 
+    .contain_form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 100vw;
+      height: auto;
+    }
     h1, h3{
       margin: 0.8rem;
       padding: 0.8rem;
@@ -543,6 +551,8 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     margin: 3rem;
     background-color: opacify($fuzzy-wuzzy, 0.9);
     border-radius: 3px;
+    min-width: 50vw;
+    height: auto;
   }
 }
 
@@ -633,4 +643,22 @@ nav.uk-navbar-container:not(.uk-navbar-transparent){
     height: auto;
   }
 }
+}
+/* Login Modal -Home */
+.create.uk-modal-dialog{
+  background-color: $selective-yellow;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px $fuzzy-wuzzy;
+  display:grid;
+  gap: 1rem;
+  border-radius: 5px;
+  h1{
+    letter-spacing: 2px;
+    color: $lemon-meringue;
+    text-shadow: 2px 2px 2px  $fuzzy-wuzzy;
+  }
+  .create_form{
+    justify-self: center;
+    min-width: 10rem;
+  }
 }

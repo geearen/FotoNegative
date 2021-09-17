@@ -501,6 +501,14 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   border-radius: 3px;
   box-shadow: 2px 2px 2px 2px #BD6060;
 }
+.camera_edit .section_edit .contain_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  height: auto;
+}
 .camera_edit .section_edit h1, .camera_edit .section_edit h3 {
   margin: 0.8rem;
   padding: 0.8rem;
@@ -510,6 +518,8 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
   margin: 3rem;
   background-color: #bd6060;
   border-radius: 3px;
+  min-width: 50vw;
+  height: auto;
 }
 
 /* Delete Modal */
@@ -592,6 +602,24 @@ nav.uk-navbar-container:not(.uk-navbar-transparent) a, nav.uk-navbar-container:n
     min-width: 15vw;
     height: auto;
   }
+}
+/* Login Modal -Home */
+.create.uk-modal-dialog {
+  background-color: #FABB2E;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px #BD6060;
+  display: grid;
+  gap: 1rem;
+  border-radius: 5px;
+}
+.create.uk-modal-dialog h1 {
+  letter-spacing: 2px;
+  color: #FDECC3;
+  text-shadow: 2px 2px 2px #BD6060;
+}
+.create.uk-modal-dialog .create_form {
+  justify-self: center;
+  min-width: 10rem;
 }
 
 /*# sourceMappingURL=main.css.map */
