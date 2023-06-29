@@ -4,7 +4,7 @@ const { Comment } = require("../models");
 const { authRequired } = require("../utils/auth");
 const handleUploadFile = require("../utils/handleUploadFile");
 const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ dest: "tmp/" });
 
 router.use(upload.single("commentImages"));
 
