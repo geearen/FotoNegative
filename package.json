@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
     "watch-sass": "sass --watch sass/src:public/styles",
-    "start": "node server.js"
+    "start": "node server.js",
+    "verce-build": "echo hello"
   },
   "repository": {
     "type": "git",
