@@ -3,7 +3,7 @@ const router = express.Router();
 const { User, Comment } = require("../models");
 const handleUploadProfile = require("../utils/handleUploadProfile");
 const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ dest: "/tmp/" });
 
 router.use(upload.single("profileImage"));
 
