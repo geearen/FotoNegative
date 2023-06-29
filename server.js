@@ -16,6 +16,8 @@ const PORT = process.env.PORT || 7000;
 const controllers = require("./controllers");
 
 /* App Config */
+const viewsPath = path.join(__dirname, "./views");
+app.set("views", viewsPath);
 app.set("view engine", "ejs");
 
 /* Session Controller */
@@ -51,13 +53,13 @@ app.get("/", (req, res) => res.redirect("/home"));
 /* Home Page */
 app.get("/home", function (req, res) {
   const context = { error: null };
-  return res.render("home", context);
+  return res.render("home.ejs", context);
 });
 
 /* About Page */
 app.get("/about", function (req, res) {
   const context = { error: null };
-  res.render("about", context);
+  res.render("about.ejs", context);
 });
 
 /* Routes */
@@ -69,7 +71,7 @@ app.use("/cameras", controllers.comment);
 /* 404 Page */
 app.get("/*", function (req, res) {
   const context = { error: "Oh no.. Something went wrong . 😓😓😓😓" };
-  res.render("404", context);
+  res.render("404.ejs", context);
 });
 
 /* Port Binding */

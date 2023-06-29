@@ -22,10 +22,10 @@ router.get("/:username", async (req, res) => {
 
     if (!foundProfile) throw "Profile Does Not Exist.";
 
-    return res.render("user/profile", context);
+    return res.render("user/profile.ejs", context);
   } catch (error) {
     const context = { error };
-    return res.render("404", context);
+    return res.render("404.ejs", context);
   }
 });
 
@@ -41,11 +41,11 @@ router.get("/:username/edit", async (req, res) => {
 
     if (!editProfile) throw "Unable to complete the request.";
 
-    return res.render("user/edit", context);
+    return res.render("user/edit.ejs", context);
   } catch (error) {
     const context = { error };
     console.log(error);
-    return res.render("404", context);
+    return res.render("404.ejs", context);
   }
 });
 
@@ -65,7 +65,7 @@ router.put("/:username", handleUploadProfile, async (req, res, next) => {
   } catch (error) {
     console.log(error);
     const context = { error };
-    return res.render("404", context);
+    return res.render("404.ejs", context);
   }
 });
 
@@ -87,7 +87,7 @@ router.delete("/:username", async (req, res, next) => {
     return res.redirect("/home");
   } catch (error) {
     const context = { error };
-    return res.render("404", context);
+    return res.render("404.ejs", context);
   }
 });
 module.exports = router;

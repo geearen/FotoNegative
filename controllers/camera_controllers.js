@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const {adminRequired} = require("../utils/admin_auth")
+const { adminRequired } = require("../utils/admin_auth");
 const { Camera, Comment, Categories } = require("../models");
-const axios = require('axios');
+const axios = require("axios");
 
 const adminID = process.env.adminID;
 
@@ -14,14 +14,14 @@ router.get("/", async (req, res, next) => {
     const allCameras = await Camera.find({}).sort("cameraName");
     const allCategory = await Categories.find({});
 
-    if(req.session.currentUser && req.session.currentUser.id == adminID){
+    if (req.session.currentUser && req.session.currentUser.id == adminID) {
       const context = {
-        categories:allCategory,
+        categories: allCategory,
         cameras: allCameras,
         isAdmin: true,
-        error:null
-      }
-      return res.render("cameras/index", context);
+        error: null,
+      };
+      return res.render("cameras/index.ejs", context);
     }
     const context = {
       categories: allCategory,
@@ -29,7 +29,7 @@ router.get("/", async (req, res, next) => {
       isAdmin: false,
       error: null,
     };
-    return res.render("cameras/index", context);
+    return res.render("cameras/index.ejs", context);
   } catch (error) {
     console.log(error);
     req.error = error;
@@ -39,8 +39,11 @@ router.get("/", async (req, res, next) => {
 /* Filter Route for Film or Digital*/
 router.get("/filter/:type", async (req, res, next) => {
   try {
-    let type = req.params.type.charAt(0).toUpperCase() + req.params.type.slice(1);
-    const allCameras = await Camera.find({photographyType: type}).sort("cameraName");
+    let type =
+      req.params.type.charAt(0).toUpperCase() + req.params.type.slice(1);
+    const allCameras = await Camera.find({ photographyType: type }).sort(
+      "cameraName"
+    );
     const allCategory = await Categories.find({});
     if (req.session.currentUser && req.session.currentUser.id == adminID) {
       const context = {
@@ -49,7 +52,7 @@ router.get("/filter/:type", async (req, res, next) => {
         isAdmin: true,
         error: null,
       };
-      return res.render("cameras/index", context);
+      return res.render("cameras/index.ejs", context);
     }
     const context = {
       categories: allCategory,
@@ -57,7 +60,7 @@ router.get("/filter/:type", async (req, res, next) => {
       isAdmin: false,
       error: null,
     };
-    return res.render("cameras/index", context);
+    return res.render("cameras/index.ejs", context);
   } catch (error) {
     console.log(error);
     req.error = error;
@@ -79,7 +82,7 @@ router.get("/category/:id", async (req, res, next) => {
         isAdmin: true,
         error: null,
       };
-      return res.render("cameras/index", context);
+      return res.render("cameras/index.ejs", context);
     }
     const context = {
       categories: allCategory,
@@ -87,7 +90,7 @@ router.get("/category/:id", async (req, res, next) => {
       isAdmin: false,
       error: null,
     };
-    return res.render("cameras/index", context);
+    return res.render("cameras/index.ejs", context);
   } catch (error) {
     console.log(error);
     req.error = error;
@@ -96,17 +99,16 @@ router.get("/category/:id", async (req, res, next) => {
 });
 
 /* New Route */
-router.get("/new", adminRequired, async (req, res) =>{
+router.get("/new", adminRequired, async (req, res) => {
   try {
-    const allCategories = await Categories.find({})
-    const context ={
-      categories:allCategories
-    }
-    return res.render("cameras/new", context);
-    
+    const allCategories = await Categories.find({});
+    const context = {
+      categories: allCategories,
+    };
+    return res.render("cameras/new.ejs", context);
   } catch (error) {
-    const context = {error}
-    return res.render("404", context)
+    const context = { error };
+    return res.render("404.ejs", context);
   }
 });
 
@@ -118,42 +120,49 @@ router.post("/", adminRequired, async (req, res) => {
   } catch (error) {
     const context = { error };
     console.log(error);
-    return res.render("404", context);
+    return res.render("404.ejs", context);
   }
 });
-
 
 /* Show Page */
 router.get("/:id", async (req, res, next) => {
   try {
     const foundCamera = await Camera.findById(req.params.id);
     const allComments = await Comment.find({ camera: req.params.id })
-      .sort({ createdAt : -1})
+      .sort({ createdAt: -1 })
       .populate("user");
-    const foundCategory = await Categories.findOne({index: foundCamera.category});
-    let unsplashData = []
-    let apiRes = await axios.get(`https://api.unsplash.com/photos/random?count=5&query=${foundCamera.cameraName}&content_filter=high&client_id=${apiKey}`).then((response) => {unsplashData = response.data})
+    const foundCategory = await Categories.findOne({
+      index: foundCamera.category,
+    });
+    let unsplashData = [];
+    let apiRes = await axios
+      .get(
+        `https://api.unsplash.com/photos/random?count=5&query=${foundCamera.cameraName}&content_filter=high&client_id=${apiKey}`
+      )
+      .then((response) => {
+        unsplashData = response.data;
+      });
     if (req.session.currentUser && req.session.currentUser.id == adminID) {
       const context = {
         unsplashData,
-        category:foundCategory,
+        category: foundCategory,
         camera: foundCamera,
         comments: allComments,
         isAdmin: true,
-        error:null,
+        error: null,
       };
-      return res.render("cameras/show", context);
+      return res.render("cameras/show.ejs", context);
     }
 
     const context = {
       unsplashData,
-      category:foundCategory,
+      category: foundCategory,
       camera: foundCamera,
       comments: allComments,
       isAdmin: false,
       error: null,
     };
-    return res.render("cameras/show", context);
+    return res.render("cameras/show.ejs", context);
   } catch (error) {
     console.log(error);
     req.error = error;
@@ -167,11 +176,11 @@ router.get("/:id/edit", adminRequired, async (req, res, next) => {
     const foundCamera = await Camera.findById(req.params.id);
     const allCategories = await Categories.find({});
     const context = {
-      categories:allCategories,
+      categories: allCategories,
       camera: foundCamera,
-      error:null,
+      error: null,
     };
-    return res.render("cameras/edit", context);
+    return res.render("cameras/edit.ejs", context);
   } catch (error) {
     console.log(error);
     req.error = error;
@@ -186,9 +195,9 @@ router.put("/:id", adminRequired, async (req, res, next) => {
       req.params.id,
       { $set: req.body },
       { new: true }
-      );
-    return res.redirect(`/cameras/${updatedCamera.id}`)
-  } catch(error){
+    );
+    return res.redirect(`/cameras/${updatedCamera.id}`);
+  } catch (error) {
     console.log(error);
     req.error = error;
     return next();
@@ -197,16 +206,15 @@ router.put("/:id", adminRequired, async (req, res, next) => {
 
 /* Delete Page */
 router.delete("/:id", adminRequired, async (req, res, next) => {
-  try{
+  try {
     await Camera.findByIdAndDelete(req.params.id);
-    await Comment.deleteMany({camera:req.params.id})
-    return res.redirect("/cameras")
-  }catch(error){
+    await Comment.deleteMany({ camera: req.params.id });
+    return res.redirect("/cameras");
+  } catch (error) {
     console.log(error);
-    const context = {error};
-    return res.render("404", context);
+    const context = { error };
+    return res.render("404.ejs", context);
   }
 });
-
 
 module.exports = router;
