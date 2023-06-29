@@ -86,8 +86,9 @@
 
             <div uk-form-custom="target:true" >
               <input type="file" name="profileImage" >
-              <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+              <input class="uk-input uk-form-width-medium" type="type" placeholder="Select file" disabled>
             </div>
+                <input type="hidden" name="camera" value="<%= profile.id %>">
             <button class="uk-button"> Update Profile Picture <span uk-icon="icon: camera"></span> </button>
 
           </form>
