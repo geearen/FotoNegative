@@ -6,12 +6,11 @@ const MongoStore = require("connect-mongo");
 
 require("dotenv").config();
 
-
 /* Module Instance */
 const app = express();
 
 /* PORT */
-const PORT = process.env.PORT || 7000
+const PORT = process.env.PORT || 7000;
 
 /* Internal Modules */
 const controllers = require("./controllers");
@@ -22,25 +21,25 @@ app.set("view engine", "ejs");
 /* Session Controller */
 app.use(
   session({
-    store: MongoStore.create({mongoUrl: process.env.MONGODB_URI}),
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
     secret: process.env.SECRET,
-    resave:false,
-    saveUninitialized:false,
-    cookie:{
-      maxAge:1000*60*60*24*7*2,
-    }
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7 * 2,
+    },
   })
 );
 
 /* Middleware */
-app.use((req,res,next) =>{
+app.use((req, res, next) => {
   res.locals.user = req.session.currentUser;
   return next();
 });
 
 app.use(express.static("public"));
-app.use(methodOverride('_method'));
-app.use(express.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true }));
 
 /* Custom Middleware */
 app.use(require("./utils/navlinks"));
@@ -50,15 +49,15 @@ app.use(require("./utils/logger"));
 app.get("/", (req, res) => res.redirect("/home"));
 
 /* Home Page */
-app.get("/home", function (req, res){
-  const context ={error:null}
-  return res.render("home" ,context);
-})
+app.get("/home", function (req, res) {
+  const context = { error: null };
+  return res.render("home", context);
+});
 
 /* About Page */
-app.get("/about", function(req,res){
-  const context = {error:null}
-  res.render("about",context)
+app.get("/about", function (req, res) {
+  const context = { error: null };
+  res.render("about", context);
 });
 
 /* Routes */
@@ -67,16 +66,15 @@ app.use("/cameras", controllers.camera);
 app.use("/profile", controllers.user);
 app.use("/cameras", controllers.comment);
 
-
-
 /* 404 Page */
-app.get("/*", function (req, res){
+app.get("/*", function (req, res) {
   const context = { error: "Oh no.. Something went wrong . 😓😓😓😓" };
-  res.render("404", context)
-})
-
+  res.render("404", context);
+});
 
 /* Port Binding */
-app.listen(PORT, () =>{
+app.listen(PORT, () => {
   console.log(` FotoNegative is on port ${PORT}`);
-})
+});
+
+module.exports = app;
